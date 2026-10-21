@@ -4,7 +4,8 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 
-const domain = fs.readFileSync(path.join(__dirname, '..', 'CNAME'), 'utf8').trim();
+// CNAME now names the GitHub Pages host, so the Surge mirror keeps its own name.
+const domain = process.env.SURGE_DOMAIN || 'bogomind.surge.sh';
 const netrc = fs.readFileSync(path.join(os.homedir(), '.netrc'), 'utf8');
 const block = netrc.split(/\n\s*\n/).find(b => b.includes('machine surge.surge.sh'));
 const user = block.match(/login\s+(\S+)/)[1];
