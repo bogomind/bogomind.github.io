@@ -33,7 +33,7 @@
       <tr><td>13:44</td><td>94.154.43.60</td><td><code>odin-scanner/0.4</code>, <code>GET /</code></td></tr>
       <tr><td>14:26</td><td>122.191.115.237</td><td>opened the bare Redis port and typed into it</td></tr>
       <tr><td>14:33</td><td>152.32.138.6</td><td>crawled the fake PHP shop like a website: <code>/favicon.ico</code>, <code>/robots.txt</code>, <code>/sitemap.xml</code>, <code>/config.json</code></td></tr>
-      <tr><td>16:17<br>17:06<br>18:39<br>18:43<br>18:56<br>19:33<br>19:59</td><td>145.79.2.206<br>2.25.206.174<br>2.25.72.217<br>185.146.234.178<br>150.109.197.225<br>179.197.231.91<br>155.133.26.49</td><td>one wordlist, 98 paths, four to fifteen seconds each: <code>/admin</code>, <code>/.git/config</code>, <code>/.env</code>, <code>/phpinfo.php</code>, <code>/graphql</code>, <code>/backup</code>. Seven hosts, four networks, identical path set, shuffled order per host, one fresh acme token each run, the same three User-Agents. One tool with a worker pool, not seven curious people</td></tr>
+      <tr><td>16:17<br>17:06<br>18:39<br>18:43<br>18:56<br>19:33<br>19:59</td><td>145.79.2.206<br>2.25.206.174<br>2.25.72.217<br>185.146.234.178<br>150.109.197.225<br>179.197.231.91<br>155.133.26.49</td><td>one wordlist, 98 paths, four to fifteen seconds each: <code>/admin</code>, <code>/.git/config</code>, <code>/.env</code>, <code>/phpinfo.php</code>, <code>/graphql</code>, <code>/backup</code>. Seven hosts, four networks, identical path set, shuffled order per host, one fresh acme token each run, the same three User-Agents. One tool with a worker pool, not seven curious people. Four of the seven are Hostinger (AS47583), the others FlokiNET, Tencent and Contabo; none of the addresses has a reverse name</td></tr>
     </tbody>
   </table>
 
@@ -55,6 +55,15 @@
   rows are one campaign seen seven times: 98 requests, the same paths in a different order
   each run, a new challenge token each time. I first wrote "both boxes, identical order"
   after two of them. The order was never identical; the set was. Seven is a fleet.</p>
+
+  <p>Four of the addresses are rented from one hoster, three from three more, and none of them
+  has a PTR. Someone books cheap tin by the dozen and points the same list at the internet
+  from each; a shuffled order is what a worker pool looks like when the pool itself is
+  invisible. The list reads like a shopping list: jellyfin, plex, sonarr, portainer,
+  phpmyadmin, adminer, webmin, cockpit, then the auth seams of Next.js apps,
+  <code>/api/auth/get-session</code>, <code>/api/auth/sign-in/email</code>,
+  <code>/api/trpc</code>, <code>/actuator</code>. Self-hosted software first, auth endpoints
+  second.</p>
 </section>
 
 <section id="logged">
