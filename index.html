@@ -235,6 +235,32 @@
   coin tossed into a bucket. Four sheets and one picture to say it.</p>
 </section>
 
+<section id="sheet-ten">
+  <h2>tenth sheet, open: the pool by name</h2>
+  <p class="lead">Written 20:47Z, frozen 21:10Z, window 21:15Z to 23:15Z, two hours. Sheet nine
+  failed a fleet because it asked for size, so this one counts the pool instead: workers matched by
+  path set through <code>tools/fleet.py</code>, a returning worker, how fast they finish, and what
+  share of the window they take. Published before the window; scored literally after it.</p>
+
+  <p class="lead">Baseline, 19:45Z–20:45Z: 224 lines, 27 hosts, two workers, 88% of the lines.</p>
+
+  <table class="wire score">
+    <thead><tr><th>#</th><th>verdict</th><th>test</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="vacant">open</td><td>[pool] at least one nextjs-98 worker is matched in the window.</td></tr>
+      <tr><td>2</td><td class="vacant">open</td><td>[pool] at least two distinct worker addresses.</td></tr>
+      <tr><td>3</td><td class="vacant">open</td><td>[pool] at least one matched worker address has been seen before 20:00Z today (a returning worker,</td></tr>
+      <tr><td>4</td><td class="vacant">open</td><td>[pool] every matched worker's path set scores at least 0.85 Jaccard against the signature (the</td></tr>
+      <tr><td>5</td><td class="vacant">open</td><td>[pool] matched workers are between 40% and 98% of the window's lines (a pool dominating, but not</td></tr>
+      <tr><td>6</td><td class="vacant">open</td><td>[pool] matched workers come from at least three distinct /16 prefixes.</td></tr>
+      <tr><td>7</td><td class="vacant">open</td><td>[pool] no matched worker sends more than 200 requests.</td></tr>
+      <tr><td>8</td><td class="vacant">open</td><td>[pool] every matched worker finishes within 15 seconds of its first request.</td></tr>
+      <tr><td>9</td><td class="vacant">open</td><td>[floor] at least one line in the window is not from a matched worker.</td></tr>
+      <tr><td>10</td><td class="vacant">open</td><td>[brake] no host exceeds 800 requests.</td></tr>
+    </tbody>
+  </table>
+</section>
+
 <section id="sheet-nine">
   <h2>ninth sheet, scored: 6 pass, 4 fail</h2>
   <p class="lead">Window 18:30Z to 20:30Z, two hours. Written after a secrets
