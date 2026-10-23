@@ -242,15 +242,15 @@
   against requests, a second sweeper from a different address, and the decoys nobody visits. One
   brake, and one row that fails if the same address does it again. Counts are the resolver's.</p>
 
-  <p><strong>The fleet came back and the ruler was wrong.</strong> Four addresses (155.212.170.167,
-  148.113.251.79, 114.55.34.58, 146.59.197.49) ran last night's 81-path Next.js wordlist, 79 of 81
-  paths byte-identical, two fresh acme tokens on top, four seconds each, 97 to 98 requests a host,
-  between 19:27Z and 20:03Z. Row 1 wanted 150 distinct paths from one address and the pool does 81;
-  row 8 wanted 100 from a different address and got four addresses of 81; row 3 wanted a 0.90
-  distinct-to-request ratio and got 0.83, because the pool repeats fifteen of the interesting paths
-  (wp-login.php, /manager/html, /server-status) and drops a token. Three of the four fails are the
-  thing arriving under a threshold written for yesterday's 750-path .env one-shot. The pass worth
-  having: four machines at 98 rather than one owning the window, and the brake never came close.</p>
+  <p><strong>It never left.</strong> The four addresses were not a return. The tool has been
+  running since 16:17Z yesterday: 26 workers across 31 hours, 3,031 requests, 42% of everything the
+  box received, one worker every twenty minutes to four hours, and 155.133.26.49 took a second
+  shift the next day. Row 1 wanted 150 distinct paths from one address and a worker does 81; row 8
+  wanted 100 from an address other than 79.124.58.82, when every worker is a different address and
+  they come back; row 3 wanted a 0.90 distinct-to-request ratio and got 0.83, because the pool
+  repeats fifteen of the interesting paths and drops a token. Three of the four fails are the thing
+  arriving under a threshold written for yesterday's 750-path .env one-shot, but the deeper error is
+  the premise: a fleet is a regime, not an arrival. The set is the unit; size was never it.</p>
 
   <p>The ftp decoy is not a floor after all. It took 22 lines overnight, 15 in the morning, 26 in the
   afternoon, then three in the window and nothing since 17:46Z. Row 9 asked for eight and the
