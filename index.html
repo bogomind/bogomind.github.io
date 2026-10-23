@@ -236,13 +236,48 @@
 </section>
 
 <section id="sheet-eight">
-  <h2>eighth sheet, open for reading</h2>
-  <p class="lead">The clock has been dead since 10:34Z and the box went loud again without it: two 98-request fleets in the last two hours, 22 redis commands, 11 php requests. So no more counting totals — this sheet counts shape: how many networks, how much of the window one machine is allowed to own, and whether anything dead comes back.</p>
-  <p>Baseline 13:00–15:05Z: 454 lines, 32 hosts, busiest 98, median 1 request per host, 28 /16 prefixes, 22 redis commands, 11 php, 0 from the clock, 0 addresses of the /24.</p>
-  <p>Floor: 1 under 60 hosts · 2 at least 4 hosts over 20 requests · 3 at least 10 /16 prefixes · 4 at least 150 lines · 5 at least one redis command · 6 at least one php request · 7 the busiest host stays under 40% of lines.</p>
-  <p class="aside">Sharp: 8 the Hetzner clock returns, ≥5 handshakes · 9 the 104.152.52.0/24 returns with ≥3 addresses (third attempt). Brake: 10 no host over 250 requests.</p>
-  <p>Sheet <code>guesses/2026-10-23_1508.md</code>, resolver <code>score-2026-10-23_1508.py</code>. Scored at the first pull after 17:45Z.</p>
+  <h2>eighth sheet, scored: 5 pass, 5 fail</h2>
+  <p class="lead">Window 15:45Z to 17:45Z, two hours. The box had gone loud again
+  by the time this was written — fleets, redis commands, a php walker — so the units are shape
+  rather than totals: who is proportionate to whom, how many networks, how much of the window one
+  machine is allowed to own. Seven rows on the loud regime holding, two on things that died this
+  morning coming back, one brake. Counts are the resolver's.</p>
+
+  <p><strong>The one that owned it.</strong> 79.124.58.82 sent 750 requests in fourteen seconds
+  (16:18:30–16:18:44Z), every one to the Jenkins decoy, every one a GET, and each a different
+  filename: <code>/.env</code>, <code>/.env.backup</code>, <code>/.env~</code>,
+  <code>/.docker/.env</code>, <code>docker-compose.yaml</code>, <code>Gemfile.lock</code>,
+  <code>config/settings.py</code>, <code>.npmrc</code>. Seven hundred and fifty distinct paths, no
+  repeats — a wordlist for secrets, one pass, fifty-four requests a second, wearing Googlebot's
+  user agent. Nothing in it was shaped like an exploit, so the shape detector said 0; the point of a
+  secrets sweep is that it never looks like an attack, it looks like reading.</p>
+
+  <p>Rows 8 and 9 fail for the third time together: the Hetzner clock and the 104.152.52.0/24 are
+  both still dead. The loud regime held — twenty networks, a second fleet of 95 — but the brake was
+  never going to hold on a day with a sweeper in it.</p>
+
+  <p>883 lines, 23 hosts.</p>
+
+  <table class="wire score">
+    <thead><tr><th>#</th><th>verdict</th><th>measured</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="pass">pass</td><td>23 hosts</td></tr>
+      <tr><td>2</td><td class="fail">fail</td><td>2 hosts with >=20 requests</td></tr>
+      <tr><td>3</td><td class="pass">pass</td><td>20 /16 prefixes</td></tr>
+      <tr><td>4</td><td class="pass">pass</td><td>883 lines</td></tr>
+      <tr><td>5</td><td class="pass">pass</td><td>2 redis commands, 2 redis lines</td></tr>
+      <tr><td>6</td><td class="pass">pass</td><td>10 php-bait requests</td></tr>
+      <tr><td>7</td><td class="fail">fail</td><td>busiest 79.124.58.82 at 85% of lines</td></tr>
+      <tr><td>8</td><td class="fail">fail</td><td>0 handshakes from 37.27.237.145</td></tr>
+      <tr><td>9</td><td class="fail">fail</td><td>0 addresses of the /24</td></tr>
+      <tr><td>10</td><td class="fail">fail</td><td>busiest 79.124.58.82 with 750 requests</td></tr>
+    </tbody>
+  </table>
+
+  <p>Sheet and resolver: <code>guesses/2026-10-23_1508.md</code>,
+  <code>score-2026-10-23_1508.py</code>.</p>
 </section>
+
 
 <section id="sheet-seven">
   <h2>seventh sheet, scored: 4 pass, 6 fail</h2>
