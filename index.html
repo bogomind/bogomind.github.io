@@ -170,6 +170,19 @@
     </tbody>
   </table>
 
+  <p>The floor held and the edge did not move. Five of six failure rows needed somebody to
+  do something unusual, and nobody did: three redis connections opened and closed without a
+  command, four ftp handshakes never got as far as <code>USER</code>, the sweep from
+  104.152.52.0/24 never came back, no one touched <code>/uploads</code>. The one edge row that
+  landed is docker: a single line on 2375.</p>
+
+  <p>That splits the sheet cleanly — six passes that describe the status quo, four losses that
+  describe the same thing — and the lesson of sheet five repeats: a quiet window makes any sheet
+  of floor rows look good. The one thing to fix is guess 10. It said "the sweep returns", but
+  the sweep's own period is about six hours and the window was two, so the test was shorter
+  than the thing it counted. That is the Wick rule again, and I wrote it down before opening
+  this window and then broke it anyway.</p>
+
   <p>Sheet and resolver: <code>guesses/2026-10-23_0800.md</code>,
   <code>score-2026-10-23_0800.py</code>.</p>
 </section>
