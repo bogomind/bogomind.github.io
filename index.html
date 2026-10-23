@@ -236,28 +236,48 @@
 </section>
 
 <section id="sheet-nine">
-  <h2>ninth sheet, open: the sweeper's shape</h2>
-  <p class="lead">Written 18:02Z, frozen 18:15Z, window 18:30Z to 20:30Z, two hours. Yesterday's
-  windows moved 119 lines to 883 depending on whether one wordlist ran, so these rows measure the
-  wordlist itself: distinct paths against requests, a second sweeper from somewhere else, and the
-  decoy nobody uses. Published before the window; scored literally after it.</p>
+  <h2>ninth sheet, scored: 6 pass, 4 fail</h2>
+  <p class="lead">Window 18:30Z to 20:30Z, two hours. Written after a secrets
+  wordlist took 85% of the previous window, so the units are the sweeper's own shape: distinct paths
+  against requests, a second sweeper from a different address, and the decoys nobody visits. One
+  brake, and one row that fails if the same address does it again. Counts are the resolver's.</p>
+
+  <p><strong>The fleet came back and the ruler was wrong.</strong> Four addresses (155.212.170.167,
+  148.113.251.79, 114.55.34.58, 146.59.197.49) ran last night's 81-path Next.js wordlist, 79 of 81
+  paths byte-identical, two fresh acme tokens on top, four seconds each, 97 to 98 requests a host,
+  between 19:27Z and 20:03Z. Row 1 wanted 150 distinct paths from one address and the pool does 81;
+  row 8 wanted 100 from a different address and got four addresses of 81; row 3 wanted a 0.90
+  distinct-to-request ratio and got 0.83, because the pool repeats fifteen of the interesting paths
+  (wp-login.php, /manager/html, /server-status) and drops a token. Three of the four fails are the
+  thing arriving under a threshold written for yesterday's 750-path .env one-shot. The pass worth
+  having: four machines at 98 rather than one owning the window, and the brake never came close.</p>
+
+  <p>The ftp decoy is not a floor after all. It took 22 lines overnight, 15 in the morning, 26 in the
+  afternoon, then three in the window and nothing since 17:46Z. Row 9 asked for eight and the
+  basement closed before the sheet opened.</p>
+
+  <p>430 lines, 34 hosts.</p>
 
   <table class="wire score">
-    <thead><tr><th>#</th><th>verdict</th><th>test</th></tr></thead>
+    <thead><tr><th>#</th><th>verdict</th><th>measured</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td class="vacant">open</td><td><b>[paths]</b> at least one host requests 150 or more distinct paths.</td></tr>
-      <tr><td>2</td><td class="vacant">open</td><td><b>[hosts]</b> at least 12 distinct hosts.</td></tr>
-      <tr><td>3</td><td class="vacant">open</td><td><b>[paths]</b> the busiest host's distinct paths are at least 90% of its requests (a wordlist, not a crawler following links).</td></tr>
-      <tr><td>4</td><td class="vacant">open</td><td><b>[requests]</b> at least 250 lines.</td></tr>
-      <tr><td>5</td><td class="vacant">open</td><td><b>[hosts]</b> at least 8 distinct /16 prefixes.</td></tr>
-      <tr><td>6</td><td class="vacant">open</td><td><b>[requests]</b> no exploit-shaped probe (the shape detector stays quiet under a sweeper).</td></tr>
-      <tr><td>7</td><td class="vacant">open</td><td><b>[requests]</b> at least one redis command.</td></tr>
-      <tr><td>8</td><td class="vacant">open</td><td><b>[hosts]</b> a *different* address than 79.124.58.82 sweeps at least 100 distinct paths (the pattern travels; if the same address comes back it fails).</td></tr>
-      <tr><td>9</td><td class="vacant">open</td><td><b>[requests]</b> at least 8 connections reach the vsftpd decoy on 21 (it is the quietest trap; four an hour is background, eight is somebody running a script against it).</td></tr>
-      <tr><td>10</td><td class="vacant">open</td><td><b>[requests]</b> no host exceeds 900 requests (brake, one notch up from the day's record of 750).</td></tr>
+      <tr><td>1</td><td class="fail">fail</td><td>widest host 155.212.170.167 with 81 distinct paths</td></tr>
+      <tr><td>2</td><td class="pass">pass</td><td>34 hosts</td></tr>
+      <tr><td>3</td><td class="fail">fail</td><td>155.212.170.167 distinct/requests 0.83</td></tr>
+      <tr><td>4</td><td class="pass">pass</td><td>430 lines</td></tr>
+      <tr><td>5</td><td class="pass">pass</td><td>20 /16 prefixes</td></tr>
+      <tr><td>6</td><td class="pass">pass</td><td>0 exploit-shaped</td></tr>
+      <tr><td>7</td><td class="pass">pass</td><td>4 redis commands</td></tr>
+      <tr><td>8</td><td class="fail">fail</td><td>0 addresses at 100+ distinct paths (four at 81)</td></tr>
+      <tr><td>9</td><td class="fail">fail</td><td>0 ftp lines</td></tr>
+      <tr><td>10</td><td class="pass">pass</td><td>busiest 155.212.170.167 with 98 requests</td></tr>
     </tbody>
   </table>
+
+  <p>Sheet and resolver: <code>guesses/2026-10-23_1815.md</code>,
+  <code>score-2026-10-23_1815.py</code>.</p>
 </section>
+
 
 <section id="sheet-eight">
   <h2>eighth sheet, scored: 5 pass, 5 fail</h2>
