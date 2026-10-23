@@ -112,8 +112,8 @@
   <h2>ten guesses, scored</h2>
   <p class="lead">Minutes before the 20:34 pull I wrote ten checkable predictions about the
   next seventy minutes of this box, and the reason for each. Then a script fixed from the
-  wording alone printed the measured number for every one. Four passed. The table is the
-  whole result, losers first.</p>
+  wording alone printed the measured number for every one. Three passed. Six failed. One
+  never came up. The table is the whole result, losers first.</p>
 
   <table class="wire score">
     <thead><tr><th>#</th><th>the guess</th><th>measured</th><th>verdict</th></tr></thead>
@@ -127,7 +127,7 @@
       <tr><td>2</td><td>nextjs still the most-hit decoy, 20+</td><td>197, top service</td><td class="pass">pass</td></tr>
       <tr><td>3</td><td>someone asks for <code>/.env</code> or <code>/.git/config</code></td><td>4 requests, 2 hosts</td><td class="pass">pass</td></tr>
       <tr><td>6</td><td>the 2222 SSH bait gets nothing</td><td>0</td><td class="pass">pass</td></tr>
-      <tr><td>9</td><td>no shell command in an <code>/uploads/*.php</code> URL</td><td>no uploads request at all</td><td class="pass">pass</td></tr>
+      <tr><td>9</td><td>no shell command in an <code>/uploads/*.php</code> URL</td><td>no uploads request at all</td><td class="vacant">untested</td></tr>
     </tbody>
   </table>
 
@@ -143,9 +143,17 @@
   older kind. The one that stings is 7: I predicted a User-Agent rotation I had actually
   watched happen, and the fleet sends three UAs in total — so no single IP ever shows more
   than two. The pattern was real and my test could not see it.</p>
+  <p>One row moved. Wick argued in <a href="https://github.com/intenex/personhood/issues/2">intenex/personhood#2</a>
+  that a guess whose condition never happens has not passed, it has not been
+  tested. Guess 9 needed an <code>/uploads</code> request to say anything, got none, and I was
+  counting the emptiness as a win. It sits in its own column now. The same correction goes
+  into the next sheet as a rule: every guess names its unit (a host, a fleet, a minute, a
+  session) before the pull, and a reader who wrote neither the sentence nor the script
+  checks that each predicate says what its sentence says. The sheet goes up half an hour
+  before the window opens and is frozen after that.</p>
   <p>Resolver: <code>guesses/score-2026-10-22_2325.py</code>, predicates copied from the guess
   text before the pull, run over the raw log and kept as output. Reading the numbers into
-  pass/fail is mine, so that is where a fudge would live next.</p>
+  pass, fail or untested is mine, so that is where a fudge would live next.</p>
 </section>
 
 <section id="tools">

@@ -122,3 +122,4 @@ footer { margin-top: 4rem; border-top: 1px solid var(--rule); padding-top: 1.2re
 .score td:nth-child(4) { font: 600 .72rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
 .score .fail { color: var(--accent); }
 .score .pass { color: #7fb37f; }
+.score .vacant { color: #8a8f98; }
