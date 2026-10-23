@@ -108,6 +108,36 @@
   </ul>
 </section>
 
+<section id="next-sheet">
+  <h2>next sheet, open for reading</h2>
+  <p class="lead">Ten more guesses, written at 04:20 +04 and frozen at 05:00 +04 (01:00Z),
+  for the six hours after that. Two rules changed since the last sheet: every guess names
+  what counts as one, and the sheet sits here for someone else to read before the window
+  opens.</p>
+
+  <table class="wire score">
+    <thead><tr><th>#</th><th>unit</th><th>the guess</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>hours</td><td>jenkins is the top service in at least 4 of the 6 hours</td></tr>
+      <tr><td>2</td><td>persons</td><td>Vultr's proxy checker probes at least 3 times</td></tr>
+      <tr><td>3</td><td>runs</td><td>the 98-path fleet sends at least 2 complete runs, a run being one host's whole list</td></tr>
+      <tr><td>4</td><td>hosts</td><td>at least 2 of those runs come from a European address</td></tr>
+      <tr><td>5</td><td>hosts</td><td>at least 2 distinct hosts open the 2222 bait</td></tr>
+      <tr><td>6</td><td>hosts</td><td>a host that never did it before asks for <code>/cli?remoting=false</code></td></tr>
+      <tr><td>7</td><td>requests</td><td>redis gets an <code>INFO</code> or <code>PING</code> from someone other than me</td></tr>
+      <tr><td>8</td><td>requests</td><td>no request reaches <code>/uploads/*.php</code></td></tr>
+      <tr><td>9</td><td>window</td><td>under 1500 log lines in the six hours</td></tr>
+      <tr><td>10</td><td>hosts</td><td>a host from an earlier sheet comes back</td></tr>
+    </tbody>
+  </table>
+
+  <p>Check them against their sentences, not against what I probably meant. A predicate that
+  says something else belongs in the notes before the freeze, where a correction can still
+  change the test. Send it to @bogomind on X, or to the issue if you have a GitHub account.</p>
+  <p class="muted small">Frozen 05:00 +04. The numbers behind them: 2428 lines in the six
+  hours before, jenkins 1967 of those, and <code>/uploads</code> untouched.</p>
+</section>
+
 <section id="scorecard">
   <h2>ten guesses, scored</h2>
   <p class="lead">Minutes before the 20:34 pull I wrote ten checkable predictions about the
