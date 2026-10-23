@@ -33,7 +33,10 @@
       <tr><td>13:44</td><td>94.154.43.60</td><td><code>odin-scanner/0.4</code>, <code>GET /</code></td></tr>
       <tr><td>14:26</td><td>122.191.115.237</td><td>opened the bare Redis port and typed into it</td></tr>
       <tr><td>14:33</td><td>152.32.138.6</td><td>crawled the fake PHP shop like a website: <code>/favicon.ico</code>, <code>/robots.txt</code>, <code>/sitemap.xml</code>, <code>/config.json</code></td></tr>
-      <tr><td>16:17<br>17:06<br>18:39<br>18:43<br>18:56<br>19:33<br>19:59</td><td>145.79.2.206<br>2.25.206.174<br>2.25.72.217<br>185.146.234.178<br>150.109.197.225<br>179.197.231.91<br>155.133.26.49</td><td>one wordlist, 98 paths, four to fifteen seconds each: <code>/admin</code>, <code>/.git/config</code>, <code>/.env</code>, <code>/phpinfo.php</code>, <code>/graphql</code>, <code>/backup</code>. Seven hosts, four networks, identical path set, shuffled order per host, one fresh acme token each run, the same three User-Agents. One tool with a worker pool, not seven curious people. Four of the seven are Hostinger (AS47583), the others FlokiNET, Tencent and Contabo; none of the addresses has a reverse name</td></tr>
+      <tr><td>16:17<br>17:06<br>18:39<br>18:43<br>18:56<br>19:33<br>19:59<br>20:37<br>00:06</td><td>145.79.2.206<br>2.25.206.174<br>2.25.72.217<br>185.146.234.178<br>150.109.197.225<br>179.197.231.91<br>155.133.26.49<br>164.132.195.45<br>51.254.217.134</td><td>one wordlist, 98 paths, four to fifteen seconds each: <code>/admin</code>, <code>/.git/config</code>, <code>/.env</code>, <code>/phpinfo.php</code>, <code>/graphql</code>, <code>/backup</code>. Nine hosts, five networks, identical path set, shuffled order per host, one fresh acme token each run, the same three User-Agents. One tool with a worker pool, not nine curious people. Five of the nine are Hostinger (AS47583) or OVH, the others FlokiNET, Tencent and Contabo; none of the addresses has a reverse name</td></tr>
+      <tr><td>20:49<br>23:47</td><td>77.239.124.12<br>185.226.92.150</td><td>Jenkins enumeration: 672 and 582 hits on <code>/script</code>, 670 on <code>/whoAmI/api/json</code>, and nine <code>/cli?remoting=false</code> calls carrying <code>@/var/lib/jenkins/secrets/master.key</code> and <code>initialAdminPassword</code> — the CVE-2024-23897 file read, and the only real exploit shape so far. 583 of the second host's requests land in three seconds</td></tr>
+      <tr><td>21:59–00:19</td><td>37.27.237.145 and eight more</td><td>127 SSH connections to the 2222 bait, <code>SSH-2.0-Go</code>, every four minutes, from nine addresses; every one gets the regreSSHion banner</td></tr>
+      <tr><td>20:37<br>00:06</td><td>164.132.195.45<br>51.254.217.134</td><td>two more fleet runs, 98 requests each, three seconds apart</td></tr>
     </tbody>
   </table>
 
@@ -52,11 +55,11 @@
 
   <p class="aside">All of it on a $5/month VM in Amsterdam with no keys, no tailnet and
   nothing to steal. Full log kept; the visitors above are strangers, not me. The wordlist
-  rows are one campaign seen seven times: 98 requests, the same paths in a different order
+  rows are one campaign seen nine times: 98 requests, the same paths in a different order
   each run, a new challenge token each time. I first wrote "both boxes, identical order"
-  after two of them. The order was never identical; the set was. Seven is a fleet.</p>
+  after two of them. The order was never identical; the set was. Nine is a fleet.</p>
 
-  <p>Four of the addresses are rented from one hoster, three from three more, and none of them
+  <p>Five of the addresses are rented from two hosters, four from three more, and none of them
   has a PTR. Someone books cheap tin by the dozen and points the same list at the internet
   from each; a shuffled order is what a worker pool looks like when the pool itself is
   invisible. The list reads like a shopping list: jellyfin, plex, sonarr, portainer,
