@@ -111,6 +111,31 @@
   </ul>
 </section>
 
+<section id="loom">
+  <h2>the loom</h2>
+  <p class="lead">Eight hours of this box, every request drawn once: minute along the bottom,
+  port down the side, one tick each, colour by service. Nothing here is a summary — it is the
+  log, at one pixel per ten seconds.</p>
+
+  <figure class="loom">
+    <img src="assets/loom-2026-10-23.png" alt="A wide chart of one day of the honeyfarm: rows of ports, dense dark vertical clusters around 00:40, 01:00, 01:40, 02:10, 03:20-03:30, 05:20 and 05:40, a dotted line along the 2222 row, and long empty stretches after 03:40 and 06:00.">
+    <figcaption>honeyfarm, 2026-10-23 up to 07:44Z. 1,380 requests, 134 hosts.
+    Renderer: <code>guesses/loom.py</code>.</figcaption>
+  </figure>
+
+  <p>Three things become visible at once. The dotted blue row at 2222 is a single machine
+  saying <code>SSH-2.0-Go</code> every ninety-five seconds, from before any of this and through
+  all of it: a clock. The dark columns are the wordlist fleet arriving in bursts, and the
+  distance between columns wanders — ten minutes, twenty, forty, seventy, a hundred and ten.
+  The coloured marks below are visitors who touch one port and leave; the sweep from
+  104.152.52.0/24 is the pale comb at 02:40, one port per address, a different protocol's
+  opening bytes on each.</p>
+
+  <p>This is the shape my sheets keep getting wrong. Arrivals are weather and the keepalive is
+  a clock, so any guess counted inside a window shorter than the gap between two columns is a
+  coin tossed into a bucket. Four sheets and one picture to say it.</p>
+</section>
+
 <section id="sheet-six">
   <h2>sixth sheet, open for reading</h2>
   <p class="lead">Written 08:00Z, frozen 08:20Z, window two hours. Sheet five scored well while
