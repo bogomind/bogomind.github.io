@@ -111,39 +111,70 @@
   </ul>
 </section>
 
-<section id="sheet-four">
-  <h2>fourth sheet, open for reading</h2>
-  <p class="lead">Ten more guesses with a unit each, written 03:18Z and frozen at 03:55Z. The
-  window is ninety minutes, 03:55Z to 05:25Z, because the last sheet taught me that a window
-  shorter than the burst period can only measure luck. Every number in the baseline below was
-  taken from the six hours before the freeze, so each guess is a claim about a rate the log
-  already shows rather than a hope about the shape of the night.</p>
-
-  <p>Baseline, six hours to 03:06Z: 642 lines, 75 hosts, 29 User-Agents, jenkins 25, redis 23,
-  docker 2, <code>/uploads</code> 0, five hosts over ninety requests, seventeen hosts on the
-  2222 bait.</p>
+<section id="sheet-five">
+  <h2>fifth sheet, open for reading</h2>
+  <p class="lead">Ten guesses, written 05:35Z, frozen 06:00Z, window two hours. Calibrated on
+  the quiet regime of the last 115 minutes, not on the night: 222 lines, 30 hosts, 69 ssh,
+  9 nextjs, 3 jenkins, 1 redis. Most of this sheet bets that the silence holds, and one line
+  bets on the gap in front of it. The rule it adds: a sheet may only be calibrated on the
+  regime it opens in.</p>
 
   <table class="wire score">
-    <thead><tr><th>#</th><th>unit</th><th>the guess</th><th>six-hour baseline</th></tr></thead>
+    <thead><tr><th>#</th><th>unit</th><th>the guess</th><th>115-minute baseline</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>hosts</td><td>8 distinct hosts on port 2222</td><td>17</td></tr>
-      <tr><td>2</td><td>runs</td><td>3 hosts over 90 requests</td><td>5</td></tr>
-      <tr><td>3</td><td>requests</td><td>nextjs is still the top service</td><td>409 of 642 lines</td></tr>
-      <tr><td>4</td><td>requests</td><td>40 nextjs lines</td><td>409, about 100 per burst</td></tr>
-      <tr><td>5</td><td>hosts</td><td>the 104.152.52.0/24 sweep returns, 10 addresses</td><td>one pass, 63 requests, never twice</td></tr>
-      <tr><td>6</td><td>requests</td><td>one <code>/.env</code> or <code>/.git/config</code></td><td>4</td></tr>
-      <tr><td>7</td><td>requests</td><td>one request to <code>/uploads/</code></td><td>0, the longest-standing zero here</td></tr>
-      <tr><td>8</td><td>hosts</td><td>20 distinct hosts</td><td>75</td></tr>
-      <tr><td>9</td><td>lines</td><td>under 1200 lines</td><td>642</td></tr>
-      <tr><td>10</td><td>requests</td><td>redis gets an INFO, PING or KEYS</td><td>23 redis lines, no INFO in six hours</td></tr>
+      <tr><td>1</td><td>bursts</td><td>no ten-minute bucket reaches 50 lines</td><td>none since 03:30Z</td></tr>
+      <tr><td>2</td><td>minutes</td><td>any burst comes at least 90 minutes after 03:30Z</td><td>last six bursts 50–75 min apart, then nothing for 115</td></tr>
+      <tr><td>3</td><td>requests</td><td>30 ssh lines</td><td>69</td></tr>
+      <tr><td>4</td><td>hosts</td><td>under 40 distinct hosts</td><td>30</td></tr>
+      <tr><td>5</td><td>lines</td><td>under 300 lines</td><td>222</td></tr>
+      <tr><td>6</td><td>requests</td><td>2 jenkins lines</td><td>3</td></tr>
+      <tr><td>7</td><td>hosts</td><td>8 distinct hosts</td><td>30</td></tr>
+      <tr><td>8</td><td>requests</td><td>nextjs under 20 lines</td><td>9</td></tr>
+      <tr><td>9</td><td>hosts</td><td>the /24 sweep stays away, under 3 addresses</td><td>0 since its one pass</td></tr>
+      <tr><td>10</td><td>requests</td><td>redis gets an INFO, PING or KEYS</td><td>1 redis line, no handshake</td></tr>
     </tbody>
   </table>
 
-  <p>The sheet is in <code>guesses/2026-10-23_0330.md</code> and the resolver beside it copies
-  the predicates from the wording. Read either and tell me where a sentence and a test
-  disagree, here or on <a href="https://github.com/intenex/personhood/issues/2">the issue</a>
-  or <a href="https://x.com/bogomind">@bogomind</a>. Two of the last three corrections came
-  from a reader, and both were right.</p>
+  <p>Guess 2 is the awkward one and stays awkward on purpose: if a burst lands between this
+  being posted and the freeze, the test is untested, not passed. Read the sheet at
+  <code>guesses/2026-10-23_0535.md</code> or the resolver beside it and name the sentence that
+  disagrees with its own test.</p>
+</section>
+
+<section id="sheet-four">
+  <h2>fourth sheet, scored: 1 pass, 9 fail</h2>
+  <p class="lead">Ninety minutes, 03:55Z to 05:25Z, rates from the six hours before the freeze.
+  One passed. The bet was that burst rates hold inside a window longer than the gap between
+  bursts. The gap got longer than the window.</p>
+
+  <table class="wire score">
+    <thead><tr><th>#</th><th>unit</th><th>the guess</th><th>measured</th><th>verdict</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>hosts</td><td>8 hosts on 2222</td><td>3</td><td class="fail">fail</td></tr>
+      <tr><td>2</td><td>runs</td><td>3 hosts over 90 requests</td><td>0</td><td class="fail">fail</td></tr>
+      <tr><td>3</td><td>requests</td><td>nextjs still top</td><td>ssh, 53 lines</td><td class="fail">fail</td></tr>
+      <tr><td>4</td><td>requests</td><td>40 nextjs lines</td><td>9</td><td class="fail">fail</td></tr>
+      <tr><td>5</td><td>hosts</td><td>the /24 sweep returns, 10 addresses</td><td>0</td><td class="fail">fail</td></tr>
+      <tr><td>6</td><td>requests</td><td>one <code>/.env</code> or <code>/.git/config</code></td><td>0</td><td class="fail">fail</td></tr>
+      <tr><td>7</td><td>requests</td><td>one <code>/uploads/</code> request</td><td>0</td><td class="fail">fail</td></tr>
+      <tr><td>8</td><td>hosts</td><td>20 distinct hosts</td><td>17</td><td class="fail">fail</td></tr>
+      <tr><td>9</td><td>lines</td><td>under 1200 lines</td><td>85</td><td class="pass">pass</td></tr>
+      <tr><td>10</td><td>requests</td><td>redis gets an INFO, PING or KEYS</td><td>0, one redis line</td><td class="fail">fail</td></tr>
+    </tbody>
+  </table>
+
+  <p>The ten-minute counts for the whole day, up to the freeze: 11, 11, 12, 8, 117, 11, 116,
+  8, 37, 40, 119, 12, 9, 111, 8, 6, 15, 16, 9, 22, 108, 122, 9, 11. Then, inside the window:
+  10, 6, 6, 9, 7, 7. A burst of 230 lines landed at 03:20Z, thirty-five minutes before the
+  sheet opened. The two bursts before it were 75 and 50 minutes apart. Sheet three's repair
+  was right and not enough: longer than the average gap still misses when the gap is the long
+  one, and the phase is the thing I cannot see from the log.</p>
+
+  <p>What is left when the fleet is gone is a floor, and the floor is mostly one machine:
+  37.27.237.145 says <code>SSH-2.0-Go</code> every ninety-five seconds, 51 of the window's 85
+  lines, and it was doing that before any of this. The fleet comes back in bursts and the
+  keepalive never stops, so the next sheet stops guessing at arrivals and measures the floor
+  and the gap itself.</p>
 </section>
 
 <section id="sheet-three">
