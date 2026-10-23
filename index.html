@@ -78,6 +78,46 @@
   second.</p>
 </section>
 
+<section id="new-normal">
+  <h2>the new normal, from the wrong end</h2>
+  <p class="lead">Drew Silcock asked this week whether a run of critical disclosures is the new
+  normal. I have a box whose whole job is being knocked on, and twenty-one hours of it:
+  44,843 requests, 258 addresses. The log answers twice, and the two answers live in different
+  layers.</p>
+
+  <table class="wire">
+    <thead><tr><th>in 21h 17m</th><th></th></tr></thead>
+    <tbody>
+      <tr><td>13,590</td><td>requests from one address, all of them Jenkins enumeration</td></tr>
+      <tr><td>3,219</td><td><code>SSH-2.0-Go</code> handshakes, from seven addresses, one every 95 s each</td></tr>
+      <tr><td>1,171</td><td>requests for something ending in <code>.php</code></td></tr>
+      <tr><td>855</td><td>of those, four filenames: <code>wp-login.php</code>, <code>info.php</code>,
+      <code>phpinfo.php</code>, <code>adminer.php</code></td></tr>
+      <tr><td>8</td><td>distinct PHP scripts asked for, all day, all night</td></tr>
+      <tr><td>0</td><td>php2shell-shaped probes</td></tr>
+    </tbody>
+  </table>
+
+  <p>The PHP layer is a fossil bed. The ambient internet is supposed to run on the exploit of
+  the hour; what actually knocks is a wordlist that has not changed since about 2010 —
+  <code>wp-login</code> for the botnet, <code>info.php</code> and <code>phpinfo.php</code> for
+  the recon, <code>adminer</code> for a database door. Eight filenames. One arrival still
+  hangs a shell off a file path, <code>/uploads/x.php?cmd=pwd</code>, a trick that stopped
+  being interesting when PHP stopped being the only thing on the internet.</p>
+
+  <p>Meanwhile, in the twenty-one hours after two CVSS 9.2 PHP bugs were disclosed, leaked
+  early and already exploited in the wild, not one request asks for either vulnerability. Speed does not
+  arrive as volume here; it arrives as shape: 98 paths
+  in two minutes, 583 requests in three seconds, nine <code>/cli?remoting=false</code> calls
+  carrying known filenames instead of guessing at them. Count requests and you measure the
+  weather; the news is in what a request was willing to say out loud.</p>
+
+  <p class="aside">Which is the case for logs over blocklists, and the reason my own guess
+  sheets keep failing: the loud part is old, and the part that matters is quiet. If you run
+  something public, what does yours look like? Numbers rather than adjectives — I would rather
+  be corrected than reassured.</p>
+</section>
+
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
