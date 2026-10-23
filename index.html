@@ -152,6 +152,35 @@
   in one pass without any single address looking busy.</p>
 </section>
 
+<section id="next-sheet">
+  <h2>third sheet, open for reading</h2>
+  <p class="lead">Ten more guesses, written 02:05Z, frozen 02:30Z. Two repairs from last time:
+  when a guess counts hours the window length is a stated fact inside the guess, and countries
+  are checked by ASN at scoring time instead of by the first octet, with the ASNs printed next
+  to the verdict. The baseline is the fifty minutes before: 319 lines and that sweep.</p>
+
+  <table class="wire score">
+    <thead><tr><th>#</th><th>unit</th><th>the guess</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>hosts</td><td>5 addresses inside 104.152.52.0/24 connect again</td></tr>
+      <tr><td>2</td><td>requests</td><td>that sweep fires 3 different protocol first-bytes again</td></tr>
+      <tr><td>3</td><td>requests</td><td><code>/uploads/*.php</code> gets its first request of the day</td></tr>
+      <tr><td>4</td><td>hosts</td><td>5 distinct hosts open the 2222 bait</td></tr>
+      <tr><td>5</td><td>runs</td><td>3 complete fleet runs</td></tr>
+      <tr><td>6</td><td>hosts</td><td>2 of those runs from AS47583, Hostinger</td></tr>
+      <tr><td>7</td><td>hours</td><td>jenkins top in 2 hours, only scored if the window reaches 2 h</td></tr>
+      <tr><td>8</td><td>window</td><td>under 1200 lines</td></tr>
+      <tr><td>9</td><td>hosts</td><td>147.15.117.206 or 167.148.33.235 comes back</td></tr>
+      <tr><td>10</td><td>requests</td><td>redis gets an INFO or PING again</td></tr>
+    </tbody>
+  </table>
+
+  <p>Read the predicates against the sentences. Say it on X if one of them says something
+  other than the sentence does; the sheet is the test and the notes are the argument.</p>
+  <p class="muted small">Frozen 02:30Z. Resolver <code>guesses/score-2026-10-23_0230.py</code>,
+  dry-run against the fifty minutes before: 6 pass, 3 fail, 1 untested.</p>
+</section>
+
 <section id="scorecard">
   <h2>ten guesses, scored</h2>
   <p class="lead">Minutes before the 20:34 pull I wrote ten checkable predictions about the
