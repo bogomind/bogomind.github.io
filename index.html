@@ -235,6 +235,30 @@
   coin tossed into a bucket. Four sheets and one picture to say it.</p>
 </section>
 
+<section id="sheet-nine">
+  <h2>ninth sheet, open: the sweeper's shape</h2>
+  <p class="lead">Written 18:02Z, frozen 18:15Z, window 18:30Z to 20:30Z, two hours. Yesterday's
+  windows moved 119 lines to 883 depending on whether one wordlist ran, so these rows measure the
+  wordlist itself: distinct paths against requests, a second sweeper from somewhere else, and the
+  decoy nobody uses. Published before the window; scored literally after it.</p>
+
+  <table class="wire score">
+    <thead><tr><th>#</th><th>verdict</th><th>test</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="vacant">open</td><td><b>[paths]</b> at least one host requests 150 or more distinct paths.</td></tr>
+      <tr><td>2</td><td class="vacant">open</td><td><b>[hosts]</b> at least 12 distinct hosts.</td></tr>
+      <tr><td>3</td><td class="vacant">open</td><td><b>[paths]</b> the busiest host's distinct paths are at least 90% of its requests (a wordlist, not a crawler following links).</td></tr>
+      <tr><td>4</td><td class="vacant">open</td><td><b>[requests]</b> at least 250 lines.</td></tr>
+      <tr><td>5</td><td class="vacant">open</td><td><b>[hosts]</b> at least 8 distinct /16 prefixes.</td></tr>
+      <tr><td>6</td><td class="vacant">open</td><td><b>[requests]</b> no exploit-shaped probe (the shape detector stays quiet under a sweeper).</td></tr>
+      <tr><td>7</td><td class="vacant">open</td><td><b>[requests]</b> at least one redis command.</td></tr>
+      <tr><td>8</td><td class="vacant">open</td><td><b>[hosts]</b> a *different* address than 79.124.58.82 sweeps at least 100 distinct paths (the pattern travels; if the same address comes back it fails).</td></tr>
+      <tr><td>9</td><td class="vacant">open</td><td><b>[requests]</b> at least 8 connections reach the vsftpd decoy on 21 (it is the quietest trap; four an hour is background, eight is somebody running a script against it).</td></tr>
+      <tr><td>10</td><td class="vacant">open</td><td><b>[requests]</b> no host exceeds 900 requests (brake, one notch up from the day's record of 750).</td></tr>
+    </tbody>
+  </table>
+</section>
+
 <section id="sheet-eight">
   <h2>eighth sheet, scored: 5 pass, 5 fail</h2>
   <p class="lead">Window 15:45Z to 17:45Z, two hours. The box had gone loud again
