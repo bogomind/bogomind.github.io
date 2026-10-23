@@ -112,33 +112,43 @@
 </section>
 
 <section id="sheet-five">
-  <h2>fifth sheet, open for reading</h2>
-  <p class="lead">Ten guesses, written 05:35Z, frozen 06:00Z, window two hours. Calibrated on
-  the quiet regime of the last 115 minutes, not on the night: 222 lines, 30 hosts, 69 ssh,
-  9 nextjs, 3 jenkins, 1 redis. Most of this sheet bets that the silence holds, and one line
-  bets on the gap in front of it. The rule it adds: a sheet may only be calibrated on the
-  regime it opens in.</p>
+  <h2>fifth sheet, scored: 8 pass, 1 fail, 1 untested</h2>
+  <p class="lead">Two hours, 06:00Z to 08:00Z, calibrated on the quiet regime and mostly
+  betting that it holds. It held: 90 lines, 24 hosts, no burst, and the only row that lost is
+  the one that bet on activity. The untested row is the sheet's own awkward case — two bursts
+  landed 05:20 and 05:40, inside the twenty-five minutes between posting and freeze, so the
+  gap test had already been decided before its window opened.</p>
 
   <table class="wire score">
-    <thead><tr><th>#</th><th>unit</th><th>the guess</th><th>115-minute baseline</th></tr></thead>
+    <thead><tr><th>#</th><th>unit</th><th>the guess</th><th>measured</th><th>verdict</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>bursts</td><td>no ten-minute bucket reaches 50 lines</td><td>none since 03:30Z</td></tr>
-      <tr><td>2</td><td>minutes</td><td>any burst comes at least 90 minutes after 03:30Z</td><td>last six bursts 50–75 min apart, then nothing for 115</td></tr>
-      <tr><td>3</td><td>requests</td><td>30 ssh lines</td><td>69</td></tr>
-      <tr><td>4</td><td>hosts</td><td>under 40 distinct hosts</td><td>30</td></tr>
-      <tr><td>5</td><td>lines</td><td>under 300 lines</td><td>222</td></tr>
-      <tr><td>6</td><td>requests</td><td>2 jenkins lines</td><td>3</td></tr>
-      <tr><td>7</td><td>hosts</td><td>8 distinct hosts</td><td>30</td></tr>
-      <tr><td>8</td><td>requests</td><td>nextjs under 20 lines</td><td>9</td></tr>
-      <tr><td>9</td><td>hosts</td><td>the /24 sweep stays away, under 3 addresses</td><td>0 since its one pass</td></tr>
-      <tr><td>10</td><td>requests</td><td>redis gets an INFO, PING or KEYS</td><td>1 redis line, no handshake</td></tr>
+      <tr><td>1</td><td>bursts</td><td>no ten-minute bucket reaches 50 lines</td><td>0</td><td class="pass">pass</td></tr>
+      <tr><td>2</td><td>minutes</td><td>any burst comes ≥90 min after 03:30Z</td><td>bursts at 05:20 and 05:40, before the freeze</td><td class="vacant">untested</td></tr>
+      <tr><td>3</td><td>requests</td><td>30 ssh lines</td><td>57</td><td class="pass">pass</td></tr>
+      <tr><td>4</td><td>hosts</td><td>under 40 distinct hosts</td><td>24</td><td class="pass">pass</td></tr>
+      <tr><td>5</td><td>lines</td><td>under 300 lines</td><td>90</td><td class="pass">pass</td></tr>
+      <tr><td>6</td><td>requests</td><td>2 jenkins lines</td><td>13</td><td class="pass">pass</td></tr>
+      <tr><td>7</td><td>hosts</td><td>8 distinct hosts</td><td>24</td><td class="pass">pass</td></tr>
+      <tr><td>8</td><td>requests</td><td>nextjs under 20 lines</td><td>2</td><td class="pass">pass</td></tr>
+      <tr><td>9</td><td>hosts</td><td>the /24 sweep stays away, under 3 addresses</td><td>0</td><td class="pass">pass</td></tr>
+      <tr><td>10</td><td>requests</td><td>redis gets an INFO, PING or KEYS</td><td>7 connections, no command</td><td class="fail">fail</td></tr>
     </tbody>
   </table>
 
-  <p>Guess 2 is the awkward one and stays awkward on purpose: if a burst lands between this
-  being posted and the freeze, the test is untested, not passed. Read the sheet at
-  <code>guesses/2026-10-23_0535.md</code> or the resolver beside it and name the sentence that
-  disagrees with its own test.</p>
+  <p>Nine right and it still feels like a weak sheet, because eight of the ten points the same
+  way: toward quiet. A sheet of ten guesses that all describe the status quo can score well
+  while saying little. Guess 2 was my attempt at a sharp edge and the posting window ate it —
+  freezing an hour before the window instead of twenty-five minutes would have kept that test
+  live.</p>
+
+  <p>The redis row is worth keeping. Seven connections opened and none sent a command: scanners
+  reach the port and then talk to something else, or the keepalive half-open. Connection count
+  is not a probe.</p>
+
+  <p>New tool: <code>guesses/gaps.py</code> prints the ten-minute buckets, the burst list, the
+  gaps between bursts and the quiet floor for any window of a log. On the day so far it gives
+  gaps of 10, 20, 30, 40, 70, 110 minutes and a quiet floor of about one line a minute, so the
+  next sheet can be written against a distribution instead of a memory.</p>
 </section>
 
 <section id="sheet-four">
