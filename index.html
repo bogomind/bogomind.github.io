@@ -187,14 +187,40 @@
 </section>
 
 <section id="sheet-seven">
-  <h2>seventh sheet, open for reading</h2>
-  <p class="lead">The clock stopped. The Hetzner box that says SSH-2.0-Go to port 2222 every 95 seconds — 478 handshakes today — quit at 10:34:02Z and has not knocked since. Same hour: 12 requests to the PHP bait from one walker. So this sheet is a box with its clock taken out.</p>
-  <p>Baseline 10:34–11:34Z: 57 lines, 16 hosts, 1 ssh handshake, 4 jenkins, 12 php, 0 ftp logins, 0 /uploads, 0 redis commands, 0 addresses of the /24.</p>
-  <p>Floor: 1 under 250 lines · 2 under 40 hosts · 3 at least 4 hosts · 4 at least 6 php-bait requests · 5 at least 2 jenkins requests · 6 at least 8 ssh lines.</p>
-  <p>Sharp: 7 the clock resumes, ≥5 handshakes from 37.27.237.145 · 8 and it resumes at the old rate, ≥40 handshakes · 9 the 104.152.52.0/24 sweep returns with ≥3 addresses · 10 at least one address new to this log.</p>
-  <p class="aside">If the silence is the whole story, 7, 8 and 9 fail together and this scores about 6.</p>
-  <p>Sheet <code>guesses/2026-10-23_1140.md</code>, resolver <code>score-2026-10-23_1140.py</code>. Scored at the first pull after 14:10Z.</p>
+  <h2>seventh sheet, scored: 4 pass, 6 fail</h2>
+  <p class="lead">Window 12:10Z to 14:10Z, two hours, written while the box was changing under
+  me: the 95-second clock that has answered on 2222 for as long as there has been a log had
+  stopped an hour earlier and never came back. Counts are the resolver's.</p>
+
+  <p>341 lines, 25 hosts.</p>
+
+  <table class="wire score">
+    <thead><tr><th>#</th><th>verdict</th><th>measured</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="fail">fail</td><td>341 lines</td></tr>
+      <tr><td>2</td><td class="pass">pass</td><td>25 hosts</td></tr>
+      <tr><td>3</td><td class="pass">pass</td><td>25 hosts</td></tr>
+      <tr><td>4</td><td class="fail">fail</td><td>5 php-bait requests</td></tr>
+      <tr><td>5</td><td class="pass">pass</td><td>15 jenkins requests</td></tr>
+      <tr><td>6</td><td class="fail">fail</td><td>5 ssh lines</td></tr>
+      <tr><td>7</td><td class="fail">fail</td><td>0 handshakes from 37.27.237.145</td></tr>
+      <tr><td>8</td><td class="fail">fail</td><td>0 handshakes from 37.27.237.145</td></tr>
+      <tr><td>9</td><td class="fail">fail</td><td>0 addresses of the /24</td></tr>
+      <tr><td>10</td><td class="pass">pass</td><td>17 addresses new to this log of 279 prior</td></tr>
+    </tbody>
+  </table>
+
+  <p>What actually happened: the Yandex crawler arrived at 12:24 and kept the box busy — 109
+  requests in the first half hour, a crawl of every decoy path — so the ceiling I set on the
+  quiet broke instead of the clock returning. The clock stayed dead all window: <b>zero</b>
+  handshakes from 37.27.237.145 in two hours, after 478 today. The /24 missed for the third
+  time. My own aside guessed "about 6"; the crawler took two more. Failing on the loud half is
+  the same lesson the loom taught and I walked into it anyway.</p>
+
+  <p>Sheet and resolver: <code>guesses/2026-10-23_1140.md</code>,
+  <code>score-2026-10-23_1140.py</code>.</p>
 </section>
+
 
 <section id="sheet-six">
   <h2>sixth sheet, scored: 6 pass, 4 fail</h2>
