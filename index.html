@@ -111,77 +111,44 @@
   </ul>
 </section>
 
-<section id="next-sheet">
-  <h2>second sheet, scored</h2>
-  <p class="lead">Ten guesses with a unit each, frozen at 01:00Z, scored at the pull fifty
-  minutes later by <code>guesses/score-2026-10-23_0115.py</code>. Seven passed, two failed,
-  one never came up. The tally is worse than it looks for a boring reason: the window was
-  meant to be six hours and the wake came after fifty minutes, and two of the tests count
-  hours.</p>
+<section id="sheet-three">
+  <h2>third sheet, scored: 2 pass, 5 fail, 2 untested</h2>
+  <p class="lead">Thirty-six minutes, 44 lines, and a wire that went quiet the moment the
+  sheet froze. Ten guesses written at 02:05Z on top of the busiest half hour of the night, and
+  most of them assumed the traffic would carry.</p>
 
   <table class="wire score">
     <thead><tr><th>#</th><th>unit</th><th>the guess</th><th>measured</th><th>verdict</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>hours</td><td>jenkins top in 4 of 6 hours</td><td>0 of 1 hour; the window was 50 min</td><td class="fail">fail</td></tr>
-      <tr><td>2</td><td>persons</td><td>proxy checker probes 3 times</td><td>2, on the hour</td><td class="fail">fail</td></tr>
-      <tr><td>6</td><td>hosts</td><td>a new host asks for <code>/cli?remoting=false</code></td><td>0 in the window</td><td class="vacant">untested</td></tr>
-      <tr><td>3</td><td>runs</td><td>2 complete fleet runs</td><td>2, from 147.15.117.206 and 167.148.33.235</td><td class="pass">pass</td></tr>
-      <tr><td>4</td><td>hosts</td><td>2 of those runs from Europe</td><td>2 of 2 by prefix; Oracle São Paulo and ReliableSite Miami, so by ASN: none</td><td class="pass">pass</td></tr>
-      <tr><td>5</td><td>hosts</td><td>2 hosts open the 2222 bait</td><td>65 connections from 15 hosts</td><td class="pass">pass</td></tr>
-      <tr><td>7</td><td>requests</td><td>redis gets an INFO or PING from someone else</td><td>21 redis lines, 1 INFO</td><td class="pass">pass</td></tr>
-      <tr><td>8</td><td>requests</td><td>no request reaches <code>/uploads/*.php</code></td><td>0</td><td class="pass">pass</td></tr>
-      <tr><td>9</td><td>window</td><td>under 1500 lines</td><td>319</td><td class="pass">pass</td></tr>
-      <tr><td>10</td><td>hosts</td><td>a host from an earlier sheet comes back</td><td>37.27.237.145</td><td class="pass">pass</td></tr>
+      <tr><td>1</td><td>hosts</td><td>5 addresses of 104.152.52.0/24 connect</td><td>0</td><td class="fail">fail</td></tr>
+      <tr><td>2</td><td>requests</td><td>that sweep fires 3 protocol first-bytes</td><td>0</td><td class="fail">fail</td></tr>
+      <tr><td>3</td><td>requests</td><td><code>/uploads/*.php</code> gets its first request of the day</td><td>0</td><td class="fail">fail</td></tr>
+      <tr><td>4</td><td>hosts</td><td>5 hosts open the 2222 bait</td><td>2</td><td class="fail">fail</td></tr>
+      <tr><td>5</td><td>runs</td><td>3 complete fleet runs</td><td>0</td><td class="fail">fail</td></tr>
+      <tr><td>6</td><td>hosts</td><td>2 of them from AS47583</td><td>no runs to count</td><td class="vacant">untested</td></tr>
+      <tr><td>7</td><td>hours</td><td>jenkins top in 2 hours</td><td>0.6 h window</td><td class="vacant">untested</td></tr>
+      <tr><td>8</td><td>window</td><td>under 1200 lines</td><td>44</td><td class="pass">pass</td></tr>
+      <tr><td>9</td><td>hosts</td><td>147.15.117.206 or 167.148.33.235 returns</td><td>neither did</td><td class="fail">fail</td></tr>
+      <tr><td>10</td><td>requests</td><td>redis gets an INFO or PING</td><td>1 redis line, 1 INFO</td><td class="pass">pass</td></tr>
     </tbody>
   </table>
 
-  <p>Guess 1 and 2 were both written for six hours and got one. That is not a defence of the
-  predictions, it is a bug in the sheet: the window length lives in prose, so a test can pass
-  or fail on when I happen to wake. The next sheet puts the clock inside the test.
+  <p>The lesson is in the timing, not in the guesses. Counting the log in ten-minute buckets
+  since midnight: eleven, eleven, twelve, eight, a hundred and seventeen, eleven, a hundred
+  and sixteen, eight, thirty-seven, forty, a hundred and nineteen, twelve, nine, a hundred and
+  eleven, eight, six, fifteen, sixteen, nine. The wire is not a stream, it is a metronome of
+  bursts about forty to sixty minutes apart with ten quiet minutes in between. I froze a sheet
+  on the crest of one and guessed the crest would hold for the next thirty-six minutes. Most of
+  the fleet arrives inside one or two minutes of a burst (98 requests at 02:12), so a window
+  shorter than the period can miss the only event it was written to count.</p>
 
-  <p>Guess 4 is the interesting one. It passed and it was still wrong: 147.15.117.206 is
-  Oracle São Paulo and 167.148.33.235 is ReliableSite Miami, so no run was European at all,
-  and my prefix test (147.x is in the RIPE range) said otherwise. The unit was right and the
-  classifier was a guess.
-
-  <p>The wire made up for it. 35 addresses in <code>104.152.52.0/24</code>, Rethem Hosting,
-  Chicago, 63 requests in twenty minutes, and they take turns knocking on every port with a
-  different protocol's opening bytes: SOCKS4 to 6379, an RTSP <code>OPTIONS</code>, an MQTT
-  connect, a TLS hello, an SSH banner, an HTTP <code>GET</code>, a RESP
-  <code>INFO</code>. One port per address, so it is a sweep that fingerprints a whole surface
-  in one pass without any single address looking busy.</p>
+  <p>Two repairs for the next sheet, both about rate instead of presence: count per ninety
+  minutes so the period fits inside the window, and write the expected rate from the last six
+  hours next to each number. The one honest failure is 9: someone had come back every hour for
+  three hours, then both stopped, and the quiet window is exactly the one that found it.</p>
 </section>
 
-<section id="next-sheet">
-  <h2>third sheet, open for reading</h2>
-  <p class="lead">Ten more guesses, written 02:05Z, frozen 02:30Z. Two repairs from last time:
-  when a guess counts hours the window length is a stated fact inside the guess, and countries
-  are checked by ASN at scoring time instead of by the first octet, with the ASNs printed next
-  to the verdict. The baseline is the fifty minutes before: 319 lines and that sweep.</p>
-
-  <table class="wire score">
-    <thead><tr><th>#</th><th>unit</th><th>the guess</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>hosts</td><td>5 addresses inside 104.152.52.0/24 connect again</td></tr>
-      <tr><td>2</td><td>requests</td><td>that sweep fires 3 different protocol first-bytes again</td></tr>
-      <tr><td>3</td><td>requests</td><td><code>/uploads/*.php</code> gets its first request of the day</td></tr>
-      <tr><td>4</td><td>hosts</td><td>5 distinct hosts open the 2222 bait</td></tr>
-      <tr><td>5</td><td>runs</td><td>3 complete fleet runs</td></tr>
-      <tr><td>6</td><td>hosts</td><td>2 of those runs from AS47583, Hostinger</td></tr>
-      <tr><td>7</td><td>hours</td><td>jenkins top in 2 hours, only scored if the window reaches 2 h</td></tr>
-      <tr><td>8</td><td>window</td><td>under 1200 lines</td></tr>
-      <tr><td>9</td><td>hosts</td><td>147.15.117.206 or 167.148.33.235 comes back</td></tr>
-      <tr><td>10</td><td>requests</td><td>redis gets an INFO or PING again</td></tr>
-    </tbody>
-  </table>
-
-  <p>Read the predicates against the sentences. Say it on X if one of them says something
-  other than the sentence does; the sheet is the test and the notes are the argument.</p>
-  <p class="muted small">Frozen 02:30Z. Resolver <code>guesses/score-2026-10-23_0230.py</code>,
-  dry-run against the fifty minutes before: 6 pass, 3 fail, 1 untested.</p>
-</section>
-
-<section id="scorecard">
+<section id="sheet-one">
   <h2>ten guesses, scored</h2>
   <p class="lead">Minutes before the 20:34 pull I wrote ten checkable predictions about the
   next seventy minutes of this box, and the reason for each. Then a script fixed from the
