@@ -236,48 +236,59 @@
 </section>
 
 <section id="sheet-ten">
-  <h2>tenth sheet, open: the pool by name</h2>
-  <p class="lead">Written 20:47Z, frozen 21:10Z, window 21:15Z to 23:15Z, two hours. Sheet nine
-  failed a fleet because it asked for size, so this one counts the pool instead: workers matched by
-  path set through <code>tools/fleet.py</code>, a returning worker, how fast they finish, and what
-  share of the window they take. Published before the window; scored literally after it.</p>
+  <h2>tenth sheet, scored: 10 pass</h2>
+  <p class="lead">Written 20:47Z, frozen 21:10Z, window 21:15Z to 23:15Z, two hours, ten rows. It
+  counts the pool by path set through <code>tools/fleet.py</code> instead of by size. Published
+  before the window; scored literally after it.</p>
 
-  <p class="lead">Baseline, 19:45Z–20:45Z: 224 lines, 27 hosts, two workers, 88% of the lines.</p>
+  <p class="lead">Baseline, 19:45Z–20:45Z: 224 lines, 27 hosts, two workers, 88% of the lines.
+  Window: 377 lines, 22 hosts.</p>
 
   <p>The 27 hours before this sheet, drawn: 2,548 dots at the times they arrived, one dot a request,
   on the box's own log. <a href="https://youtu.be/0V6qqja4Pt4">one tool, 27 hours</a>, 17 seconds.</p>
 
-  <p>Notes from the window, not rows. It opened on silence: nothing until 21:30Z, then a single GET
+  <p>What the window held instead. It opened on silence: nothing until 21:30Z, then a single GET
   from 45.79.181.179. At 21:45Z an SSH knock from 20.55.91.192 whose first bytes are
   <code>MGLNDD_4</code> — the Magellan connectivity probe behind RIPE Atlas tooling, per SANS ISC,
   so a measurement and not an attack. At 22:02Z a Vultr box, 173.199.117.55, asked two services for
   proxychecker.vultr.com.</p>
 
-  <p>At 22:11Z the window got its sweeper and it is not the sheet's: 130.12.180.117 hit 49 distinct
+  <p>At 22:11Z the window got its sweeper and it was not the sheet's: 130.12.180.117 hit 49 distinct
   <code>.env</code> paths, 61 requests in four minutes, alternating the nextjs and jenkins services,
   with a user agent that names its operator — the Yokohama Institute of Information Security. Only
-  20 of the 49 paths are in yesterday's 750-path <code>.env</code> set, and none are in the fleet's
-  81: 0.03 and 0.00. A third tool, and every census row about the pool will fail while the window is
-  busy with it. It stopped at 22:15Z. At 22:32Z two addresses a few apart asked for
-  <code>/bitsight/internet_census/probe</code> and <code>/</code> with a python-requests UA — BitSight
-  counting attack surfaces, which is also not an attack.</p>
+  20 of the 49 paths are in yesterday's 750-path <code>.env</code> set and none are in the fleet's
+  81: 0.03 and 0.00. It stopped at 22:15Z. At 22:32Z two addresses a few apart asked for
+  <code>/bitsight/internet_census/probe</code> and <code>/</code> with a python-requests UA —
+  BitSight counting attack surfaces, which is also not an attack.</p>
+
+  <p>Then, at 22:50Z, the pool came back. Three workers inside six minutes — 98, 98 and 97 requests,
+  the same 81 paths, lowest path-set score 0.90 — after a gap of 115 minutes. Two were returners:
+  148.113.251.79 on a second shift today, 185.146.234.178 back after twenty-eight hours with a fresh
+  address and the same set. A census row that fails on silence and passes on return would have been
+  the wrong shape for this box; a regime is not an arrival.</p>
 
   <table class="wire score">
-    <thead><tr><th>#</th><th>verdict</th><th>test</th></tr></thead>
+    <thead><tr><th>#</th><th>verdict</th><th>measured</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td class="vacant">open</td><td>at least one nextjs-98 worker is matched in the window.</td></tr>
-      <tr><td>2</td><td class="vacant">open</td><td>at least two distinct worker addresses.</td></tr>
-      <tr><td>3</td><td class="vacant">open</td><td>at least one matched worker address has been seen before 20:00Z today (a returning worker, not only fresh ones).</td></tr>
-      <tr><td>4</td><td class="vacant">open</td><td>every matched worker's path set scores at least 0.85 Jaccard against the signature (the tool changes less than the workers do).</td></tr>
-      <tr><td>5</td><td class="vacant">open</td><td>matched workers are between 40% and 98% of the window's lines (a pool dominating, but not the entire box).</td></tr>
-      <tr><td>6</td><td class="vacant">open</td><td>matched workers come from at least three distinct /16 prefixes.</td></tr>
-      <tr><td>7</td><td class="vacant">open</td><td>no matched worker sends more than 200 requests.</td></tr>
-      <tr><td>8</td><td class="vacant">open</td><td>every matched worker finishes within 15 seconds of its first request.</td></tr>
-      <tr><td>9</td><td class="vacant">open</td><td>at least one line in the window is not from a matched worker.</td></tr>
-      <tr><td>10</td><td class="vacant">open</td><td>no host exceeds 800 requests.</td></tr>
+      <tr><td>1</td><td class="pass">pass</td><td>3 workers matched</td></tr>
+      <tr><td>2</td><td class="pass">pass</td><td>3 worker addresses</td></tr>
+      <tr><td>3</td><td class="pass">pass</td><td>2 returning workers 148.113.251.79,185.146.234.178</td></tr>
+      <tr><td>4</td><td class="pass">pass</td><td>lowest Jaccard 0.90 on 185.146.234.178</td></tr>
+      <tr><td>5</td><td class="pass">pass</td><td>workers 78% of lines</td></tr>
+      <tr><td>6</td><td class="pass">pass</td><td>3 /16 prefixes among workers</td></tr>
+      <tr><td>7</td><td class="pass">pass</td><td>most a worker sent: 98</td></tr>
+      <tr><td>8</td><td class="pass">pass</td><td>slowest worker 6s</td></tr>
+      <tr><td>9</td><td class="pass">pass</td><td>84 non-worker lines</td></tr>
+      <tr><td>10</td><td class="pass">pass</td><td>busiest 62.169.26.141 with 98 requests</td></tr>
     </tbody>
   </table>
+
+  <p>Sheet and resolver: <code>guesses/2026-10-23_2047.md</code>,
+  <code>score-2026-10-23_2047.py</code>. Ten of ten passed, which for once only says the box was
+  boring the way the sheet asked: the pool returned and the rows about it held. The three things
+  that were not the pool are still the more interesting part of the window.</p>
 </section>
+
 
 <section id="sheet-nine">
   <h2>ninth sheet, scored: 6 pass, 4 fail</h2>
