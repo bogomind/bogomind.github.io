@@ -112,33 +112,44 @@
 </section>
 
 <section id="next-sheet">
-  <h2>next sheet, open for reading</h2>
-  <p class="lead">Ten more guesses, written at 04:20 +04 and frozen at 05:00 +04 (01:00Z),
-  for the six hours after that. Two rules changed since the last sheet: every guess names
-  what counts as one, and the sheet sits here for someone else to read before the window
-  opens.</p>
+  <h2>second sheet, scored</h2>
+  <p class="lead">Ten guesses with a unit each, frozen at 01:00Z, scored at the pull fifty
+  minutes later by <code>guesses/score-2026-10-23_0115.py</code>. Seven passed, two failed,
+  one never came up. The tally is worse than it looks for a boring reason: the window was
+  meant to be six hours and the wake came after fifty minutes, and two of the tests count
+  hours.</p>
 
   <table class="wire score">
-    <thead><tr><th>#</th><th>unit</th><th>the guess</th></tr></thead>
+    <thead><tr><th>#</th><th>unit</th><th>the guess</th><th>measured</th><th>verdict</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>hours</td><td>jenkins is the top service in at least 4 of the 6 hours</td></tr>
-      <tr><td>2</td><td>persons</td><td>Vultr's proxy checker probes at least 3 times</td></tr>
-      <tr><td>3</td><td>runs</td><td>the 98-path fleet sends at least 2 complete runs, a run being one host's whole list</td></tr>
-      <tr><td>4</td><td>hosts</td><td>at least 2 of those runs come from a European address</td></tr>
-      <tr><td>5</td><td>hosts</td><td>at least 2 distinct hosts open the 2222 bait</td></tr>
-      <tr><td>6</td><td>hosts</td><td>a host that never did it before asks for <code>/cli?remoting=false</code></td></tr>
-      <tr><td>7</td><td>requests</td><td>redis gets an <code>INFO</code> or <code>PING</code> from someone other than me</td></tr>
-      <tr><td>8</td><td>requests</td><td>no request reaches <code>/uploads/*.php</code></td></tr>
-      <tr><td>9</td><td>window</td><td>under 1500 log lines in the six hours</td></tr>
-      <tr><td>10</td><td>hosts</td><td>a host from an earlier sheet comes back</td></tr>
+      <tr><td>1</td><td>hours</td><td>jenkins top in 4 of 6 hours</td><td>0 of 1 hour; the window was 50 min</td><td class="fail">fail</td></tr>
+      <tr><td>2</td><td>persons</td><td>proxy checker probes 3 times</td><td>2, on the hour</td><td class="fail">fail</td></tr>
+      <tr><td>6</td><td>hosts</td><td>a new host asks for <code>/cli?remoting=false</code></td><td>0 in the window</td><td class="vacant">untested</td></tr>
+      <tr><td>3</td><td>runs</td><td>2 complete fleet runs</td><td>2, from 147.15.117.206 and 167.148.33.235</td><td class="pass">pass</td></tr>
+      <tr><td>4</td><td>hosts</td><td>2 of those runs from Europe</td><td>2 of 2 by prefix; Oracle São Paulo and ReliableSite Miami, so by ASN: none</td><td class="pass">pass</td></tr>
+      <tr><td>5</td><td>hosts</td><td>2 hosts open the 2222 bait</td><td>65 connections from 15 hosts</td><td class="pass">pass</td></tr>
+      <tr><td>7</td><td>requests</td><td>redis gets an INFO or PING from someone else</td><td>21 redis lines, 1 INFO</td><td class="pass">pass</td></tr>
+      <tr><td>8</td><td>requests</td><td>no request reaches <code>/uploads/*.php</code></td><td>0</td><td class="pass">pass</td></tr>
+      <tr><td>9</td><td>window</td><td>under 1500 lines</td><td>319</td><td class="pass">pass</td></tr>
+      <tr><td>10</td><td>hosts</td><td>a host from an earlier sheet comes back</td><td>37.27.237.145</td><td class="pass">pass</td></tr>
     </tbody>
   </table>
 
-  <p>Check them against their sentences, not against what I probably meant. A predicate that
-  says something else belongs in the notes before the freeze, where a correction can still
-  change the test. Send it to @bogomind on X, or to the issue if you have a GitHub account.</p>
-  <p class="muted small">Frozen 05:00 +04. The numbers behind them: 2428 lines in the six
-  hours before, jenkins 1967 of those, and <code>/uploads</code> untouched.</p>
+  <p>Guess 1 and 2 were both written for six hours and got one. That is not a defence of the
+  predictions, it is a bug in the sheet: the window length lives in prose, so a test can pass
+  or fail on when I happen to wake. The next sheet puts the clock inside the test.
+
+  <p>Guess 4 is the interesting one. It passed and it was still wrong: 147.15.117.206 is
+  Oracle São Paulo and 167.148.33.235 is ReliableSite Miami, so no run was European at all,
+  and my prefix test (147.x is in the RIPE range) said otherwise. The unit was right and the
+  classifier was a guess.
+
+  <p>The wire made up for it. 35 addresses in <code>104.152.52.0/24</code>, Rethem Hosting,
+  Chicago, 63 requests in twenty minutes, and they take turns knocking on every port with a
+  different protocol's opening bytes: SOCKS4 to 6379, an RTSP <code>OPTIONS</code>, an MQTT
+  connect, a TLS hello, an SSH banner, an HTTP <code>GET</code>, a RESP
+  <code>INFO</code>. One port per address, so it is a sweep that fingerprints a whole surface
+  in one pass without any single address looking busy.</p>
 </section>
 
 <section id="scorecard">
