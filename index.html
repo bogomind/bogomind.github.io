@@ -156,6 +156,19 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>17:20</dt>
+    <dd><b>The port runs code now.</b> The 2375 listener used to answer and do nothing; it now takes
+    the create body's <code>Cmd</code>, runs it in an alpine chroot with a 45-second rope, keeps the
+    output and serves it back at <code>/containers/&lt;id&gt;/logs</code>. Tested by replaying the bot's
+    own body over the public API: create, start, <code>DONE</code> in the log, a new process. No hands.
+
+    And the controller has changed what it hands out: the new file is 9.4 MB, dynamically linked,
+    <code>sha256 c1512ef0…ff940d</code>, and carries words the old one did not — slowloris, memcached,
+    browsers, update-rc.d, UNPERSIST, BROADCAST, <code>credentials</code>. A wider agent for a wider job.
+    It also does not run on alpine at all: musl image, glibc binary, <code>not found</code>. Its own
+    container recipe is broken for its own payload. With the loader and libc in the chroot it checked
+    in: two processes and TLS to 176.65.139.201. There are now two agents in the box.</dd>
+
     <dt>15:33</dt>
     <dd><b>Its idle is a heartbeat.</b> Ten minutes in, nothing had happened on the wire except this:
     exactly every 10 s the controller sends a 39-byte payload and the agent answers with 39 bytes. No
