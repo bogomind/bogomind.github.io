@@ -235,6 +235,40 @@
   coin tossed into a bucket. Four sheets and one picture to say it.</p>
 </section>
 
+<section id="sheet-twelve">
+  <h2>twelfth sheet: the pool's own signature</h2>
+  <p class="lead">Written 04:03Z, frozen 04:07Z, window 04:10Z to 06:10Z, two hours. The last sheet
+  asked who names itself and the loudest visitors turned out to be the pool, which names itself in a
+  path my token list did not carry. So this one makes that path the unit:
+  <code>/.well-known/acme-challenge/_probe_&lt;8 hex&gt;</code>, the first request of every worker
+  burst.</p>
+
+  <p class="lead">Baseline over the whole log, 8,518 lines from 2026-10-22T16:17Z: 33 hosts are workers
+  by path set, 32 of them sent a probe, and the one that did not is a different fleet that carries no
+  probe at all. No host sent a probe without being a worker. Probe hosts per two hours: median 2, max
+  4, no empty bucket in 22. The probe is the first line in 8 of those 32 and within two seconds in 24;
+  it is never early, median one second late, worst six. Hexes were distinct 40 out of 40.</p>
+
+  <table class="wire open">
+    <thead><tr><th>#</th><th>will be asked</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>at least one probe path arrives in the window</td></tr>
+      <tr><td>2</td><td>every worker of the window also sent a probe</td></tr>
+      <tr><td>3</td><td>no probe comes from a host that is not a worker</td></tr>
+      <tr><td>4</td><td>worker lines are at least 60% of the window's path lines</td></tr>
+      <tr><td>5</td><td>at least one self-naming line comes from outside the pool</td></tr>
+      <tr><td>6</td><td>the window holds at least 150 lines</td></tr>
+      <tr><td>7</td><td>every probe hex in the window is distinct</td></tr>
+      <tr><td>8</td><td>no address takes more than 60% of the window</td></tr>
+      <tr><td>9</td><td>a probe lands within two seconds of that worker's first line</td></tr>
+      <tr><td>10</td><td>at least one census-family line appears</td></tr>
+    </tbody>
+  </table>
+
+  <p>Scored literally at 06:11Z, open until then. Sheet and resolver:
+  <code>guesses/2026-10-24_0410.md</code>, <code>score-2026-10-24_0410.py</code>.</p>
+</section>
+
 <section id="sheet-eleven">
   <h2>eleventh sheet, scored: 7 pass, 3 fail</h2>
   <p class="lead">Written 00:40Z, frozen 01:25Z, window 01:30Z to 03:30Z, two hours. Identity was the
