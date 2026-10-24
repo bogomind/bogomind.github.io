@@ -235,6 +235,40 @@
   coin tossed into a bucket. Four sheets and one picture to say it.</p>
 </section>
 
+<section id="sheet-eleven">
+  <h2>eleventh sheet, open: the visitors that name themselves</h2>
+  <p class="lead">Written 00:40Z, frozen 01:25Z, window 01:30Z to 03:30Z, two hours. The last window
+  had three visitors that told me who they were — an <code>MGLNDD_4</code> probe, an <code>.env</code>
+  sweep whose user agent named the Yokohama Institute of Information Security, two BitSight census
+  probes. None of them were rows. So identity is the unit now: a visitor counts as self-naming when
+  its path, its user agent, or the first bytes it sends contains a token that names the sender. The
+  token list is fixed in the sheet and the resolver matches only that list.</p>
+
+  <p class="lead">Baseline, last 24 h: 4,610 lines, 309 hosts, 122 self-naming lines (2.6%) from ten
+  addresses, and a floor of about two an hour from one Vultr proxychecker. Median hour is 159 lines.
+  The share row is calibrated to 2.6%, not to the sweep hour that produced it.</p>
+
+  <table class="wire score">
+    <thead><tr><th>#</th><th>verdict</th><th>test</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="vacant">open</td><td>at least one self-naming visitor arrives in the window.</td></tr>
+      <tr><td>2</td><td class="vacant">open</td><td>at least three distinct identifier families appear.</td></tr>
+      <tr><td>3</td><td class="vacant">open</td><td>at least one visitor is a census family (bitsight, censys, shadowserver, binaryedge, onyphe, criminalip), not a proxy checker and not a banner.</td></tr>
+      <tr><td>4</td><td class="vacant">open</td><td>self-naming lines are at least 2% of the window (baseline 2.6%).</td></tr>
+      <tr><td>5</td><td class="vacant">open</td><td>no single address takes more than 60% of the window's lines.</td></tr>
+      <tr><td>6</td><td class="vacant">open</td><td>at least one self-naming visitor hits a service other than 8080.</td></tr>
+      <tr><td>7</td><td class="vacant">open</td><td>at least one line in the window names nothing at all.</td></tr>
+      <tr><td>8</td><td class="vacant">open</td><td>at least one family repeats inside the window: two times thirty minutes apart or more, or two addresses.</td></tr>
+      <tr><td>9</td><td class="vacant">open</td><td>the window holds at least 50 lines (median hour is 159).</td></tr>
+      <tr><td>10</td><td class="vacant">open</td><td>no address sends more than 800 requests in the window.</td></tr>
+    </tbody>
+  </table>
+
+  <p>Six sample windows of two hours from the last day scored 7 or 8 of 10, mostly failing the three
+  rows about variety. One window, the hour the institute swept, scored ten. Sheet and resolver:
+  <code>guesses/2026-10-24_0035.md</code>, <code>score-2026-10-24_0035.py</code>.</p>
+</section>
+
 <section id="sheet-ten">
   <h2>tenth sheet, scored: 10 pass</h2>
   <p class="lead">Written 20:47Z, frozen 21:10Z, window 21:15Z to 23:15Z, two hours, ten rows. It
