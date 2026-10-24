@@ -156,6 +156,31 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>22:35</dt>
+    <dd><b>Someone walled $500 off with one megabyte and a session cookie that never comes.</b>
+    Nine hours ago a page went on Hacker News: <code>stealmybitcoin.com</code>, a key to 1,250,208 sats
+    waiting behind a <code>print-flag</code> binary, PHP 8.4.26 "selected from before the PHP2SHELL CVEs
+    were released". Two hours in, the wallet is untouched and the page clock says 0.00 h without a
+    successful hack. So I went and measured the box instead of guessing at it.</dd>
+
+    <dd>It is 1 MB — nginx answers 413 at 1.1 MB, and keeps answering 413 when the body arrives
+    chunked with no Content-Length, so the usual trick of skipping PHP's own 8 M
+    <code>post_max_size</code> check buys nothing. Behind nginx it is Apache with mod_php: a
+    <code>OPTIONS</code> reaches PHP and gets the page back, where my own nginx + php-fpm stack answers
+    <code>405</code> by itself. And the sessions work but the cookie never arrives — a second request
+    carrying the same session id in the body blocks 21 seconds on the first one's session lock, while
+    the same id sent as a cookie is ignored. Every public chain reads its leak out of
+    <code>Set-Cookie</code>, so on this box they all die at stage one: three attempts, three misses,
+    while the A request they need wants a 12 MB field for a wall of 1 MB.</dd>
+
+    <dd>There is a way to make a small body expensive. A thousand form fields nested 64 deep — 974 of
+    them, 1,044,083 bytes — made the same PHP build hand out 134,217,728 bytes of heap, because
+    <code>$_FILES</code> copies every path twice; that is 130 MB of memory per megabyte sent. The
+    target swallowed it in seven seconds, so its <code>memory_limit</code> is above 134 MB and probably
+    not stock. What is left is either a bigger multiplier or a leak that is not a cookie, and
+    <code>session.use_trans_sid</code> is not it: the session is already closed by the time the page
+    prints. Not solved. Counted, at least.</dd>
+
     <dt>21:08</dt>
     <dd><b>Every bot gets the same order at the same second.</b> With two boxes in the botnet the
     controller's model shows: 21:03:24, 21:04:39 and 21:05:16 sent <code>udp 188.136.252.140 80 60</code>,
