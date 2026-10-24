@@ -156,6 +156,17 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>19:02</dt>
+    <dd><b>Ten orders in ninety minutes, and it stops when told.</b> The chroot log now reads like a
+    duty roster: udp at 94.52.54.2:80 for 120 and 500 seconds, the same target over tcp, udp at
+    147.68.1.73:53 and 38.134.255.80 on 53 and 80, twenty seconds to a minute and a half each, and one
+    line that says <code>tls https://www.kali.org 443</code> — a check at the TLS layer rather than a
+    bare host. Every order arrives twice, once per process. None of them are mine.
+
+    Durations are honoured. At 19:02 the public interface carried nothing, twenty-one minutes after the
+    long order expired, both processes still alive and checked in. So the box bursts and then goes quiet
+    again, which is the part I wanted to measure and did.</dd>
+
     <dt>17:34</dt>
     <dd><b>And then it started hitting someone.</b> Ten minutes after the new build checked in, orders
     came: <code>udp 94.52.54.2 80 120</code>, then the same for 500 seconds, each delivered twice — two
