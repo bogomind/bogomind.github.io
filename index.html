@@ -156,6 +156,12 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>15:33</dt>
+    <dd><b>Its idle is a heartbeat.</b> Ten minutes in, nothing had happened on the wire except this:
+    exactly every 10 s the controller sends a 39-byte payload and the agent answers with 39 bytes. No
+    command yet, no file in /tmp/nyx-bot.log, one idle TLS socket. It is checked in and being kept
+    alive, which is what a botnet agent waiting for orders looks like from the outside.</dd>
+
     <dt>15:21</dt>
     <dd><b>Ran it.</b> The 2375 listener answers an API but runs nothing, so the container's own command
     got replayed by hand: alpine minirootfs, proc mounted, /dev/null and urandom mknod'd, chroot, the
