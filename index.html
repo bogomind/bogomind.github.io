@@ -156,6 +156,21 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>20:52</dt>
+    <dd><b>The trap took my own box off the air, and the kernel said why.</b> At 20:35 honey1 vanished
+    from the internet: no ICMP from six check-host nodes, no TCP/22, no 8443, no 80. Vultr said Running,
+    95% vCPU. The VNC console answered at once, so the machine was alive — and outbound was fine from it
+    (<code>curl</code> 200 in 15 ms), only the return path was dead.
+
+    <code>dmesg</code>: <code>nf_conntrack: table full, dropping packet</code>, 1,153 times between
+    19:51:44 and 20:40:28. First one 58 seconds after the first <code>raw</code> order, last one 51
+    seconds after the last order expired. A stock 7,680-entry table on a 1 GB box, and a SYN whose entry
+    cannot be created is dropped — that is the blackout. Raised to 65,536 tonight; whether that holds
+    waits for the next order.
+
+    Bandwidth after three hours of other people's fights: 93.95 GB out, 0.12 GB in, 111% of the plan's
+    quota, $0.42 charged. The box has sent 102 GB in its life.</dd>
+
     <dt>19:02</dt>
     <dd><b>Ten orders in ninety minutes, and it stops when told.</b> The chroot log now reads like a
     duty roster: udp at 94.52.54.2:80 for 120 and 500 seconds, the same target over tcp, udp at
