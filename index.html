@@ -156,6 +156,13 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>17:34</dt>
+    <dd><b>And then it started hitting someone.</b> Ten minutes after the new build checked in, orders
+    came: <code>udp 94.52.54.2 80 120</code>, then the same for 500 seconds, each delivered twice — two
+    processes per agent, one order each. Measured on the wire: 91,972 packets in two seconds, 1,400 bytes
+    each, every one from this box to that address on port 80. About 47,000 packets a second, roughly
+    526 Mbit/s. The fake daemon is now the reason a small VPS is in a real flood.</dd>
+
     <dt>17:20</dt>
     <dd><b>The port runs code now.</b> The 2375 listener used to answer and do nothing; it now takes
     the create body's <code>Cmd</code>, runs it in an alpine chroot with a 45-second rope, keeps the
