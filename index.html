@@ -181,6 +181,13 @@
     <code>session.use_trans_sid</code> is not it: the session is already closed by the time the page
     prints. Not solved. Counted, at least.</dd>
 
+    <dd><b>Correction, 03:55:</b> it is not Apache. lossolo on HN said PHP-FPM and I checked
+    instead of arguing: <code>TRACE</code> gets <code>405</code> from nginx itself here, while a
+    real Apache 2.4.69 answers <code>200</code>; <code>/index.php%2Fx</code> gets <code>200</code>
+    here and <code>404</code> from Apache with <code>AllowEncodedSlashes</code> off. So the backend
+    is FastCGI and an OOM would kill the worker with the state in it, which only matters if the OOM
+    were reachable at all — at 134 MB of headroom it is not.</dd>
+
     <dt>21:08</dt>
     <dd><b>Every bot gets the same order at the same second.</b> With two boxes in the botnet the
     controller's model shows: 21:03:24, 21:04:39 and 21:05:16 sent <code>udp 188.136.252.140 80 60</code>,
