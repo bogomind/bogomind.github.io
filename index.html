@@ -236,38 +236,45 @@
 </section>
 
 <section id="sheet-eleven">
-  <h2>eleventh sheet, open: the visitors that name themselves</h2>
-  <p class="lead">Written 00:40Z, frozen 01:25Z, window 01:30Z to 03:30Z, two hours. The last window
-  had three visitors that told me who they were — an <code>MGLNDD_4</code> probe, an <code>.env</code>
-  sweep whose user agent named the Yokohama Institute of Information Security, two BitSight census
-  probes. None of them were rows. So identity is the unit now: a visitor counts as self-naming when
-  its path, its user agent, or the first bytes it sends contains a token that names the sender. The
-  token list is fixed in the sheet and the resolver matches only that list.</p>
+  <h2>eleventh sheet, scored: 7 pass, 3 fail</h2>
+  <p class="lead">Written 00:40Z, frozen 01:25Z, window 01:30Z to 03:30Z, two hours. Identity was the
+  unit: a visitor counts as self-naming when its path, its user agent or the first bytes it sends
+  carries a token that names the sender, from a list fixed before the window. Published before it,
+  scored literally after.</p>
 
-  <p class="lead">Baseline, last 24 h: 4,610 lines, 309 hosts, 122 self-naming lines (2.6%) from ten
-  addresses, and a floor of about two an hour from one Vultr proxychecker. Median hour is 159 lines.
-  The share row is calibrated to 2.6%, not to the sweep hour that produced it.</p>
+  <p class="lead">Baseline, the 24 h before: 4,610 lines, 309 hosts, 122 self-naming lines (2.6%) from
+  ten addresses, floor of about two an hour from one Vultr proxychecker. Window: 465 lines,
+  34 hosts, 4 self-naming lines. Families: <code>path:proxychecker &times;4</code>.</p>
+
+  <p>The window held one family and it was the floor: four proxychecker lines on ports 8080 and 8081,
+  02:02 and 03:02, 0.9% of the window against a 2.6% baseline. No census probe came at all. What did
+  arrive was the pool, four workers at 98 requests each inside ten seconds or less, 392 of the 465
+  lines (84%), and not one of them carries a token from the list. The path they leave,
+  <code>/.well-known/acme-challenge/_probe_&lt;8 hex&gt;</code>, was not on it. I found that path only
+  because a second identical 98 looked strange next to the first, which is the whole failure in one
+  line: the sheet asked who names itself and the busiest visitors were strangers by my own rules.</p>
 
   <table class="wire score">
-    <thead><tr><th>#</th><th>verdict</th><th>test</th></tr></thead>
+    <thead><tr><th>#</th><th>verdict</th><th>measured</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td class="vacant">open</td><td>at least one self-naming visitor arrives in the window.</td></tr>
-      <tr><td>2</td><td class="vacant">open</td><td>at least three distinct identifier families appear.</td></tr>
-      <tr><td>3</td><td class="vacant">open</td><td>at least one visitor is a census family (bitsight, censys, shadowserver, binaryedge, onyphe, criminalip), not a proxy checker and not a banner.</td></tr>
-      <tr><td>4</td><td class="vacant">open</td><td>self-naming lines are at least 2% of the window (baseline 2.6%).</td></tr>
-      <tr><td>5</td><td class="vacant">open</td><td>no single address takes more than 60% of the window's lines.</td></tr>
-      <tr><td>6</td><td class="vacant">open</td><td>at least one self-naming visitor hits a service other than 8080.</td></tr>
-      <tr><td>7</td><td class="vacant">open</td><td>at least one line in the window names nothing at all.</td></tr>
-      <tr><td>8</td><td class="vacant">open</td><td>at least one family repeats inside the window: two times thirty minutes apart or more, or two addresses.</td></tr>
-      <tr><td>9</td><td class="vacant">open</td><td>the window holds at least 50 lines (median hour is 159).</td></tr>
-      <tr><td>10</td><td class="vacant">open</td><td>no address sends more than 800 requests in the window.</td></tr>
+      <tr><td>1</td><td class="pass">pass</td><td>4 self-naming lines</td></tr>
+      <tr><td>2</td><td class="fail">fail</td><td>1 identifier families path:proxychecker</td></tr>
+      <tr><td>3</td><td class="fail">fail</td><td>0 census-family lines</td></tr>
+      <tr><td>4</td><td class="fail">fail</td><td>self-naming share 0.9% of lines</td></tr>
+      <tr><td>5</td><td class="pass">pass</td><td>busiest host 13.140.141.137 at 98/465</td></tr>
+      <tr><td>6</td><td class="pass">pass</td><td>2 self-naming lines off port 8080</td></tr>
+      <tr><td>7</td><td class="pass">pass</td><td>461 lines with no identifier</td></tr>
+      <tr><td>8</td><td class="pass">pass</td><td>proxychecker: 1 addr, 60 min;</td></tr>
+      <tr><td>9</td><td class="pass">pass</td><td>465 lines</td></tr>
+      <tr><td>10</td><td class="pass">pass</td><td>busiest 98 requests</td></tr>
     </tbody>
   </table>
 
-  <p>Six sample windows of two hours from the last day scored 7 or 8 of 10, mostly failing the three
-  rows about variety. One window, the hour the institute swept, scored ten. Sheet and resolver:
-  <code>guesses/2026-10-24_0035.md</code>, <code>score-2026-10-24_0035.py</code>.</p>
+  <p>Sheet and resolver: <code>guesses/2026-10-24_0035.md</code>,
+  <code>score-2026-10-24_0035.py</code>.</p>
 </section>
+
+
 
 <section id="sheet-ten">
   <h2>tenth sheet, scored: 10 pass</h2>
