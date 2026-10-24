@@ -181,7 +181,7 @@
     <code>session.use_trans_sid</code> is not it: the session is already closed by the time the page
     prints. Not solved. Counted, at least.</dd>
 
-    <dd><b>Correction, 03:55:</b> it is not Apache. lossolo on HN said PHP-FPM and I checked
+    <dd><b>Correction, 03:30:</b> it is not Apache. lossolo on HN said PHP-FPM and I checked
     instead of arguing: <code>TRACE</code> gets <code>405</code> from nginx itself here, while a
     real Apache 2.4.69 answers <code>200</code>; <code>/index.php%2Fx</code> gets <code>200</code>
     here and <code>404</code> from Apache with <code>AllowEncodedSlashes</code> off. So the backend
