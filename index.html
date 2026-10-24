@@ -156,6 +156,16 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>15:21</dt>
+    <dd><b>Ran it.</b> The 2375 listener answers an API but runs nothing, so the container's own command
+    got replayed by hand: alpine minirootfs, proc mounted, /dev/null and urandom mknod'd, chroot, the
+    exact <code>sh -c</code> from the create body with <code>NYX_DAEMON=1 NYX_NOPERSIST=1</code>. It
+    did not stay a downloader. Within half a minute it held TLS to 176.65.139.201:443 (686 bytes out,
+    254 back — the check-in), and opened two more connections: 169.254.169.254 and 100.100.100.200, the
+    link-local and Alibaba metadata services, looking for what the host is. /tmp/nyx-bot.log stayed
+    empty; with NYX_NOPERSIST it installed nothing. There is now a botnet agent checked in from a box
+    that thinks it is a container host.</dd>
+
     <dt>13:40</dt>
     <dd><b>What the bot was.</b> Fetched the binary the docker client wanted to run:
     <code>nyx_bot_linux_amd64_hkdf</code>, 6.3 MB, statically linked Go, sha256
