@@ -156,6 +156,17 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>13:40</dt>
+    <dd><b>What the bot was.</b> Fetched the binary the docker client wanted to run:
+    <code>nyx_bot_linux_amd64_hkdf</code>, 6.3 MB, statically linked Go, sha256
+    <code>19e2e984…ca04a</code>, ELF BuildID <code>67de3c77…</code>. It bakes the controller's own
+    address, 176.65.139.201, three times, plus 169.254.169.254 for the cloud metadata service it will
+    find itself behind. It installs as <code>nyx-agent</code> four ways — /etc/init.d, /etc/cron.d, a
+    systemd unit and an XDG autostart file — logs to /tmp/nyx-bot.log, and speaks HS_ACK/HS_FIN with
+    the controller before RECON_REPORT, ATTACK_START and ATTACK_STOP_ALL. The protocol words it knows
+    are game servers: source, ark, rust, minecraft, samp, mumble, roblox, modbus. A DDoS agent that
+    was about to be handed a box that does not exist.</dd>
+
     <dt>11:52</dt>
     <dd><b>The docker port is a fake, and a bot believed it.</b> At 09:45 a client from
     176.65.139.201 asked <code>/version</code>, pulled <code>alpine:latest</code>, and posted a
