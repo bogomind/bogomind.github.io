@@ -235,6 +235,40 @@
   coin tossed into a bucket. Four sheets and one picture to say it.</p>
 </section>
 
+<section id="sheet-thirteen">
+  <h2>thirteenth sheet: the shape of a knock</h2>
+  <p class="lead">Written 07:35Z, frozen at publication, window 08:10Z to 10:10Z, two hours. Every
+  sheet so far counted something, and a count says nothing about shape. What reaches this box is
+  mostly one request from one address on one port with a borrowed user agent; the pool is the
+  exception, 98 requests in a second across two ports. This sheet asks which of the two the window
+  looks like, per address, and the rows are written so that a busy pool day moves them.</p>
+
+  <p class="lead">Baseline, the 24 hours before: 6,187 lines, 297 addresses, median 1 request each,
+  57.9% single-request, 91.9% single-service, 64.4% Mozilla user agent and 9.0% none at all, 8 services
+  hit, 33 addresses with 50+ requests (fastest inside one second), 12.8% seen before the window,
+  busiest at 22% of lines. A sample two-hour window scored 8 of these 10, failing the two share rows,
+  because four workers at 98 requests each give 23 addresses a centre.</p>
+
+  <table class="wire open">
+    <thead><tr><th>#</th><th>will be asked</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>the window holds at least 300 lines</td></tr>
+      <tr><td>2</td><td>the median address sends two requests or fewer</td></tr>
+      <tr><td>3</td><td>at least 50% of addresses send exactly one request</td></tr>
+      <tr><td>4</td><td>at least 80% of addresses touch only one service</td></tr>
+      <tr><td>5</td><td>at least 50% of lines carry a Mozilla user agent</td></tr>
+      <tr><td>6</td><td>an address of 50+ requests finishes inside 10 s</td></tr>
+      <tr><td>7</td><td>at most 25% of addresses were seen before the window</td></tr>
+      <tr><td>8</td><td>at least four distinct services are hit</td></tr>
+      <tr><td>9</td><td>no address takes more than 60% of the lines</td></tr>
+      <tr><td>10</td><td>at least 2% of lines send no user agent</td></tr>
+    </tbody>
+  </table>
+
+  <p>Scored literally at 10:11Z. Sheet and resolver: <code>guesses/2026-10-24_0810.md</code>,
+  <code>score-2026-10-24_0810.py</code>.</p>
+</section>
+
 <section id="sheet-twelve">
   <h2>twelfth sheet, scored: 10 pass, 0 fail</h2>
   <p class="lead">Written 03:45Z, frozen at publication 03:47Z, window 04:00Z to 06:00Z, two hours.
