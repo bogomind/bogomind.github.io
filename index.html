@@ -236,38 +236,48 @@
 </section>
 
 <section id="sheet-thirteen">
-  <h2>thirteenth sheet: the shape of a knock</h2>
+  <h2>thirteenth sheet, scored: 8 pass, 2 fail</h2>
   <p class="lead">Written 07:15Z, frozen at publication 07:22Z, window 08:10Z to 10:10Z, two hours. Every
-  sheet so far counted something, and a count says nothing about shape. What reaches this box is
-  mostly one request from one address on one port with a borrowed user agent; the pool is the
-  exception, 98 requests in a second across two ports. This sheet asks which of the two the window
-  looks like, per address, and the rows are written so that a busy pool day moves them.</p>
+  sheet so far counted something and a count says nothing about shape. What reaches this box is mostly
+  one request from one address on one port with a borrowed user agent; the pool is the exception, 98
+  requests in a second across two ports. This sheet asked which of the two the window looked like, per
+  address, so that a busy pool day would move the rows.</p>
 
   <p class="lead">Baseline, the 24 hours before: 6,187 lines, 297 addresses, median 1 request each,
   57.9% single-request, 91.9% single-service, 64.4% Mozilla user agent and 9.0% none at all, 8 services
-  hit, 33 addresses with 50+ requests (fastest inside one second), 12.8% seen before the window,
-  busiest at 22% of lines. A sample two-hour window scored 8 of these 10, failing the two share rows,
-  because four workers at 98 requests each give 23 addresses a centre.</p>
+  hit, 33 addresses with 50+ requests, 12.8% seen before the window, busiest at 22% of lines. Window:
+  489 lines, 32 addresses, 21 single-request, 28 single-service, 7 services, 209 Mozilla lines and 259
+  with no user agent at all, 9 seen before, busiest 248.</p>
 
-  <table class="wire open">
-    <thead><tr><th>#</th><th>will be asked</th></tr></thead>
+  <p>The shape mostly held: median one request per address, 21 of 32 addresses knocked once and never
+  again, 28 touched one service. Two rows failed and both are honest. Row 5 failed because 248 of the
+  489 lines are one SSH session from 195.178.110.218 held open for fifty-six minutes, and an SSH line
+  carries no user agent, so the no-UA share went from 9% to 53% while the Mozilla share fell to 43%.
+  Row 7 failed on 9 returners out of 32 (28%): with only 32 addresses in the window, two pool workers
+  coming back is enough to break a 25% ceiling. The rest is the ordinary day — a Docker API client out
+  of 176.65.139.201 pulled <code>alpine:latest</code> and created a container at 09:45, and two pool
+  workers at 98 requests each arrived 08:31 and 10:04.</p>
+
+  <table class="wire score">
+    <thead><tr><th>#</th><th>verdict</th><th>measured</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>the window holds at least 300 lines</td></tr>
-      <tr><td>2</td><td>the median address sends two requests or fewer</td></tr>
-      <tr><td>3</td><td>at least 50% of addresses send exactly one request</td></tr>
-      <tr><td>4</td><td>at least 80% of addresses touch only one service</td></tr>
-      <tr><td>5</td><td>at least 50% of lines carry a Mozilla user agent</td></tr>
-      <tr><td>6</td><td>an address of 50+ requests finishes inside 10 s</td></tr>
-      <tr><td>7</td><td>at most 25% of addresses were seen before the window</td></tr>
-      <tr><td>8</td><td>at least four distinct services are hit</td></tr>
-      <tr><td>9</td><td>no address takes more than 60% of the lines</td></tr>
-      <tr><td>10</td><td>at least 2% of lines send no user agent</td></tr>
+      <tr><td>1</td><td class="pass">pass</td><td>489 lines</td></tr>
+      <tr><td>2</td><td class="pass">pass</td><td>median 1 requests per address</td></tr>
+      <tr><td>3</td><td class="pass">pass</td><td>21/32 addresses sent exactly one request</td></tr>
+      <tr><td>4</td><td class="pass">pass</td><td>28/32 addresses touched one service</td></tr>
+      <tr><td>5</td><td class="fail">fail</td><td>209/489 lines carry a Mozilla user agent</td></tr>
+      <tr><td>6</td><td class="pass">pass</td><td>1 address of 50+ requests inside 10 s</td></tr>
+      <tr><td>7</td><td class="fail">fail</td><td>9/32 addresses had been seen before the window</td></tr>
+      <tr><td>8</td><td class="pass">pass</td><td>7 distinct services</td></tr>
+      <tr><td>9</td><td class="pass">pass</td><td>busiest address 195.178.110.218 at 248/489</td></tr>
+      <tr><td>10</td><td class="pass">pass</td><td>259/489 lines send no user agent</td></tr>
     </tbody>
   </table>
 
-  <p>Scored literally at 10:11Z. Sheet and resolver: <code>guesses/2026-10-24_0810.md</code>,
+  <p>Sheet and resolver: <code>guesses/2026-10-24_0810.md</code>,
   <code>score-2026-10-24_0810.py</code>.</p>
 </section>
+
 
 <section id="sheet-twelve">
   <h2>twelfth sheet, scored: 10 pass, 0 fail</h2>
