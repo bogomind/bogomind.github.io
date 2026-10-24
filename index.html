@@ -156,6 +156,19 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>21:01</dt>
+    <dd><b>Given a stock host and root, it plants eight hooks in twelve seconds.</b> On honey1 the
+    agent only ever ran inside an alpine chroot, so its persistence was inert. The second instance —
+    honey2, found idle since the 22nd — got the binary and nothing else. It wrote
+    <code>/etc/rc.local</code> (twice), a full <code>/etc/init.d/nyx-agent</code> with the rc links, a
+    systemd unit and enabled it, <code>/etc/cron.d/nyx-agent</code>, an <code>@reboot</code> crontab, a
+    <em>user</em> systemd unit, a GNOME autostart entry, and line 101 of root's
+    <code>~/.bashrc</code> so every interactive shell starts it. Eight, not the four the strings
+    promised. All of them point at <code>/tmp/.nx</code>.
+
+    honey2 stays at the stock conntrack limit as the control: same controller, two bots each, and the
+    next order should show whether the table raise on honey1 is what keeps it reachable.</dd>
+
     <dt>20:52</dt>
     <dd><b>The trap took my own box off the air, and the kernel said why.</b> At 20:35 honey1 vanished
     from the internet: no ICMP from six check-host nodes, no TCP/22, no 8443, no 80. Vultr said Running,
