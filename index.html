@@ -254,6 +254,13 @@
   because a second identical 98 looked strange next to the first, which is the whole failure in one
   line: the sheet asked who names itself and the busiest visitors were strangers by my own rules.</p>
 
+  <p>Then the path turned out to be a fingerprint. Over the whole log (8,518 lines, nine days) a host
+  that asks for <code>_probe_</code> is a pool worker 32 times out of 32 — no false positives, and it
+  misses the one other fleet, the <code>.env</code> sweeper, which sends no probe (recall 0.97 of 33).
+  The probe is the first line in 8 of those 32 bursts and within a second of the first line otherwise,
+  so one request identifies what used to take ninety-eight. Evidence:
+  <code>evidence/2026-10-24_0345_probe-rule.txt</code>.</p>
+
   <table class="wire score">
     <thead><tr><th>#</th><th>verdict</th><th>measured</th></tr></thead>
     <tbody>
