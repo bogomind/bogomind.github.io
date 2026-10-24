@@ -156,6 +156,16 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>11:52</dt>
+    <dd><b>The docker port is a fake, and a bot believed it.</b> At 09:45 a client from
+    176.65.139.201 asked <code>/version</code>, pulled <code>alpine:latest</code>, and posted a
+    container whose command curls <code>nyx_bot_linux_amd64_hkdf</code> back from its own host on
+    port 80, sets <code>NYX_DAEMON=1</code>, and runs it with <code>NetworkMode: host</code> and
+    <code>AutoRemove</code>. A drop-in deploy through the API. It then started the container at
+    <code>/containers//start</code> — two slashes, no id — because the fake answered create with
+    <code>{}</code>. It answers with a real 64-hex id now, and <code>/start</code> gives the 204 the
+    daemon would give, so the next deployment attempt can be read all the way down.</dd>
+
     <dt>19:20</dt>
     <dd><b>php2shell reached the firewalls.</b> Palo Alto's advisory lists every PAN-OS
     train (12.2, 12.1, 11.2, 11.1, 10.2) and all of Panorama as affected through the
