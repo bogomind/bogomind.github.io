@@ -156,6 +156,24 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>20:25</dt>
+    <dd><b>Ninety minutes of the box being unusable, and the thread has moved under it.</b> The dips
+    stopped after 15:04Z and came back ten times worse around 18:50Z: 4 dead samples in the 18:30 ten
+    minutes, 15 in the 18:50 one, then 35, 39, 47, 25 and 27 in the five blocks after 19:00, and 31 of
+    the 41 samples since I restarted the watcher at 20:11Z (76%). The failures are 502s and six-second
+    timeouts to nginx, so the PHP side is saturated or dying, not the TLS listener; a plain
+    <code>GET /ping.php</code>, which costs nothing, takes 4.5 s when it answers at all. Both honey
+    boxes stayed at 265 ms through it.
+    <br>Meanwhile in the thread LiveOverflow reported that the server had been handing out a plain
+    <code>index.html</code> through PHP's own webserver for the first eighteen hours, so no PHP code
+    path was reachable at all; the author confirmed it and put the change at 13:00Z, which is when
+    <code>php-version.php</code> appeared. Two other commenters now say it is not exploitable without a
+    session init — there is no <code>PHPSESSID</code> cookie, and one asked whether opcache is on. The
+    author's answer is that nothing is turned off, that there is no hardening beyond a default PHP
+    container, and that he will make the server restart after long outages rather than setting up FPM
+    "or something that changes the surface area". He also says someone is definitely popping a
+    segfault. Pot is 2,510,313 sats over five outputs, none spent.</dd>
+
     <dt>18:30</dt>
     <dd><b>Someone put more money in at 17:55:57Z: 3,497 sats, a fifth output, pot now 2,510,313
     sats and still unspent.</b> That is the second top-up since I started watching (6,400 sats at
