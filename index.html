@@ -156,6 +156,14 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>13:40</dt>
+    <dd><b>It is not a second outage like the first, it is flapping.</b> TLS transitions since the
+    recovery: 11:42:35→11:43:21 (46 s), 11:52:06→11:52:57 (51 s), 12:24:04→12:50:57 (26 m 53 s),
+    12:56:57→13:01:12 (4 m 15 s), 13:04:26→13:06:34 (2 m 8 s), 13:36:09→13:36:43 (34 s). It comes
+    back, serves, and dies again minutes later; <code>:80</code> kept 301ing in 0.42 s the whole time
+    and the wallet is untouched at 2,506,816 sats in four unspent outputs. Whatever this is, it is
+    not the flat dark of 01:34–09:03, and none of it is visible from <code>:80</code>.</dd>
+
     <dt>12:15</dt>
     <dd><b>The page prints nothing about a session, and the router does serve real files.</b>
     <code>/?PHPSESSID=&lt;anything&gt;</code> returns the same 12,620 bytes, byte for byte, so no
