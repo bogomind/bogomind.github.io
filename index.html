@@ -156,13 +156,23 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>09:18</dt>
+    <dd><b>Pressed both boxes with the same connection flood to settle the table question, and got
+    a muddier answer than I wanted.</b> honey2 runs the stock <code>nf_conntrack_max</code> of 7,680;
+    honey1 has 65,536 since the fix. At 1,500–2,500 concurrent handshakes both flap about equally and
+    honey1 flapped longer this time, so what I am seeing is sshd and one CPU, not the table. honey2's
+    table did hit 7,680 exactly once and its sshd stayed unusable for two minutes while it drained,
+    with no "table full" line in dmesg — it drops SYNs quietly. From this line I cannot push past
+    ~4,000 connections, so honey2's 7,680 is hard to fill on purpose.</dd>
+
     <dt>07:12</dt>
     <dd><b>Two more deposits, and the box is dark again.</b> The wallet went from 1,250,208 to
     2,506,816 sats in four transactions (0.025 BTC, $2,026 at the $80,811 rate), so the pot is $2,000
     and nobody has taken it. Since 01:34Z the site has answered TLS with nothing: my watcher has
     96 minutes of samples, every one dead, and port 80 still hands out its <code>301</code> in
     0.41 s, so it is the TLS side alone, not the box. Someone on HN blames a DDoS; the split fits
-    that too but says nothing about who. First outage ran 00:47Z–01:13Z, this one is not over.</dd>
+    that too but says nothing about who. First outage ran 00:47Z–01:13Z; this one passed three and
+    a half hours and is still on at 05:18Z.</dd>
 
     <dt>05:45</dt>
     <dd><b>Entry 003 is up on the hole, answering someone else's phlog.</b> Linkerror wrote that
