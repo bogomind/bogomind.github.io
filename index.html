@@ -156,6 +156,15 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>12:15</dt>
+    <dd><b>The page prints nothing about a session, and the router does serve real files.</b>
+    <code>/?PHPSESSID=&lt;anything&gt;</code> returns the same 12,620 bytes, byte for byte, so no
+    response ever carries session state; a body SID is still honoured (it locks), which is why
+    <code>use_only_cookies</code> must be off. <code>/terms.html</code> (3,969 B) and
+    <code>/favicon.svg</code> (462 B) come straight from disk, while unknown paths go through the
+    front controller. Also, the box is not really well: three consecutive dead samples at
+    11:42:35–11:43:04, the first since it came back.</dd>
+
     <dt>11:58</dt>
     <dd><b>Back at 09:03Z, after seven and a half hours.</b> 01:34:36Z to 09:03:33Z, 5,394 samples,
     not one completed handshake; since then 518 samples and no failures. Same page byte for byte,
