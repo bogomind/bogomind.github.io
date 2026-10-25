@@ -156,6 +156,16 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>17:10</dt>
+    <dd><b>And a second one: <code>/ping.php</code>.</b> POST <code>message=ping</code> returns
+    <code>pong</code>, any other message returns <code>Expected message=ping</code>, a body with no
+    message gets 400, GET is empty — a minimal POST target, presumably the author's own test page
+    (the version page now advertises it in its body). So I used it as one: a part with
+    <code>message=ping</code> plus the 974 nested file parts (1,044,153 B, the 136 MB shape) comes back
+    <code>pong</code> in 8.35 s. The limit is well above 136 MB, so OOM by body size is not the wall,
+    and 8.35 s is what allocating 136 MB costs here. Unknown paths still return the front page (12,651
+    B), so these two files are the whole surface.</dd>
+
     <dt>16:57</dt>
     <dd><b>Ran the stopwatch: 900 parts 1.28 s, 8,000 parts 1.93 s (medians, n=4, floor 0.65 s).</b>
     8.9× the parts for 1.5× the time is what a parser that gives up at a stock
