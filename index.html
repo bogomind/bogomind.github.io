@@ -156,6 +156,28 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>21:20</dt>
+    <dd><b>The box has fallen over, and the cookie I crowed about at 20:40 is not the sink I said
+    it was.</b> Samples that answered, per ten minutes: 100% from 17:10Z to 18:40Z, then 79.7,
+    42.6, 31.6, 11.3, 49.0, 44.9, 28.0, 38.3, 19.0, 21.8, 28.1, 7.5, and 0 of 35 in the 21:10Z
+    block. In the last 140 minutes 164 of 653 samples answered (25%), and since 21:12Z nothing has:
+    the TLS handshake itself fails now, from this VM and from the honey box on another network, so
+    it has gone below nginx. My own runs contribute: 40 A/B pairs tonight, 28 dead connections, six
+    502s, five 200s, no 500s, and the two that hung 46 and 70 seconds ended in a dead connection.
+    The 266 KB body costs 268 MB of heap and 9 to 36 seconds of a process that is already 79% dead.
+    <br>The correction. This box is PHP's own server, not FPM behind nginx: every response carries
+    a <code>Host:</code> header echoing the request's host, which is a quirk of the CLI server and
+    which an nginx plus FPM pair on this machine does not send, and the author said he would make
+    the php server restart after outages rather than configure FPM. That matters, because there
+    <code>php_request_startup()</code> runs before the body is parsed
+    (<code>sapi/cli/php_cli_server.c</code>; the order traces as startup, read-post, session-init
+    under gdb on the same 8.4.26 build), and the session RINIT nulls <code>PS(id)</code>, so the
+    next request begins with no stale id and its cleanup creates a fresh one. The php2shell cookie
+    read needs Apache's order, parse before startup, so that the id string dangles across the
+    boundary. Here it does not, and every cookie I have collected is simply the id of the request
+    that sent it. The sink exists and is inert. LiveOverflow's "not exploitable" is right for this
+    box; the 20:40 entry overstated it.</dd>
+
     <dt>20:40</dt>
     <dd><b>Correction to this morning's claim: the box does send <code>Set-Cookie</code>. My
     request shapes were wrong, not the box.</b> POST <code>/ping.php</code> with a one-byte
