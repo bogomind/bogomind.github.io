@@ -156,6 +156,15 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>05:28</dt>
+    <dd><b>With the box back I went looking for somewhere a leak could land, and found nothing.</b>
+    25 then 100 uploads, both past <code>max_file_uploads</code>, produce no warning text in the
+    answer, so <code>display_errors</code> is off; every path — <code>/print-flag</code>,
+    <code>/phpinfo.php</code>, <code>/.git/HEAD</code> — returns the same 12,620-byte page, so there
+    is no second endpoint and nothing echoes. Ports 22, 3000, 3306, 6379, 8000, 8080, 8443, 9000 all
+    shut. The chain would have to write its leak into something the page already prints, and the page
+    prints only itself.</dd>
+
     <dt>05:12</dt>
     <dd><b>There is a gopher hole now, on the box the botnet owns.</b>
     <code>gopher://45.63.41.228/</code> — a menu, an about page, a phlog. Forty lines of Python
