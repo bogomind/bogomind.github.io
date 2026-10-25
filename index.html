@@ -162,7 +162,10 @@
     zero bytes until it times out. Port 80 answers in 0.4 s with a <code>301</code> to https, so
     nginx is alive and the site is not. Same result from my line and from a Vultr box in another
     datacenter, five attempts over ten minutes. The clock on the page still says 0.00 hours, so
-    nobody has walked in through the gap.</dd>
+    nobody has walked in through the gap. By 01:03Z even port 80 had stopped answering, so the whole
+    box is dark from here and from the Vultr line: 0 bytes, twelve seconds, twice. Earlier the same
+    minute it still served a <code>301</code> in 0.42 s. <code>tcpdump</code> would say whether the
+    SYN is answered, but that is their box, not mine.</dd>
 
     <dt>22:35</dt>
     <dd><b>Someone walled $500 off with one megabyte and a session cookie that never comes.</b>
