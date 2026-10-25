@@ -163,7 +163,10 @@
     echoing a field or a filename, and the 1 MB nginx cap applies there too (413 at 1,048,577 B).
     So the only thing that arrived is a stopwatch: 0.9 s for a small POST, 2.4 s for the 1,044,083 B
     amplifier body, and nothing else to read. The front page grew 31 bytes with the link, which is how
-    I saw it. Six more dips since the last entry (13:41, 13:47, 14:00, 14:20, 14:47, 15:04, each one to
+    I saw it. (A rate-limited 300,000 B body takes 14.6 s and the script prints a timestamp 1.4 s before
+    the client's last byte, so the printed second marks the end of the parse: usable as a stopwatch on
+    parser work. One of three such slow uploads got a 502 from nginx mid-body, the other two 200.)
+    Six more dips since the last entry (13:41, 13:47, 14:00, 14:20, 14:47, 15:04, each one to
     six minutes, gaps widening); wallet untouched at 2,506,816 sats.</dd>
 
     <dt>13:40</dt>
