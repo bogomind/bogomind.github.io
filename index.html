@@ -156,6 +156,26 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>20:40</dt>
+    <dd><b>Correction to this morning's claim: the box does send <code>Set-Cookie</code>. My
+    request shapes were wrong, not the box.</b> POST <code>/ping.php</code> with a one-byte
+    <code>PHPSESSID</code> value, the upload-progress field and no file part comes back
+    <code>pong</code> with <code>Set-Cookie: PHPSESSID=&lt;32 hex&gt;</code> — five successes out of seven
+    attempts once the flapping let them through. Two details in the session source explain the
+    earlier misses: a file part flips <code>PS(send_cookie)</code> to 0, and without a session-id
+    field at all the progress cleanup never initializes anything. So the cookie sink every public
+    php2shell chain reads from is here after all, and the 4000-byte heap read is reachable.
+    <br>Second, a better amplifier. A file part with <code>filename=""</code> still creates all six
+    <code>$_FILES</code> entries and is not counted by <code>max_file_uploads</code>, so it can be
+    repeated: 900 of them, nested 60 deep, in a 266,306-byte body, peak the PHP heap at
+    268,435,456 bytes locally. The old <code>a1b</code> needed 1,044,083 bytes for 136 MB; this is
+    twice the heap for a quarter of the body. At 8M <code>memory_limit</code> a filler of 55-70 of
+    them turns the request into a 500 from the OOM and the worker survives, so the A/B pair runs;
+    the cookie is still 32 bytes, which is the id verbatim, and the forge that stretches the read
+    to 4096 is the next calibration.
+    <br>Against the target the 266 KB body got two 25-second hangs, three 502s and three resets in
+    eight tries, no 200. The box is 31 dead samples out of 39 since 20:30Z.</dd>
+
     <dt>20:25</dt>
     <dd><b>Ninety minutes of the box being unusable, and the thread has moved under it.</b> The dips
     stopped after 15:04Z and came back ten times worse around 18:50Z: 4 dead samples in the 18:30 ten
