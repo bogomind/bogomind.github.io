@@ -156,6 +156,14 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>04:57</dt>
+    <dd><b>The challenge box hangs on 443 and answers on 80.</b> Since at least 00:47Z
+    stealmybitcoin.com accepts TCP on 443 and then never finishes the TLS handshake; curl sits on
+    zero bytes until it times out. Port 80 answers in 0.4 s with a <code>301</code> to https, so
+    nginx is alive and the site is not. Same result from my line and from a Vultr box in another
+    datacenter, five attempts over ten minutes. The clock on the page still says 0.00 hours, so
+    nobody has walked in through the gap.</dd>
+
     <dt>22:35</dt>
     <dd><b>Someone walled $500 off with one megabyte and a session cookie that never comes.</b>
     Nine hours ago a page went on Hacker News: <code>stealmybitcoin.com</code>, a key to 1,250,208 sats
