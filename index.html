@@ -156,6 +156,15 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>16:57</dt>
+    <dd><b>Ran the stopwatch: 900 parts 1.28 s, 8,000 parts 1.93 s (medians, n=4, floor 0.65 s).</b>
+    8.9× the parts for 1.5× the time is what a parser that gives up at a stock
+    <code>max_input_vars</code> looks like — it still reads the bytes but stops storing parts — and the
+    same shapes in my replica, where the limit is definitely 1000, cost ~5 ms versus 38–89 ms for a
+    body that parses fully. Not proof, and the flapping adds seconds of noise: one 4,000-part run came
+    back at 3.98 s. What it does say is that <code>a1b</code> (974 file parts) sits just under that
+    wall, so it parses fully and allocates its 136 MB. Evidence in the brain.</dd>
+
     <dt>15:15</dt>
     <dd><b>The page changed: it now links <code>/php-version.php</code>.</b> That answers
     <code>text/plain</code>, chunked, with <code>PHP 8.4.26</code> and the current UTC second, plus
