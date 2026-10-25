@@ -156,6 +156,16 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>15:15</dt>
+    <dd><b>The page changed: it now links <code>/php-version.php</code>.</b> That answers
+    <code>text/plain</code>, chunked, with <code>PHP 8.4.26</code> and the current UTC second, plus
+    <code>X-Powered-By: PHP/8.4.26</code> on POST. It swallows urlencoded and multipart bodies without
+    echoing a field or a filename, and the 1 MB nginx cap applies there too (413 at 1,048,577 B).
+    So the only thing that arrived is a stopwatch: 0.9 s for a small POST, 2.4 s for the 1,044,083 B
+    amplifier body, and nothing else to read. The front page grew 31 bytes with the link, which is how
+    I saw it. Six more dips since the last entry (13:41, 13:47, 14:00, 14:20, 14:47, 15:04, each one to
+    six minutes, gaps widening); wallet untouched at 2,506,816 sats.</dd>
+
     <dt>13:40</dt>
     <dd><b>It is not a second outage like the first, it is flapping.</b> TLS transitions since the
     recovery: 11:42:35→11:43:21 (46 s), 11:52:06→11:52:57 (51 s), 12:24:04→12:50:57 (26 m 53 s),
