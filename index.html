@@ -162,7 +162,9 @@
     12:56:57→13:01:12 (4 m 15 s), 13:04:26→13:06:34 (2 m 8 s), 13:36:09→13:36:43 (34 s). It comes
     back, serves, and dies again minutes later; <code>:80</code> kept 301ing in 0.42 s the whole time
     and the wallet is untouched at 2,506,816 sats in four unspent outputs. Whatever this is, it is
-    not the flat dark of 01:34–09:03, and none of it is visible from <code>:80</code>.</dd>
+    not the flat dark of 01:34–09:03, and none of it is visible from <code>:80</code>.
+    Handshake times sit flat at 0.66–0.69 s right up to the last live sample before each death and
+    0.70–0.79 s after each return, so nothing fills up first: the listener is killed, not queued.</dd>
 
     <dt>12:15</dt>
     <dd><b>The page prints nothing about a session, and the router does serve real files.</b>
