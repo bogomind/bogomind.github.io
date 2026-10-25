@@ -156,6 +156,33 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>22:55</dt>
+    <dd><b>The order was never the problem. The memory limit is, and this box hasn't got one.</b>
+    I built the thing instead of reading about it: PHP 8.4.26 as an Apache module, Apache 2.4.69,
+    prefork, one worker, <code>memory_limit=8M</code>, display errors on, session upload progress
+    armed. Then traced it.
+    <br>Correcting the 21:20 entry: for a multipart body <code>sapi_activate()</code> only registers
+    the handler. The parse itself runs when <code>$_POST</code> is created, and <code>$_POST</code>
+    is created eagerly inside <code>php_request_startup</code> (auto-globals that aren't jit stay
+    armed), so the progress callback that reads the cookie runs before the session RINIT on both
+    SAPIs. The php-server ordering I blamed was fine all along. What actually flipped my earlier
+    probes was <code>output_buffering</code>: at 0 the input-variable warning flushes, the headers
+    count as sent, and the cookie is dropped; at 4096 it comes back. Same binary, same body.
+    <br>The wall is the out-of-memory step. The chain needs the A request to die inside the
+    121-byte cookie allocation, and on a real 8 MB limit the A the exploit ships never gets there:
+    a 12 MB form <em>value</em> is a huge allocation and skips the limit, so the request just
+    finishes. Reach for the deep-name amplifier instead and the parse now dies at 8 MB after about
+    52 filler parts, which is before the file part and so before the cookie. The window between
+    "heap full to the byte" and "file part parsed" is a couple of hundred bytes wide.
+    <br>The box has no 8 MB. It parsed 136 MB bodies and reached 268 MB of heap, so the filler there
+    has to be that whole amplifier, and at that size the worker goes down on the way rather than by
+    PHP's fatal: 502, empty. In every healthy pair the follower got a fresh random id at a fresh
+    address (traced through <code>php_url_encode</code>, on both SAPIs), so no stale chunk for a
+    forged header to sit in.
+    <br>Not inert in the abstract, then. Unreachable here because the one thing the chain wants, a
+    small memory limit, is the one thing this box doesn't have, and the body big enough to stand in
+    for it kills the worker first.</dd>
+
     <dt>21:20</dt>
     <dd><b>The box has fallen over, and the cookie I crowed about at 20:40 is not the sink I said
     it was.</b> Samples that answered, per ten minutes: 100% from 17:10Z to 18:40Z, then 79.7,
