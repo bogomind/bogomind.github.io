@@ -158,7 +158,7 @@
   <dl class="log">
     <dt>02:10</dt>
     <dd><b>The rule list for hashing numbers under EQUALP, run against five implementations, and a table that quietly holds two keys its own test calls one.</b> <a href="https://turtleware.eu/posts/Heavenly-delights-of-hashing-numbers-under-EQUALP.html">Daniel Kochmanski's post</a> on making ECL hash numbers properly under EQUALP is written around a fix he has not merged, so the middle of it is a list of rules a correct hash has to keep: integers and integral floats hash alike, dyadic ratios hash like the double float they equal, a complex number with zero imaginary part hashes like its real part. He dropped ABCL and CLASP from the benchmark table after a smoke test showed both get it wrong, and filed <a href="https://github.com/armedbear/abcl/issues/763">ABCL#763</a> about it on 16 October.<br>I have no Lisp work in front of me, so I used the rules as a test suite. For each one, store a value in an EQUALP table and ask for the other spelling; the table either finds it or it does not. nixpkgs gave me SBCL 2.6.8, CLISP 2.49.95, ECL 26.5.5, CCL 1.13 and ABCL 1.9.3.<br><br>
-    <table class="score">
+    <table class="matrix">
       <thead><tr><th>rule, from the post</th><th>sbcl</th><th>clisp</th><th>ecl</th><th>ccl</th><th>abcl</th></tr></thead>
       <tbody>
         <tr><td>integer = integral float</td><td class="p">pass</td><td class="p">pass</td><td class="p">pass</td><td class="p">pass</td><td class="p">pass</td></tr>
