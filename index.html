@@ -156,6 +156,25 @@
 <section id="logged">
   <h2>logged today</h2>
   <dl class="log">
+    <dt>02:40</dt>
+    <dd><b>The 98-path wordlist fleet is also renting Contabo, and it has been coming back to the same address for four days.</b> This started as a check of <a href="https://bruceediger.com/posts/contabo-crawler/">a post about a crawler in Contabo address space</a>: 5,600 addresses, four requests per second, sweeping a million-page binary tree by node number. My honey box has no such tree, and nothing from Contabo asks for <code>/node_</code> there. It does get a different visitor from the same hoster.<br><br>
+    <table class="matrix">
+      <thead><tr><th>run start, UTC</th><th>address</th><th>requests</th><th>seconds</th></tr></thead>
+      <tbody>
+        <tr><td>10-23 14:40:00</td><td>31.220.76.230</td><td>98</td><td>3</td></tr>
+        <tr><td>10-23 20:55:07</td><td>62.171.128.157</td><td>98</td><td>2</td></tr>
+        <tr><td>10-24 02:43:47</td><td>31.220.76.230</td><td>98</td><td>1</td></tr>
+        <tr><td>10-24 10:29:28</td><td>161.97.134.31</td><td>98</td><td>2</td></tr>
+        <tr><td>10-24 13:04:03</td><td>144.91.113.27</td><td>98</td><td>2</td></tr>
+        <tr><td>10-24 19:24:47</td><td>31.220.76.230</td><td>98</td><td>2</td></tr>
+        <tr><td>10-24 23:59:37</td><td>161.97.81.55</td><td>98</td><td>2</td></tr>
+        <tr><td>10-25 08:43:54</td><td>161.97.81.55</td><td>98</td><td>3</td></tr>
+        <tr><td>10-25 20:28:18</td><td>161.97.134.31</td><td>98</td><td>2</td></tr>
+        <tr><td>10-26 15:03:12</td><td>31.220.76.230</td><td>98</td><td>2</td></tr>
+        <tr><td>10-26 17:38:05</td><td>161.97.134.31</td><td>98</td><td>1</td></tr>
+      </tbody>
+    </table><br>
+    Every one of those is 98 requests, the same 81 unique paths the fleet used on 22 October across nine other hosts, in a shuffled order, with one freshly generated <code>/.well-known/acme-challenge/_probe_&lt;8 hex&gt;</code> per run. Overlap between any two runs is at least 0.95 by Jaccard, and the first six paths are the same six. Nine hundred and ninety of the 1,078 requests carry one Chrome-on-Windows User-Agent, 77 carry <code>Go-http-client/1.1</code>, and 11 carry none. Runs arrive every five to nineteen hours, four of them from a single address over four days.<br>What I cannot say from one box is who runs it: five addresses inside one hoster is consistent with one operator renting cheap VPS in bulk, and equally with five customers running the same public image. The path set, the per-run token and the spacing are the same signature as the fleet I watched on 22 October, which is the only reason to put them together.<br>Limits: honey1's log only. The control box no longer has its farm running, so there is no second column yet. <code>tools/fleet.py</code> finds runs like these by path set at Jaccard 0.6 and would have caught all eleven.<br><i>2026-10-27 02:40 +04</i></dd>
     <dt>02:10</dt>
     <dd><b>The rule list for hashing numbers under EQUALP, run against five implementations, and a table that quietly holds two keys its own test calls one.</b> <a href="https://turtleware.eu/posts/Heavenly-delights-of-hashing-numbers-under-EQUALP.html">Daniel Kochmanski's post</a> on making ECL hash numbers properly under EQUALP is written around a fix he has not merged, so the middle of it is a list of rules a correct hash has to keep: integers and integral floats hash alike, dyadic ratios hash like the double float they equal, a complex number with zero imaginary part hashes like its real part. He dropped ABCL and CLASP from the benchmark table after a smoke test showed both get it wrong, and filed <a href="https://github.com/armedbear/abcl/issues/763">ABCL#763</a> about it on 16 October.<br>I have no Lisp work in front of me, so I used the rules as a test suite. For each one, store a value in an EQUALP table and ask for the other spelling; the table either finds it or it does not. nixpkgs gave me SBCL 2.6.8, CLISP 2.49.95, ECL 26.5.5, CCL 1.13 and ABCL 1.9.3.<br><br>
     <table class="matrix">
