@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>tells — find the AI in a draft</title>
+<style>
+  :root { --ink:#1b1a17; --paper:#f6f3ec; --line:#c8c0b2; --red:#a3341f; --amber:#8a5a10; --green:#2f5d3a; }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.55 Georgia,"Times New Roman",serif; }
+  header, main, footer { max-width:54rem; margin:0 auto; padding:0 1.2rem }
+  header { padding-top:2rem }
+  h1 { font-size:1.7rem; margin:0 0 .4rem; letter-spacing:-.01em }
+  .sub { margin:0 0 1rem; color:#5a5449; font-size:.95rem }
+  textarea { width:100%; min-height:16rem; padding:.8rem; border:1px solid var(--line); background:#fffdf7;
+             font:15px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace; resize:vertical; }
+  .bar { display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; margin:.6rem 0 1rem }
+  button { font:inherit; padding:.45rem .9rem; border:1px solid var(--ink); background:var(--ink); color:var(--paper); cursor:pointer }
+  button.ghost { background:transparent; color:var(--ink) }
+  button:disabled { opacity:.45; cursor:default }
+  .stats { display:flex; gap:1.2rem; flex-wrap:wrap; align-items:baseline; border-top:1px solid var(--line);
+           border-bottom:1px solid var(--line); padding:.6rem 0; margin-bottom:1rem }
+  .verdict { font-size:1.15rem }
+  .v-bad { color:var(--red) } .v-mid { color:var(--amber) } .v-ok { color:var(--green) }
+  .count { color:#5a5449; font-size:.9rem }
+  .cols { display:grid; grid-template-columns:1fr; gap:1.4rem }
+  @media (min-width:56rem) { .cols { grid-template-columns:1fr 1fr } }
+  .panel h2 { font-size:.85rem; text-transform:uppercase; letter-spacing:.08em; margin:0 0 .5rem; color:#5a5449 }
+  .marked { white-space:pre-wrap; font:15px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace; background:#fffdf7;
+            border:1px solid var(--line); padding:.8rem; max-height:34rem; overflow:auto }
+  mark { background:#ffe9a8; padding:0 1px; border-radius:2px }
+  mark.h2 { background:#ffd0c2 } mark.h3 { background:#ffe9a8 } mark.h1 { background:#f6d6d0 }
+  ol.findings { padding-left:1.2rem; margin:0 }
+  ol.findings li { margin:0 0 .55rem }
+  .rule { font-weight:bold }
+  .why { color:#5a5449; font-size:.9rem }
+  .n { color:var(--red); font-variant-numeric:tabular-nums }
+  footer { padding:1.6rem 1.2rem 3rem; color:#5a5449; font-size:.9rem; border-top:1px solid var(--line); margin-top:2rem }
+  a { color:inherit }
+  .empty { color:#5a5449; font-style:italic }
+</style>
+</head>
+<body>
+<header>
+  <h1>tells</h1>
+  <p class="sub">Paste a draft. It marks the habits that make text read as machine-written, strongest first.
+  Nothing is uploaded: the whole checker is this page.</p>
+</header>
+
+<main>
+  <label for="draft" class="sub">your text</label>
+  <textarea id="draft" spellcheck="true" placeholder="Paste text here. The checker looks for staging, forced rhythm, inflation, decorative formatting, chat leftovers."></textarea>
+  <div class="bar">
+    <button id="go">check</button>
+    <button id="sample" class="ghost">load a bad example</button>
+    <button id="clear" class="ghost">clear</button>
+  </div>
+
+  <div class="stats" aria-live="polite">
+    <span id="verdict" class="verdict">—</span>
+    <span id="count" class="count"></span>
+    <span id="words" class="count"></span>
+  </div>
+
+  <div class="cols">
+    <section class="panel">
+      <h2>the text, marked</h2>
+      <div id="marked" class="marked empty">nothing checked yet</div>
+    </section>
+    <section class="panel">
+      <h2>what it found</h2>
+      <ol id="findings" class="findings"></ol>
+    </section>
+  </div>
+</main>
+
+<footer>
+  Rule list and reasoning: Wikipedia's <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">Signs of AI writing</a>.
+  A hit is not a defect: fix what a careful writer would not do on purpose. Curly quotes and em dashes are fine if the
+  rest is straight and the dashes are sparse; a technical word like “robust” may be the right word. Weights are a guess,
+  the list is the point.
+</footer>
+
+<script>
+const RULES = [
+ { id:"notx", name:"not X, but Y", w:3, re:/\b(?:not|isn'?t|aren'?t|wasn'?t)\s+(?:just|merely|only|simply|about)\b[^.!?\n]{0,80}?\b(?:but|it'?s|it is|rather)\b/gi,
+   why:"The contrast is a staging move: it adds emphasis, not a fact. Say the thing once." },
+ { id:"notonly", name:"not only … but also", w:2, re:/\bnot only\b[^.!?\n]{0,90}?\bbut(?: also)?\b/gi,
+   why:"Same staging in a longer shape. Usually one half can go." },
+ { id:"closer", name:"one-line closer", w:2, re:null,
+   why:"A short final sentence that repeats the paragraph's point instead of adding to it." },
+ { id:"stock", name:"stock AI word", w:2, re:/\b(?:delve(?:s|d|ing)?|crucial(?:ly)?|pivotal|testament to|tapestry|intricate|intricacies|interplay|meticulous(?:ly)?|vibrant|vibrant|underscores?|underscored|showcas(?:e|es|ed|ing)|garner(?:s|ed|ing)?|bolster(?:s|ed|ing)?|enhance(?:s|d|ing)?|utiliz(?:e|es|ed|ing)|myriad|plethora|realm|seamless(?:ly)?|leverag(?:e|es|ed|ing)|harness(?:es|ed|ing)?|quietly|actually|additionally)\b/gi,
+   why:"Models overuse these; people use them rarely and unevenly." },
+ { id:"signif", name:"inflated significance", w:2, re:/\b(?:stands? as|serves? as (?:a|an)|plays? a (?:key|crucial|vital|pivotal) role|marking a (?:pivotal|crucial|key|significant)|setting the stage|a step in the right direction|the future looks bright|only time will tell|reflects? a broader|enduring legacy|indelible mark)\b/gi,
+   why:"An ordinary detail is told to matter. Keep the detail, drop the significance." },
+ { id:"dash", name:"em dash", w:1, re:/[—–]/g,
+   why:"Fine in moderation. Above about one per 100 words it becomes the only connector the writer has." },
+ { id:"triad", name:"forced triad", w:1, re:/\b\w{3,},\s+\w{3,},?\s+and\s+\w{3,}\b/gi,
+   why:"Three items by rule. Two or four is often truer." },
+ { id:"hyphen", name:"hyphenated compound", w:1, re:/\b(?:self|data|well|state|long|high|low|real|full|end|user|future|next|day|season|task)-[a-z]{3,}\b/gi,
+   why:"Models build hyphenated pairs where a plainer phrase would do." },
+ { id:"hedge", name:"stacked hedge", w:2, re:/\b(?:it(?:'s| is) (?:worth|important) noting|it should be noted|when it comes to|in the (?:ever-)?evolving|in today'?s|at the end of the day|that said,)/gi,
+   why:"Throat-clearing before the point." },
+ { id:"chat", name:"chatbot residue", w:3, re:/\b(?:i hope this helps|let me know|great question|certainly!|of course!|you'?re absolutely right|would you like|shall i|here'?s a breakdown|let'?s dive in|let'?s explore)\b/gi,
+   why:"Whatever the chat wrapper left behind." },
+ { id:"summary", name:"summary wrapper", w:2, re:/\b(?:in summary|in conclusion|overall,|to sum up|final thoughts|key takeaways)\b/gi,
+   why:"If the piece already landed, the summary restates instead of adding." },
+ { id:"bold", name:"bold label line", w:2, re:/^\s*\*\*[^*\n]{2,60}\*\*/gm,
+   why:"Every item bolded and labelled, as a default rather than a need." },
+ { id:"curly", name:"curly quote", w:1, re:/[“”‘’]/g,
+   why:"Only a tell against straight quotes. If the whole document is curly, keep it." },
+ { id:"disclaim", name:"knowledge-limit hedge", w:2, re:/\b(?:as of (?:my|the latest)|up to my last|based on available information|not publicly available|not widely documented|while specific details are limited|it is believed that)\b/gi,
+   why:"The model saying where its training data ran out." },
+ { id:"conn", name:"connective opener", w:2, re:/(?:^|(?<=[.!?]\s))\s*(?:Moreover|Furthermore|Additionally|Ultimately|Notably|Indeed|Consequently|Nonetheless|Importantly|Crucially)\b,?/g,
+   why:"A conjunction in front of the sentence has to carry emphasis by itself. Often it can go." },
+ { id:"dive", name:"deep dive / dive into", w:2, re:/\b(?:deep dive|dive into|delve into)\b/gi,
+   why:"Almost never the word a person reaches for first." },
+ { id:"realm", name:"landscape/realm", w:1, re:/\b(?:the \w+ landscape|the realm of|in the world of)\b/gi,
+   why:"Abstract scenery standing in for a concrete subject." },
+ { id:"sales", name:"sales language", w:2, re:/\b(?:game-?chang(?:er|ing)|cutting-edge|state-of-the-art|revolutionar(?:y|ize)|unlock(?:s|ing|ed)?|empower(?:s|ing|ed)?|supercharg(?:e|es|ed|ing)|elevate|transformative)\b/gi,
+   why:"Marketing words in a text that is not selling anything." },
+ { id:"avoidis", name:"avoiding “is”", w:1, re:/\b(?:serves? as|functions? as|acts? as|represents? a|constitutes? a|stands? as)\b/gi,
+   why:"“serves as” where “is” was available." },
+ { id:"open", name:"repeated sentence opening", w:1, re:null,
+   why:"Consecutive sentences starting the same way, usually all with a subject-first pattern." },
+ { id:"uniform", name:"uniform sentence length", w:2, re:null,
+   why:"Real writing alternates short and long. Even lengths read as a rhythm by rule." }
+];
+
+const SAMPLE = `Great question! In today's rapidly evolving digital landscape, code review has become a crucial part of the software development lifecycle. It's not just about catching bugs — it's about fostering a culture of quality.
+
+Moreover, a robust review process plays a key role in knowledge sharing, setting the stage for team growth. Reviewers delve into the code, meticulously examining each line, and their feedback showcases the team's commitment. This is a testament to the power of collaboration.
+
+**Clear expectations:** Teams should define what a review covers.
+**Fast turnaround:** Reviews should happen within a day.
+**Kind tone:** Feedback should assume good intent.
+
+Ultimately, code review is about people, not code. I hope this helps! Let me know if you'd like me to expand.`;
+
+const $ = (id) => document.getElementById(id);
+
+function wordCount(t){ return (t.match(/[A-Za-z0-9'’-]+/g) || []).length; }
+
+function sentenceLengths(t){
+  return t.split(/(?<=[.!?])\s+/).map(s => wordCount(s)).filter(n => n > 0);
+}
+
+function structural(t){
+  const hits = [];
+  // one-line closers: last sentence of a paragraph, short and pointing back
+  let off = 0;
+  for (const para of t.split(/\n{2,}/)) {
+    const m = para.match(/(?:^|[.!?]\s+)((?:That|It|This|There)[^.!?]{0,40}[.!?])\s*$/);
+    if (m && wordCount(m[1]) <= 8) {
+      const start = off + para.lastIndexOf(m[1]);
+      hits.push({ id:"closer", start, end: start + m[1].length });
+    }
+    off += para.length + 2;
+  }
+  // repeated openings
+  const sents = [...t.matchAll(/(?:^|(?<=[.!?]\s))([A-Z][a-z]+)\b/g)];
+  for (let i = 1; i < sents.length; i++) {
+    if (sents[i][1].toLowerCase() === sents[i-1][1].toLowerCase() && sents[i].index > sents[i-1].index) {
+      hits.push({ id:"open", start: sents[i].index, end: sents[i].index + sents[i][1].length });
+    }
+  }
+  // uniform sentence length
+  const lens = sentenceLengths(t);
+  if (lens.length >= 5) {
+    const mean = lens.reduce((a,b) => a+b, 0) / lens.length;
+    const sd = Math.sqrt(lens.reduce((a,b) => a + (b-mean)**2, 0) / lens.length);
+    if (sd < 3.2) hits.push({ id:"uniform", start: 0, end: 0 });
+  }
+  return hits;
+}
+
+function check(){
+  const text = $("draft").value;
+  const words = wordCount(text);
+  $("words").textContent = words ? words + " words" : "";
+  const findings = [];
+  let hits = [];
+
+  for (const r of RULES) {
+    if (r.re) {
+      r.re.lastIndex = 0;
+      for (const m of text.matchAll(r.re)) {
+        hits.push({ id:r.id, start:m.index, end:m.index + m[0].length });
+        if (hits.length > 4000) break;
+      }
+    }
+  }
+  hits = hits.concat(structural(text));
+
+  for (const r of RULES) {
+    const own = hits.filter(h => h.id === r.id);
+    if (!own.length) continue;
+    let weight = r.w * own.length;
+    if (r.id === "dash" && words) {
+      const per100 = own.length / words * 100;
+      weight = per100 > 2.2 ? 3 : per100 > 1.2 ? 2 : own.length > 2 ? 1 : 0;
+      if (!weight) continue;
+    }
+    findings.push({ r, n: own.length, weight });
+  }
+  findings.sort((a,b) => b.weight - a.weight || b.n - a.n);
+
+  // marked text
+  const sorted = hits.slice().sort((a,b) => a.start - b.start || b.end - a.end);
+  let out = "", at = 0;
+  for (const h of sorted) {
+    if (h.start < at || h.end <= h.start) continue;
+    const r = RULES.find(x => x.id === h.id);
+    out += esc(text.slice(at, h.start)) + `<mark class="h${r.w}">` + esc(text.slice(h.start, h.end)) + "</mark>";
+    at = h.end;
+  }
+  out += esc(text.slice(at));
+  $("marked").innerHTML = words ? out : '<span class="empty">nothing checked yet</span>';
+  $("marked").classList.toggle("empty", !words);
+
+  // findings list
+  $("findings").innerHTML = findings.map(f =>
+    `<li><span class="rule">${esc(f.r.name)}</span> <span class="n">×${f.n}</span><br><span class="why">${esc(f.r.why)}</span></li>`
+  ).join("") || '<li class="empty">nothing found. either it is clean or it is short.</li>';
+
+  const score = words ? findings.reduce((a,f) => a + f.weight, 0) / Math.max(1, words/100) : 0;
+  const v = $("verdict");
+  if (!words) { v.textContent = "—"; v.className = "verdict"; }
+  else if (score >= 9) { v.textContent = "reads machine-written"; v.className = "verdict v-bad"; }
+  else if (score >= 4) { v.textContent = "a few habits"; v.className = "verdict v-mid"; }
+  else { v.textContent = "mostly clean"; v.className = "verdict v-ok"; }
+  $("count").textContent = findings.length
+    ? `${findings.length} rule${findings.length === 1 ? "" : "s"}, first fix: ${findings[0].r.name}`
+    : "";
+}
+
+function esc(s){ return s.replace(/[&<>]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;" }[c])); }
+
+$("go").onclick = check;
+$("sample").onclick = () => { $("draft").value = SAMPLE; check(); };
+$("clear").onclick = () => { $("draft").value = ""; check(); };
+$("draft").addEventListener("input", () => { if ($("draft").value.length > 60) check(); else if (!$("draft").value) check(); });
+</script>
+</body>
+</html>
