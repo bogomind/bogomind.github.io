@@ -1,0 +1,121 @@
+{
+ "n": 5,
+ "answer": "水",
+ "simp": "水",
+ "trad": "水",
+ "pinyin": "shuǐ",
+ "accept": [
+  "水"
+ ],
+ "forms": [
+  {
+   "glyph": "水-oracle.svg",
+   "stage": "甲骨文",
+   "era": "商"
+  },
+  {
+   "glyph": "水-bronze.svg",
+   "stage": "金文",
+   "era": "西周"
+  },
+  {
+   "glyph": "水-seal.svg",
+   "stage": "小篆",
+   "era": "秦"
+  },
+  {
+   "glyph": "水-slip.svg",
+   "stage": "秦简",
+   "era": "秦"
+  }
+ ],
+ "hints": [
+  "它总往低处流。",
+  "常用词：喝__、__果、口__。"
+ ],
+ "near": {
+  "河": "方向对了！答案比它更基本。",
+  "川": "方向对了！答案比它更基本。",
+  "江": "方向对了！答案比它更基本。"
+ },
+ "story": [
+  {
+   "text": "中间弯弯的一笔是水流，两边的点是溅起来的水滴。",
+   "ev": [
+    [
+     "cuhk",
+     "以中心一筆作水流，其旁之點作水滴"
+    ]
+   ]
+  },
+  {
+   "text": "水滴画几个都行，多几点、少几点，商朝人不在乎。",
+   "ev": [
+    [
+     "cuhk",
+     "「水」字甲骨文繁省不一"
+    ],
+    [
+     "cuhk",
+     "水滴數目多寡不一"
+    ]
+   ]
+  },
+  {
+   "text": "它要是挤到别的字左边，就缩成了三点水“氵”，也就是“河”“湖”“海”左边那三点。",
+   "ev": [
+    [
+     "wikt",
+     "Next to a character, it is compressed and stylized into [[氵]]"
+    ]
+   ]
+  },
+  {
+   "text": "《说文解字》说：“水，准也。”准，就是平。后来这话真成了一个词：“水准”。最早是量平不平的工具，后来才指一个人、一件事到了什么程度。",
+   "ev": [
+    [
+     "shuowen",
+     "水準也"
+    ],
+    [
+     "cuhk",
+     "「水，準也」，本屬聲訓，後「水準」變作複合詞，先解作測定水平的器具，後引申指某一方面達到的程度"
+    ],
+    [
+     "cuhk",
+     "《釋名》亦云：「水，準也。準，平物也。」"
+    ]
+   ]
+  },
+  {
+   "text": "商朝人担心的“水”，常常是发大水。卜辞里就问过：“其有大水？”",
+   "ev": [
+    [
+     "cuhk",
+     "甲骨文「水」用作本義，指水災。如《合集》10150：「其㞢(有)大水」"
+    ]
+   ]
+  }
+ ],
+ "sources": {
+  "cuhk": {
+   "title": "漢語多功能字庫「水」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%B0%B4",
+   "cache": "cuhk/水.txt"
+  },
+  "shuowen": {
+   "title": "《說文解字》「水」",
+   "by": "許慎（東漢）",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%B0%B4",
+   "note": "原文據漢語多功能字庫所錄",
+   "cache": "cuhk/水.txt"
+  },
+  "wikt": {
+   "title": "Wiktionary「水」Glyph origin",
+   "by": "Wiktionary 編者（CC BY-SA 4.0）",
+   "url": "https://en.wiktionary.org/wiki/%E6%B0%B4#Chinese",
+   "cache": "wikt/水.txt"
+  }
+ }
+}

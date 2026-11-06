@@ -1,0 +1,134 @@
+{
+ "n": 9,
+ "answer": "羊",
+ "simp": "羊",
+ "trad": "羊",
+ "pinyin": "yáng",
+ "accept": [
+  "羊"
+ ],
+ "forms": [
+  {
+   "glyph": "羊-oracle.svg",
+   "stage": "甲骨文",
+   "era": "商"
+  },
+  {
+   "glyph": "羊-bronze.svg",
+   "stage": "金文",
+   "era": "西周"
+  },
+  {
+   "glyph": "羊-seal.svg",
+   "stage": "小篆",
+   "era": "秦"
+  }
+ ],
+ "hints": [
+  "一种动物，身上的毛能织毛衣。",
+  "它咩咩地叫。",
+  "常用词：__肉串、山__、__毛。"
+ ],
+ "near": {
+  "牛": "也有一对角，不过不是它。"
+ },
+ "story": [
+  {
+   "text": "一个羊头：两只角弯弯的。",
+   "ev": [
+    [
+     "cuhk",
+     "「羊」字甲金文均象羊頭上有一對彎曲的羊角"
+    ]
+   ]
+  },
+  {
+   "text": "《说文解字》还引了孔子一句话：牛、羊这两个字，是照着样子画出来的。",
+   "ev": [
+    [
+     "shuowen",
+     "孔子曰：牛羊之字，以形舉也"
+    ]
+   ]
+  },
+  {
+   "text": "古人觉得羊是吉祥的东西，“羊”和“祥”读音也近。所以在铜器的铭文里，“羊”可以直接当“祥”用，“不羊”就是不吉祥。",
+   "ev": [
+    [
+     "cuhk",
+     "古人認為「羊」是吉祥的動物"
+    ],
+    [
+     "cuhk",
+     "金文和戰國竹簡「羊」字又可通讀為「祥」"
+    ],
+    [
+     "cuhk",
+     "不羊(祥)莫大焉"
+    ],
+    [
+     "cuhk",
+     "「羊」與「祥」意思和讀音都很密"
+    ]
+   ]
+  },
+  {
+   "text": "很多好字里竟然都有一只羊：美、善、义（義）。",
+   "ev": [
+    [
+     "cuhk",
+     "從「羊」的漢字大都帶有美善吉祥的意義"
+    ],
+    [
+     "cuhk",
+     "譱、義、羑、美字皆从羊"
+    ]
+   ]
+  },
+  {
+   "text": "“美”字上面也是羊，可它是怎么来的，说法不一。《说文解字》的解释是，美就是好吃：羊是拿来吃的，羊大了就肥美。可甲骨文里的“美”，像一个人头上戴着羽毛、羊角一类的装饰。照这个看法，美是打扮得好看。",
+   "ev": [
+    [
+     "shuowen-美",
+     "美甘也。从羊从大。羊在六畜，主給膳也"
+    ],
+    [
+     "shuowen-美",
+     "羊大則美"
+    ],
+    [
+     "cuhk-美",
+     "象人頭戴羽毛、羊角之類裝飾物，表示漂亮、好看"
+    ]
+   ]
+  }
+ ],
+ "sources": {
+  "cuhk": {
+   "title": "漢語多功能字庫「羊」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%BE%8A",
+   "cache": "cuhk/羊.txt"
+  },
+  "shuowen": {
+   "title": "《說文解字》「羊」",
+   "by": "許慎（東漢）",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%BE%8A",
+   "note": "原文據漢語多功能字庫所錄",
+   "cache": "cuhk/羊.txt"
+  },
+  "shuowen-美": {
+   "title": "《說文解字》「美」",
+   "by": "許慎（東漢）",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%BE%8E",
+   "note": "原文據漢語多功能字庫所錄",
+   "cache": "cuhk/美.txt"
+  },
+  "cuhk-美": {
+   "title": "漢語多功能字庫「美」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%BE%8E",
+   "cache": "cuhk/美.txt"
+  }
+ }
+}

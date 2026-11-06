@@ -1,0 +1,115 @@
+{
+ "n": 15,
+ "answer": "大",
+ "simp": "大",
+ "trad": "大",
+ "pinyin": "dà",
+ "accept": [
+  "大"
+ ],
+ "forms": [
+  {
+   "glyph": "大-oracle.svg",
+   "stage": "甲骨文",
+   "era": "商"
+  },
+  {
+   "glyph": "大-bronze.svg",
+   "stage": "金文",
+   "era": "西周"
+  },
+  {
+   "glyph": "大-seal.svg",
+   "stage": "小篆",
+   "era": "秦"
+  },
+  {
+   "glyph": "大-slip.svg",
+   "stage": "秦简",
+   "era": "秦"
+  }
+ ],
+ "hints": [
+  "它的反义词是“小”。",
+  "常用词：__人、__家、长__。"
+ ],
+ "near": {
+  "夫": "好眼力！它俩本来是一个字。再想想更常用的那个。",
+  "人": "对了一半：它画的确实是个人。"
+ },
+ "story": [
+  {
+   "text": "一个人，正面站着，叉开两条腿。",
+   "ev": [
+    [
+     "cuhk",
+     "「大」字象人正面站立"
+    ]
+   ]
+  },
+  {
+   "text": "它最早的意思是“大人”，也就是成年人。跟它相对的是“子”，小孩儿。大人比小孩儿大，所以它慢慢有了“大”的意思。",
+   "ev": [
+    [
+     "cuhk",
+     "本義是成年人，與「子」象小孩相對"
+    ],
+    [
+     "cuhk",
+     "因年紀較小孩大，故引申有大義"
+    ]
+   ]
+  },
+  {
+   "text": "没想到，在这个人头上加一短横，就成了“夫”。“大”和“夫”本来是一个字，后来才分开。",
+   "ev": [
+    [
+     "cuhk",
+     "古文字「大」、「夫」是一字之分化"
+    ],
+    [
+     "cuhk",
+     "後來才在「大」上加一短橫分化出「夫」字"
+    ]
+   ]
+  },
+  {
+   "text": "那一横是什么？多数学者认为它只是装饰，没有意义。《说文解字》却说，那是一根簪子：小孩披着头发，成年男子才用簪子把头发束起来。",
+   "ev": [
+    [
+     "cuhk",
+     "學者多認為一短橫是沒有意義的飾筆"
+    ],
+    [
+     "shuowen-夫",
+     "从大，一以象簪也"
+    ],
+    [
+     "cuhk-夫",
+     "古代的男性，童子披髮，成人則以簪束髮"
+    ]
+   ]
+  }
+ ],
+ "sources": {
+  "cuhk": {
+   "title": "漢語多功能字庫「大」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%A4%A7",
+   "cache": "cuhk/大.txt"
+  },
+  "shuowen-夫": {
+   "title": "《說文解字》「夫」",
+   "by": "許慎（東漢）",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%A4%AB",
+   "note": "原文據漢語多功能字庫所錄",
+   "cache": "cuhk/夫.txt"
+  },
+  "cuhk-夫": {
+   "title": "漢語多功能字庫「夫」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%A4%AB",
+   "cache": "cuhk/夫.txt"
+  }
+ }
+}

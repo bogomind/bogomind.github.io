@@ -1,0 +1,119 @@
+{
+ "n": 6,
+ "answer": "人",
+ "simp": "人",
+ "trad": "人",
+ "pinyin": "rén",
+ "accept": [
+  "人"
+ ],
+ "forms": [
+  {
+   "glyph": "人-oracle.svg",
+   "stage": "甲骨文",
+   "era": "商"
+  },
+  {
+   "glyph": "人-bronze.svg",
+   "stage": "金文",
+   "era": "西周"
+  },
+  {
+   "glyph": "人-seal.svg",
+   "stage": "小篆",
+   "era": "秦"
+  },
+  {
+   "glyph": "人-slip.svg",
+   "stage": "秦简",
+   "era": "秦"
+  }
+ ],
+ "hints": [
+  "你自己就是一个。",
+  "常用词：大__、好__、__民。"
+ ],
+ "near": {
+  "大": "很接近，可惜不是这个姿势。",
+  "亻": "对了！不过要写成完整的字。"
+ },
+ "story": [
+  {
+   "text": "一个人侧着身子站着，手垂下来。",
+   "ev": [
+    [
+     "cuhk",
+     "古文字「人」象人側面垂手侍立形"
+    ],
+    [
+     "wikt",
+     "side view of a standing man, highlighting an arm and a leg"
+    ]
+   ]
+  },
+  {
+   "text": "这个“人”还被借去记数。商朝人竟然在“人”身上加一横，当作一千；加三横，就是三千。",
+   "ev": [
+    [
+     "cuhk-千",
+     "古人假借「人」字來表示千數，並增「一」以示「一千」之合文"
+    ],
+    [
+     "cuhk-千",
+     "甲金文有於「人」字加三畫以為「三千」"
+    ]
+   ]
+  },
+  {
+   "text": "为什么借“人”？因为那时候，“人”和“千”读音相近。后来大家念“一千”常常省掉“一”，加了一横的“人”，就成了单独的“千”字。",
+   "ev": [
+    [
+     "cuhk-千",
+     "甲金文從「一」，「人」聲"
+    ],
+    [
+     "cuhk-千",
+     "後來由於古人讀「一千」常有省去「一」的習慣，故到後來「一千」的合文就成了單字「千」"
+    ]
+   ]
+  },
+  {
+   "text": "商王提到自己，用的是“余一人”，意思是我这一个人。",
+   "ev": [
+    [
+     "cuhk",
+     "《合集》20328：「余一人」，是殷王自稱"
+    ]
+   ]
+  },
+  {
+   "text": "“人”放到别的字左边，就成了单人旁“亻”。",
+   "ev": [
+    [
+     "wikt",
+     "The stylized version to the left of the characters is [[亻]]"
+    ]
+   ]
+  }
+ ],
+ "sources": {
+  "cuhk": {
+   "title": "漢語多功能字庫「人」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%BA%BA",
+   "cache": "cuhk/人.txt"
+  },
+  "cuhk-千": {
+   "title": "漢語多功能字庫「千」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8D%83",
+   "cache": "cuhk/千.txt"
+  },
+  "wikt": {
+   "title": "Wiktionary「人」Glyph origin",
+   "by": "Wiktionary 編者（CC BY-SA 4.0）",
+   "url": "https://en.wiktionary.org/wiki/%E4%BA%BA#Chinese",
+   "cache": "wikt/人.txt"
+  }
+ }
+}

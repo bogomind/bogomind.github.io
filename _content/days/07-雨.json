@@ -1,0 +1,127 @@
+{
+ "n": 7,
+ "answer": "雨",
+ "simp": "雨",
+ "trad": "雨",
+ "pinyin": "yǔ",
+ "accept": [
+  "雨"
+ ],
+ "forms": [
+  {
+   "glyph": "雨-oracle.svg",
+   "stage": "甲骨文",
+   "era": "商"
+  },
+  {
+   "glyph": "雨-bronze.svg",
+   "stage": "金文",
+   "era": "西周"
+  },
+  {
+   "glyph": "雨-seal.svg",
+   "stage": "小篆",
+   "era": "秦"
+  },
+  {
+   "glyph": "雨-slip.svg",
+   "stage": "秦简",
+   "era": "秦"
+  }
+ ],
+ "hints": [
+  "它从天上掉下来，打湿你的衣服。",
+  "常用词：下__、__伞、__衣。"
+ ],
+ "near": {
+  "云": "接近了！不过答案是从云里掉下来的那个。",
+  "雲": "接近了！不过答案是从云里掉下来的那个。",
+  "雪": "很接近，但它不是白的。",
+  "水": "对了一半：它也是水，从天上来的那种。"
+ },
+ "story": [
+  {
+   "text": "上面一横是天，下面几竖，是正在往下落的雨点。",
+   "ev": [
+    [
+     "cuhk",
+     "多以一畫表示上天，其下有三兩雨滴表示下雨"
+    ]
+   ]
+  },
+  {
+   "text": "最上面那一短横，是后来才加上去的。",
+   "ev": [
+    [
+     "cuhk",
+     "其上或別加一畫作飾筆"
+    ],
+    [
+     "wikt",
+     "The horizontal stroke at the top was added later"
+    ]
+   ]
+  },
+  {
+   "text": "到了西周，雨点外面连成了一个框，跟小篆已经很像了。",
+   "ev": [
+    [
+     "cuhk",
+     "西周文字雨形外部連結成直線，與小篆相類"
+    ]
+   ]
+  },
+  {
+   "text": "下不下雨，商朝人也要占卜。卜辞里有一句“今日其大雨”，意思是今天会下大雨吗？",
+   "ev": [
+    [
+     "cuhk",
+     "《合集》12598：「今日其大雨。」"
+    ]
+   ]
+  },
+  {
+   "text": "关于写字，还有个传说：仓颉造出文字的时候，“天雨粟，鬼夜哭”。天上竟然下起了谷子，鬼在夜里哭。这里的“雨”其实是动词，从天上落下来的意思。",
+   "ev": [
+    [
+     "huainanzi",
+     "昔者蒼頡作書，而天雨粟，鬼夜哭"
+    ],
+    [
+     "cuhk",
+     "「雨」字一般雖用作名詞，便在許多其他場合可當動詞用"
+    ],
+    [
+     "cuhk-米",
+     "未剝皮的叫「粟」"
+    ]
+   ]
+  }
+ ],
+ "sources": {
+  "cuhk": {
+   "title": "漢語多功能字庫「雨」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%9B%A8",
+   "cache": "cuhk/雨.txt"
+  },
+  "wikt": {
+   "title": "Wiktionary「雨」Glyph origin",
+   "by": "Wiktionary 編者（CC BY-SA 4.0）",
+   "url": "https://en.wiktionary.org/wiki/%E9%9B%A8#Chinese",
+   "cache": "wikt/雨.txt"
+  },
+  "huainanzi": {
+   "title": "《淮南子·本經訓》",
+   "by": "劉安等（西漢）",
+   "url": "https://zh.wikisource.org/wiki/%E6%B7%AE%E5%8D%97%E5%AD%90/%E6%9C%AC%E7%B6%93%E8%A8%93",
+   "cache": "texts/huainanzi-benjing.txt"
+  },
+  "cuhk-米": {
+   "title": "漢語多功能字庫「米」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%B1%B3",
+   "cache": "cuhk/米.txt"
+  }
+ }
+}

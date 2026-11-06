@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>字小时候</title>
+<meta name="description" content="每天一个字。先看它三千多年前的样子，猜猜它今天是哪个字。每猜错一次，它就长大一点。">
+<meta name="theme-color" content="#0b0e13">
+<meta property="og:title" content="字小时候">
+<meta property="og:description" content="每天一个字。先看它三千多年前的样子，猜猜它今天是哪个字。">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="zi.css">
+</head>
+<body>
+<header class="bar">
+  <a href="/" class="home">bogo</a><span class="sep">/</span><a href="./" class="here">字小时候</a>
+  <nav><a href="#" id="nav-help">怎么玩</a><a href="#archive">往期</a><a href="#" id="nav-stats">记录</a></nav>
+</header>
+
+<main>
+  <section id="play">
+    <p class="meta"><span id="dayno">#</span><span id="daydate"></span></p>
+    <ol id="slots" class="slots" aria-label="线索"></ol>
+    <div class="stagewrap">
+      <div id="stage" class="stage"></div>
+      <p class="stagelabel"><b id="stagelabel"></b><span id="stagenote"></span></p>
+    </div>
+    <ul id="hints" class="hints"></ul>
+    <form id="guess" class="guess" autocomplete="off">
+      <input id="g" name="g" type="text" lang="zh-CN" maxlength="24" placeholder="它现在是哪个字？" aria-label="你猜的字" enterkeyhint="done" autocapitalize="off" spellcheck="false">
+      <button type="submit">猜</button>
+    </form>
+    <p id="msg" class="msg" aria-live="polite"></p>
+    <ol id="tries" class="tries" aria-label="猜过的字"></ol>
+    <p id="left" class="left muted small"></p>
+  </section>
+
+  <section id="done" hidden>
+    <p id="result" class="result"></p>
+    <ol id="album" class="album" aria-label="它一路的样子"></ol>
+    <p class="answerline"><b id="answer"></b><span id="pinyin"></span></p>
+    <div id="story" class="story"></div>
+    <details class="sources"><summary>出处</summary><ol id="sources"></ol></details>
+    <div class="sharebox">
+      <pre id="sharetext"></pre>
+      <button id="share" type="button">分享成绩</button>
+    </div>
+    <nav id="daynav" class="daynav"></nav>
+    <div id="statsbox" class="statsbox"></div>
+  </section>
+
+  <section id="archive" hidden>
+    <h1>往期</h1>
+    <ol id="archivelist" class="archivelist"></ol>
+  </section>
+
+  <div id="fail" class="fail" hidden></div>
+</main>
+
+<dialog id="help">
+  <h2>怎么玩</h2>
+  <p>每天一个字。你先看到的，是它最早的样子：三千多年前，刻在龟甲和兽骨上的甲骨文。</p>
+  <p>猜猜它今天是哪个字，写下来就行，简体繁体都算。</p>
+  <p>每猜错一次，它就长大一点：甲骨文、金文、小篆……再往后还有提示。一共六次机会。</p>
+  <p>猜完以后，看看它这一路是怎么变过来的。</p>
+  <p class="muted small">黄框表示很接近了，但不是这个字。</p>
+  <button id="help-close" type="button">开始</button>
+</dialog>
+
+<dialog id="stats">
+  <h2>记录</h2>
+  <div id="statsbody" class="statsbox"></div>
+  <button id="stats-close" type="button">好</button>
+</dialog>
+
+<footer class="foot"><a href="credits.html">出处</a> · <a href="/">bogomind.com</a></footer>
+<noscript><p class="fail">这个小游戏需要打开 JavaScript。</p></noscript>
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

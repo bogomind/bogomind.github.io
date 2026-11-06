@@ -1,0 +1,142 @@
+{
+ "n": 4,
+ "answer": "木",
+ "simp": "木",
+ "trad": "木",
+ "pinyin": "mù",
+ "accept": [
+  "木"
+ ],
+ "forms": [
+  {
+   "glyph": "木-oracle.svg",
+   "stage": "甲骨文",
+   "era": "商"
+  },
+  {
+   "glyph": "木-bronze.svg",
+   "stage": "金文",
+   "era": "商周"
+  },
+  {
+   "glyph": "木-seal.svg",
+   "stage": "小篆",
+   "era": "秦"
+  }
+ ],
+ "hints": [
+  "它活着，可是一步也不会走。",
+  "上面伸枝，下面扎根。",
+  "常用词：__头、__材、积__。"
+ ],
+ "near": {
+  "树": "意思对了！答案是一个更老、更简单的字。",
+  "樹": "意思对了！答案是一个更老、更简单的字。",
+  "林": "方向对了，不过答案只有一棵。",
+  "森": "方向对了，不过答案只有一棵。"
+ },
+ "story": [
+  {
+   "text": "一棵树：上面伸出树枝，下面扎着树根。",
+   "ev": [
+    [
+     "cuhk",
+     "甲金文象樹木，上象枝，下象根"
+    ]
+   ]
+  },
+  {
+   "text": "在这棵树上加一笔，就能变出新字。这一笔加在根上，是“本”，本来就是树根的意思。",
+   "ev": [
+    [
+     "cuhk-本",
+     "從「木」，從「一」，本義為草木的根"
+    ],
+    [
+     "shuowen-本",
+     "木下曰本。从木，一在其下"
+    ]
+   ]
+  },
+  {
+   "text": "加在树梢上，是“末”，就是树梢。就这么一笔，竟然就成了两个字。",
+   "ev": [
+    [
+     "cuhk-末",
+     "在木的頂端加點，以表示樹的末梢、末端"
+    ],
+    [
+     "shuowen-末",
+     "木上曰末。从木，一在其上"
+    ]
+   ]
+  },
+  {
+   "text": "所以“本末倒置”，说白了就是把树根和树梢弄反了。",
+   "ev": [
+    [
+     "cuhk-本",
+     "本義為草木的根"
+    ],
+    [
+     "cuhk-末",
+     "以表示樹的末梢、末端"
+    ]
+   ]
+  },
+  {
+   "text": "《说文解字》说，“木”的上半截是“屮”。清朝的王筠不同意：树是整棵画出来的，上半截只是长得像“屮”而已。",
+   "ev": [
+    [
+     "shuowen",
+     "从屮，下象其根"
+    ],
+    [
+     "cuhk",
+     "『屮』與『木』上半形相似耳，以『木』从『屮』，於義何居？木固全體象形字也"
+    ]
+   ]
+  }
+ ],
+ "sources": {
+  "cuhk": {
+   "title": "漢語多功能字庫「木」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%9C%A8",
+   "cache": "cuhk/木.txt"
+  },
+  "shuowen": {
+   "title": "《說文解字》「木」",
+   "by": "許慎（東漢）",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%9C%A8",
+   "note": "原文據漢語多功能字庫所錄",
+   "cache": "cuhk/木.txt"
+  },
+  "cuhk-本": {
+   "title": "漢語多功能字庫「本」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%9C%AC",
+   "cache": "cuhk/本.txt"
+  },
+  "shuowen-本": {
+   "title": "《說文解字》「本」",
+   "by": "許慎（東漢）",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%9C%AC",
+   "note": "原文據漢語多功能字庫所錄",
+   "cache": "cuhk/本.txt"
+  },
+  "cuhk-末": {
+   "title": "漢語多功能字庫「末」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%9C%AB",
+   "cache": "cuhk/末.txt"
+  },
+  "shuowen-末": {
+   "title": "《說文解字》「末」",
+   "by": "許慎（東漢）",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%9C%AB",
+   "note": "原文據漢語多功能字庫所錄",
+   "cache": "cuhk/末.txt"
+  }
+ }
+}

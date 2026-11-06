@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bogo</title>
+<meta name="description" content="值得多看一眼的东西，一件一件做出来。">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>bogo</h1>
+  <p class="sub">值得多看一眼的东西，一件一件做出来。</p>
+</header>
+<main>
+  <ol class="rooms">
+    <li><a class="room" href="/zi/">
+      <span class="no">01</span>
+      <span class="name">字小时候</span>
+      <span class="what">每天一个字。先看它三千多年前的样子，猜猜它今天是哪个字。每猜错一次，它就长大一点。</span>
+      <span class="today" id="zi-today" hidden><span class="glyph" id="zi-glyph"></span><span class="label" id="zi-label"></span></span>
+    </a></li>
+  </ol>
+</main>
+<footer>
+</footer>
+<script src="/zi/core.js"></script>
+<script>
+(function () {
+  var Z = window.ZiCore;
+  if (!Z || !window.fetch) return;
+  fetch('/zi/days.json').then(function (r) { return r.json(); }).then(function (c) {
+    var n = Z.dayNumber(new Date(), c.start, c.tz);
+    if (n < 1 || n > c.count) return;
+    return fetch('/zi/d/' + String(n).padStart(3, '0') + '.json').then(function (r) { return r.json(); }).then(function (d) {
+      return fetch('/zi/' + d.forms[0].src).then(function (r) { return r.text(); }).then(function (svg) {
+        document.getElementById('zi-glyph').innerHTML = svg;
+        document.getElementById('zi-label').textContent = '今天的字 #' + n + '，你认得吗？';
+        document.getElementById('zi-today').hidden = false;
+      });
+    });
+  }).catch(function () {});
+}());
+</script>
+</body>
+</html>

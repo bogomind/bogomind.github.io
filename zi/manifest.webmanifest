@@ -1,0 +1,12 @@
+{
+  "name": "字小时候",
+  "short_name": "字小时候",
+  "description": "每天一个字。先看它三千多年前的样子，猜猜它今天是哪个字。",
+  "start_url": "/zi/",
+  "scope": "/zi/",
+  "display": "standalone",
+  "background_color": "#0b0e13",
+  "theme_color": "#0b0e13",
+  "lang": "zh-CN",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

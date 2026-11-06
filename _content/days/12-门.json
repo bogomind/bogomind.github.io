@@ -1,0 +1,109 @@
+{
+ "n": 12,
+ "answer": "门",
+ "simp": "门",
+ "trad": "門",
+ "pinyin": "mén",
+ "accept": [
+  "门",
+  "門"
+ ],
+ "forms": [
+  {
+   "glyph": "門-oracle.svg",
+   "stage": "甲骨文",
+   "era": "商"
+  },
+  {
+   "glyph": "門-bronze.svg",
+   "stage": "金文",
+   "era": "西周"
+  },
+  {
+   "glyph": "門-seal.svg",
+   "stage": "小篆",
+   "era": "秦"
+  },
+  {
+   "glyph": "門-slip.svg",
+   "stage": "秦简",
+   "era": "秦"
+  }
+ ],
+ "hints": [
+  "进屋以前，先要打开它。",
+  "常用词：大__、__口、出__。"
+ ],
+ "near": {
+  "户": "很近！不过“户”只有一扇，答案是两扇。",
+  "戶": "很近！不过“户”只有一扇，答案是两扇。",
+  "戸": "很近！不过“户”只有一扇，答案是两扇。"
+ },
+ "story": [
+  {
+   "text": "两扇门板，面对面站着。有的写法上面还加一根横木，那是门楣。",
+   "ev": [
+    [
+     "cuhk",
+     "甲金文均作兩扇門扉之形，甲骨文或於字上加上門楣"
+    ]
+   ]
+  },
+  {
+   "text": "一扇的叫“户”，两扇的才叫“门”。《说文解字》说“门”是“从二户”：两个“户”拼成的。",
+   "ev": [
+    [
+     "cuhk-戶",
+     "一扉曰戶，兩扉曰門"
+    ],
+    [
+     "shuowen",
+     "从二戶。象形"
+    ]
+   ]
+  },
+  {
+   "text": "门竟然还能当动词用。《左传》里晋国打曹国，“门焉”，意思是攻城门。",
+   "ev": [
+    [
+     "cuhk",
+     "晉侯圍曹，門焉，多死。』杜注云：『攻曹城門。』"
+    ]
+   ]
+  },
+  {
+   "text": "商朝卜辞里的门，大多是宗庙的门。王会在宗庙门前，迎接抓了羌人俘虏回来的将领。",
+   "ev": [
+    [
+     "cuhk",
+     "甲骨多用「門」為宗廟之門"
+    ],
+    [
+     "cuhk",
+     "指王於宗廟的門前迎接獲得羌人俘虜而歸的將領"
+    ]
+   ]
+  }
+ ],
+ "sources": {
+  "cuhk": {
+   "title": "漢語多功能字庫「門」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%96%80",
+   "cache": "cuhk/門.txt"
+  },
+  "shuowen": {
+   "title": "《說文解字》「門」",
+   "by": "許慎（東漢）",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%96%80",
+   "note": "原文據漢語多功能字庫所錄",
+   "cache": "cuhk/門.txt"
+  },
+  "cuhk-戶": {
+   "title": "漢語多功能字庫「戶」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E6%88%B6",
+   "cache": "cuhk/戶.txt"
+  }
+ }
+}

@@ -1,0 +1,126 @@
+{
+ "n": 8,
+ "answer": "目",
+ "simp": "目",
+ "trad": "目",
+ "pinyin": "mù",
+ "accept": [
+  "目"
+ ],
+ "forms": [
+  {
+   "glyph": "目-oracle.svg",
+   "stage": "甲骨文",
+   "era": "商"
+  },
+  {
+   "glyph": "目-bronze.svg",
+   "stage": "金文",
+   "era": "西周"
+  },
+  {
+   "glyph": "目-seal.svg",
+   "stage": "小篆",
+   "era": "秦"
+  },
+  {
+   "glyph": "目-slip.svg",
+   "stage": "秦简",
+   "era": "秦"
+  }
+ ],
+ "hints": [
+  "你正在用它读这句话。",
+  "常用词：__光、题__、__标。"
+ ],
+ "near": {
+  "眼": "意思对了！答案是更老的那个字。",
+  "睛": "意思对了！答案是更老的那个字。",
+  "见": "很近：答案只是眼睛本身。",
+  "見": "很近：答案只是眼睛本身。"
+ },
+ "story": [
+  {
+   "text": "一只眼睛：外面是眼眶，中间是眼珠。",
+   "ev": [
+    [
+     "cuhk",
+     "甲金文象人眼目"
+    ],
+    [
+     "shuowen",
+     "目人眼。象形"
+    ]
+   ]
+  },
+  {
+   "text": "最早它是横着的，跟你脸上的眼睛一样。后来竖了起来，转了九十度。",
+   "ev": [
+    [
+     "cuhk",
+     "金文或有將目形豎起"
+    ],
+    [
+     "cuhk",
+     "戰國文字繼承商周文字，一般把目豎起"
+    ],
+    [
+     "wikt",
+     "human eye, now rotated 90 degrees"
+    ]
+   ]
+  },
+  {
+   "text": "还有个容易认错的：有些字上面的“罒”，长得像横着的“目”，其实画的是一张网，比如“罗”和“罪”。",
+   "ev": [
+    [
+     "wikt",
+     "Sometimes it depicts a web ([[网]]) through its variant [[罒]], e.g., [[買]], [[罵]], [[罪]], [[詈]] (used in [[罰]]) and [[羅]] (> [[罗]])"
+    ]
+   ]
+  },
+  {
+   "text": "《说文解字》说“目”是“重童子”。传说里，舜和项羽都是一只眼睛两个瞳孔，听着就有点吓人。不过“目”字本来跟重瞳没关系，就是一只普通的眼睛。",
+   "ev": [
+    [
+     "shuowen",
+     "重童子也"
+    ],
+    [
+     "cuhk",
+     "舜、禹、項羽、王莽等都是每隻眼睛有兩個瞳孔的「重童子」，唯「目」字本義與「重童子」沒有關係"
+    ]
+   ]
+  },
+  {
+   "text": "商王眼睛不舒服，也要占卜：“王其疒目”，王的眼睛病了吗？",
+   "ev": [
+    [
+     "cuhk",
+     "《合集》165正：「王其疒目」，指王眼睛有疾"
+    ]
+   ]
+  }
+ ],
+ "sources": {
+  "cuhk": {
+   "title": "漢語多功能字庫「目」",
+   "by": "香港中文大學",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%9B%AE",
+   "cache": "cuhk/目.txt"
+  },
+  "shuowen": {
+   "title": "《說文解字》「目」",
+   "by": "許慎（東漢）",
+   "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E7%9B%AE",
+   "note": "原文據漢語多功能字庫所錄",
+   "cache": "cuhk/目.txt"
+  },
+  "wikt": {
+   "title": "Wiktionary「目」Glyph origin",
+   "by": "Wiktionary 編者（CC BY-SA 4.0）",
+   "url": "https://en.wiktionary.org/wiki/%E7%9B%AE#Chinese",
+   "cache": "wikt/目.txt"
+  }
+ }
+}
