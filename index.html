@@ -21,11 +21,18 @@
       <span class="what">每天一个字。先看它三千多年前的样子，猜猜它今天是哪个字。每猜错一次，它就长大一点。</span>
       <span class="today" id="zi-today" hidden><span class="glyph" id="zi-glyph"></span><span class="label" id="zi-label"></span></span>
     </a></li>
+    <li><a class="room" href="/chou/">
+      <span class="no">02</span>
+      <span class="name">差一筹</span>
+      <span class="what">古人用一根根小竹棍摆数、算账。每天一道用算筹摆的算式，差了一根：挪动一根，让它成立。</span>
+      <span class="today" id="chou-today" hidden><span class="rods" id="chou-board"></span><span class="label" id="chou-label"></span></span>
+    </a></li>
   </ol>
 </main>
 <footer>
 </footer>
 <script src="/zi/core.js"></script>
+<script src="/chou/core.js"></script>
 <script>
 (function () {
   var Z = window.ZiCore;
@@ -40,6 +47,18 @@
         document.getElementById('zi-today').hidden = false;
       });
     });
+  }).catch(function () {});
+}());
+(function () {
+  var C = window.ChouCore;
+  if (!C || !window.fetch) return;
+  fetch('/chou/days.json').then(function (r) { return r.json(); }).then(function (c) {
+    var n = C.dayNumber(new Date(), c.start, c.tz);
+    if (n < 1 || n > c.count) return;
+    var d = c.days[n - 1];
+    document.getElementById('chou-board').innerHTML = C.svg(C.parse(d.s), { label: '今天的算式' });
+    document.getElementById('chou-label').textContent = '今天这道 #' + n + '（' + C.LEVELS[d.lv] + '）：挪一根，让它成立。';
+    document.getElementById('chou-today').hidden = false;
   }).catch(function () {});
 }());
 </script>

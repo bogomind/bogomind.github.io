@@ -1,0 +1,12 @@
+{
+  "name": "差一筹",
+  "short_name": "差一筹",
+  "description": "每天一道用算筹摆的算式，差了一根。挪动一根，让它成立。",
+  "start_url": "/chou/",
+  "scope": "/chou/",
+  "display": "standalone",
+  "background_color": "#0b0e13",
+  "theme_color": "#0b0e13",
+  "lang": "zh-CN",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

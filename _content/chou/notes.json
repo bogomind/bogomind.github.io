@@ -1,0 +1,357 @@
+{
+  "about": "差一筹: one short note a day after the puzzle (day n shows notes[(n-1) % count]). text = our own words; orig = the old line as shown (simplified); evidence = the exact words in the saved copy of each source that every claim rests on (checked by _tools/check_chou.py --cache).",
+  "sources": {
+    "mengxi18": {
+      "title": "沈括《梦溪笔谈》卷十八 技艺",
+      "url": "https://zh.wikisource.org/wiki/%E5%A4%A2%E6%BA%AA%E7%AD%86%E8%AB%87/%E5%8D%B718",
+      "licence": "公有领域（维基文库）"
+    },
+    "mengxi": {
+      "title": "沈括《梦溪笔谈》（作者页）",
+      "url": "https://zh.wikisource.org/wiki/%E5%A4%A2%E6%BA%AA%E7%AD%86%E8%AB%87",
+      "licence": "公有领域（维基文库）"
+    },
+    "sunzi": {
+      "title": "《孙子算经》",
+      "url": "https://zh.wikisource.org/wiki/%E5%AD%AB%E5%AD%90%E7%AE%97%E7%B6%93",
+      "licence": "公有领域（维基文库）"
+    },
+    "suanxue": {
+      "title": "朱世杰《算学启蒙》总括",
+      "url": "https://zh.wikisource.org/wiki/%E6%96%B0%E7%B7%A8%E7%AD%AD%E5%AD%B8%E5%95%93%E8%92%99/%E7%B8%BD%E6%8B%AC",
+      "licence": "公有领域（维基文库）"
+    },
+    "shiji8": {
+      "title": "司马迁《史记·高祖本纪》",
+      "url": "https://zh.wikisource.org/wiki/%E5%8F%B2%E8%A8%98/%E5%8D%B7008",
+      "licence": "公有领域（维基文库）"
+    },
+    "laozi": {
+      "title": "《老子》（王弼本）第二十七章",
+      "url": "https://zh.wikisource.org/wiki/%E9%81%93%E5%BE%B7%E7%B6%93_(%E7%8E%8B%E5%BC%BC%E6%9C%AC)",
+      "licence": "公有领域（维基文库）"
+    },
+    "hanshu21": {
+      "title": "班固《汉书·律历志》",
+      "url": "https://zh.wikisource.org/wiki/%E6%BC%A2%E6%9B%B8/%E5%8D%B7021",
+      "licence": "公有领域（维基文库）"
+    },
+    "shuowen5": {
+      "title": "许慎《说文解字》竹部",
+      "url": "https://zh.wikisource.org/wiki/%E8%AA%AA%E6%96%87%E8%A7%A3%E5%AD%97/05",
+      "licence": "公有领域（维基文库）"
+    },
+    "jiuzhang8": {
+      "title": "《九章算术》卷八 方程（刘徽注）",
+      "url": "https://zh.wikisource.org/wiki/%E4%B9%9D%E7%AB%A0%E7%AE%97%E8%A1%93_(%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC)/%E5%8D%B7%E7%AC%AC%E5%85%AB",
+      "licence": "公有领域（维基文库）"
+    },
+    "suishu16": {
+      "title": "《隋书·律历志》",
+      "url": "https://zh.wikisource.org/wiki/%E9%9A%8B%E6%9B%B8/%E5%8D%B716",
+      "licence": "公有领域（维基文库）"
+    },
+    "shishuo": {
+      "title": "刘义庆《世说新语·俭啬》",
+      "url": "https://zh.wikisource.org/wiki/%E4%B8%96%E8%AA%AA%E6%96%B0%E8%AA%9E/%E5%84%89%E5%97%87",
+      "licence": "公有领域（维基文库）"
+    },
+    "wp-suanchou": {
+      "title": "维基百科「算筹」",
+      "url": "https://zh.wikipedia.org/wiki/%E7%AE%97%E7%AD%B9",
+      "licence": "CC BY-SA 4.0（只取事实，文字是本站自己写的）"
+    },
+    "wp-suzhou": {
+      "title": "维基百科「苏州码子」",
+      "url": "https://zh.wikipedia.org/wiki/%E8%8B%8F%E5%B7%9E%E7%A0%81%E5%AD%90",
+      "licence": "CC BY-SA 4.0（只取事实，文字是本站自己写的）"
+    },
+    "shiji130": {
+      "title": "司马迁《史记·太史公自序》",
+      "url": "https://zh.wikisource.org/wiki/%E5%8F%B2%E8%A8%98/%E5%8D%B7130",
+      "licence": "公有领域（维基文库）"
+    },
+    "wikt-yunchou": {
+      "title": "维基词典「運籌帷幄」",
+      "url": "https://zh.wiktionary.org/wiki/%E9%81%8B%E7%B1%8C%E5%B8%B7%E5%B9%84",
+      "licence": "CC BY-SA 4.0（只取事实，文字是本站自己写的）"
+    },
+    "wp-rods-en": {
+      "title": "Wikipedia, “Counting rods”",
+      "url": "https://en.wikipedia.org/wiki/Counting_rods",
+      "licence": "CC BY-SA 4.0（只取事实，文字是本站自己写的）"
+    }
+  },
+  "notes": [
+    {
+      "id": "weipu",
+      "title": "有人故意挪了一根",
+      "text": "北宋沈括记过一位精通历法的人，叫卫朴。他摆弄算筹快得像飞，别人的眼睛都跟不上。有人故意挪动了他的一根算筹，卫朴用手从上到下摸一遍，摸到挪过的地方，拨正了就走。",
+      "orig": "人有故移其一算者，朴自上至下，手循一遍，至移算处，则拨正而去。",
+      "src": "mengxi18",
+      "evidence": [
+        [
+          "mengxi18",
+          "人有故移其一算者，朴自上至下，手循一遍，至移算處，則撥正而去。"
+        ],
+        [
+          "mengxi18",
+          "衛朴精於曆術"
+        ],
+        [
+          "mengxi18",
+          "運籌如飛，人眼不能逐。"
+        ],
+        [
+          "mengxi",
+          "作者： 沈括 北宋"
+        ]
+      ]
+    },
+    {
+      "id": "zongheng",
+      "title": "一纵十横",
+      "text": "个位的算筹竖着摆，十位横着摆，百位又竖，千位又横。一竖一横地错开，相邻的两位就不会混在一起。",
+      "orig": "凡算之法：先识其位，一从十横，百立千僵，千十相望，万百相当。",
+      "src": "sunzi",
+      "evidence": [
+        [
+          "sunzi",
+          "凡算之法：先識其位，一從十橫，百立千僵，千十相望，萬百相當。"
+        ],
+        [
+          "wp-suanchou",
+          "个位用纵式，十位用横式，百位再用纵式"
+        ],
+        [
+          "wp-suanchou",
+          "为了不使数字和数位混淆，算筹采用纵式和横式两种方法记数"
+        ]
+      ]
+    },
+    {
+      "id": "wubu",
+      "title": "五不单张",
+      "text": "六到九不是一根根堆上去的：上面放一根当五，下面再摆几根。五却不许只用一根，要摆满五根。这个游戏也照这条规矩：只剩一根“五”，就不成数。",
+      "orig": "满六已上，五在上方。六不积聚，五不单张。",
+      "src": "suanxue",
+      "evidence": [
+        [
+          "suanxue",
+          "滿六已上，五在上方。六不積聚，五不單張。"
+        ],
+        [
+          "suanxue",
+          "朱世傑 元朝"
+        ]
+      ]
+    },
+    {
+      "id": "yunchou",
+      "title": "运筹帷幄",
+      "text": "“运筹帷幄”这四个字出自《史记》：在帷幄里运筹，无形之中就定了胜负，说的是子房。汉高祖自己也说过：在营帐里运筹策，在千里之外打胜仗，他不如子房。筹策，就是算筹。",
+      "orig": "运筹帷幄之中，制胜于无形，子房计谋其事。",
+      "src": "shiji130",
+      "evidence": [
+        [
+          "shiji130",
+          "運籌帷幄之中，制勝於無形，子房計謀其事"
+        ],
+        [
+          "wikt-yunchou",
+          "出自《{{w|史記}}·[[s:史記/卷130|太史公自序]]》"
+        ],
+        [
+          "shiji8",
+          "夫運籌策帷帳之中，決勝於千里之外，吾不如子房。"
+        ],
+        [
+          "laozi",
+          "善數不用籌策"
+        ],
+        [
+          "wp-rods-en",
+          "said \"a good calculator doesn't use counting rods\""
+        ]
+      ]
+    },
+    {
+      "id": "yiwo",
+      "title": "二百七十一根，正好一握",
+      "text": "汉代的算筹用竹子做，粗一分，长六寸，二百七十一根拼成一个六角形，正好一握。为什么偏偏是 271？把圆棍一圈圈码成六角形：中间 1 根，往外一圈 6 根，再一圈 12 根……码满十层，正好 271 根。",
+      "orig": "其算法用竹，径一分，长六寸，二百七十一枚而成六觚，为一握。",
+      "src": "hanshu21",
+      "evidence": [
+        [
+          "hanshu21",
+          "其算法用竹，徑一分，長六寸，二百七十一枚而成六觚，為一握。"
+        ]
+      ],
+      "math": "1 + 6 + 12 + 18 + 24 + 30 + 36 + 42 + 48 + 54 = 271"
+    },
+    {
+      "id": "changnong",
+      "title": "常弄乃不误",
+      "text": "许慎的《说文解字》解释“筭”，也就是算筹：长六寸，用来计算历数。这个字从竹、从弄，说的是要常常摆弄它，才不会出错。",
+      "orig": "筭：长六寸。计历数者。从竹从弄。言常弄乃不误也。",
+      "src": "shuowen5",
+      "evidence": [
+        [
+          "shuowen5",
+          "筭：長六寸。計歷數者。從竹從弄。言常弄乃不誤也。"
+        ],
+        [
+          "wp-suanchou",
+          "许慎《说文解字》"
+        ]
+      ]
+    },
+    {
+      "id": "kongwei",
+      "title": "空着就是零",
+      "text": "算筹里没有零。哪一位是零，那一格就空着。到了南宋，数学家改用笔写算式，才画一个圈“〇”来占这个空位。",
+      "orig": "",
+      "src": "wp-suanchou",
+      "evidence": [
+        [
+          "wp-suanchou",
+          "在算筹盘上，以空位表示0"
+        ],
+        [
+          "wp-suanchou",
+          "南宋数学家开始用书写算草代替算筹算板"
+        ],
+        [
+          "wp-suanchou",
+          "为了算草需要，引入〇符号。"
+        ]
+      ]
+    },
+    {
+      "id": "chihei",
+      "title": "红的是正，黑的是负",
+      "text": "魏人刘徽给《九章算术》作注，讲到“正负术”：两个数得失相反，就用正、负来区分。摆的时候，正数用红筹，负数用黑筹；没有红黑两色，就一斜一正地摆。",
+      "orig": "今两算得失相反，要令正负以名之。正算赤，负算黑。",
+      "src": "jiuzhang8",
+      "evidence": [
+        [
+          "jiuzhang8",
+          "正負術曰"
+        ],
+        [
+          "jiuzhang8",
+          "今兩算得失相反要令正負以名之正算赤負算黑否則以邪"
+        ],
+        [
+          "jiuzhang8",
+          "正為異"
+        ],
+        [
+          "wp-suanchou",
+          "魏刘徽注《九章算术》称：“正算赤，负算黑”。"
+        ]
+      ]
+    },
+    {
+      "id": "sanlian",
+      "title": "正负连形状都不一样",
+      "text": "《隋书》里的算筹宽二分，长三寸。正数和负数连形状都不一样：正数用三棱的，二百一十六根拼成六角形；负数用四棱的，一百四十四根拼成正方形。",
+      "orig": "正策三廉，积二百一十六枚，成六觚，乾之策也。负策四廉，积一百四十四枚，成方，坤之策也。",
+      "src": "suishu16",
+      "evidence": [
+        [
+          "suishu16",
+          "其算用竹，廣二分，長三寸，正策三廉，積二百一十六枚，成六觚，乾之策也。負策四廉，積一百四十四枚，成方，坤之策也。"
+        ],
+        [
+          "wp-suanchou",
+          "正策三廉（三角形）积二百一十六枚成六觚"
+        ],
+        [
+          "wp-suanchou",
+          "负策四廉（四方形），积一百四十四枚，成方"
+        ]
+      ]
+    },
+    {
+      "id": "wangrong",
+      "title": "烛下散筹",
+      "text": "王戎做到司徒，又贵又富，宅子、仆人、良田、水碓，洛阳没人比得上。账目繁多，他常和夫人在烛光下摊开算筹算账。",
+      "orig": "司徒王戎，既贵且富，区宅僮牧，膏田水碓之属，洛下无比。契疏鞅掌，每与夫人烛下散筹算计。",
+      "src": "shishuo",
+      "evidence": [
+        [
+          "shishuo",
+          "司徒王戎，既貴且富，區宅僮牧，膏田水碓之屬，洛下無比。契疏鞅掌，每與夫人燭下散籌算計。"
+        ],
+        [
+          "shishuo",
+          "作者： 劉義慶"
+        ]
+      ]
+    },
+    {
+      "id": "chutu",
+      "title": "四十根竹棍",
+      "text": "1954 年，湖南长沙左家公山的一座战国墓里，出土了 40 根竹算筹，每根长 12 厘米。1971 年，陕西千阳的一座西汉墓里，一束兽骨算筹装在丝袋里，保存完好。",
+      "orig": "",
+      "src": "wp-suanchou",
+      "evidence": [
+        [
+          "wp-suanchou",
+          "1954年考古学家在湖南长沙左家公山出土战国时代古墓，内藏竹算筹40根，每根长12厘米。"
+        ],
+        [
+          "wp-suanchou",
+          "1971年考古学家从陕西千阳县一座出土的西汉古墓中发现一束在一个丝袋内（算筹袋）保存完好的兽骨算筹"
+        ]
+      ]
+    },
+    {
+      "id": "suzhou",
+      "title": "菜市场里的算筹",
+      "text": "算筹后来变成了一种手写数字，叫苏州码子：〡〢〣〤〥〦〧〨〩。如今在港澳的菜市场、海鲜档、旧式茶餐厅的餐牌和中药房里，偶尔还看得到。〦 是六：一根短竖当五，下面一横当一，和你在十位上摆的六一个样。",
+      "orig": "",
+      "src": "wp-suzhou",
+      "evidence": [
+        [
+          "wp-suzhou",
+          "由算筹演变而来"
+        ],
+        [
+          "wp-suzhou",
+          "仅在港澳地区的菜市场、海鲜档、旧式茶餐厅餐牌及中药房偶然可见"
+        ],
+        [
+          "wp-suzhou",
+          "代表五的短竖（参考算筹横式数字）"
+        ],
+        [
+          "wp-suzhou",
+          "短竖加“一”是“〦”（六）"
+        ]
+      ]
+    },
+    {
+      "id": "shanshu",
+      "title": "善数不用筹策",
+      "text": "《老子》说：善于计数的人，用不着算筹。今天一次就摆对的人，这句话可以收下。",
+      "orig": "善数不用筹策。",
+      "src": "laozi",
+      "evidence": [
+        [
+          "laozi",
+          "善數不用籌策"
+        ],
+        [
+          "laozi",
+          "二十七章"
+        ],
+        [
+          "wp-rods-en",
+          "said \"a good calculator doesn't use counting rods\""
+        ]
+      ]
+    }
+  ]
+}

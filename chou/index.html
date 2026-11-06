@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>差一筹</title>
+<meta name="description" content="每天一道用算筹摆的算式，差了一根。挪动一根，让它成立。">
+<meta name="theme-color" content="#0b0e13">
+<meta property="og:title" content="差一筹">
+<meta property="og:description" content="每天一道用算筹摆的算式，差了一根。挪动一根，让它成立。">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="chou.css">
+</head>
+<body>
+<header class="bar">
+  <a href="/" class="home">bogo</a><span class="sep">/</span><a href="./" class="here">差一筹</a>
+  <nav><a href="#" id="nav-help">怎么玩</a><a href="#archive">往期</a><a href="#" id="nav-stats">记录</a></nav>
+</header>
+
+<main>
+  <section id="play">
+    <p class="meta"><span><span id="dayno">#</span> <span id="daydate"></span></span><span id="level" class="lv"></span></p>
+    <div id="modebar" class="modebar" hidden>
+      <span class="seg" role="group" aria-label="难度"><button type="button" data-lv="0">易</button><button type="button" data-lv="1">中</button><button type="button" data-lv="2">难</button></span>
+      <button type="button" id="newp" class="ghostbtn">换一道</button>
+      <a href="./" class="back">回到今天的题</a>
+    </div>
+    <p id="task" class="task">这道算式差一筹：挪动一根算筹，让它成立。</p>
+    <div id="board" class="board" aria-label="算筹盘：点一根算筹拿起，再点发亮的格子放下"></div>
+    <p id="msg" class="msg" aria-live="polite"></p>
+    <div id="tools" class="tools">
+      <span class="triesbox"><span id="tries" class="tries" aria-hidden="true"></span><span id="triesl" class="small muted"></span></span>
+      <label class="read"><input type="checkbox" id="read"> 读数</label>
+      <button type="button" id="hint" class="ghostbtn">提示</button>
+    </div>
+    <details id="key" class="key">
+      <summary>算筹怎么读</summary>
+      <div id="keybody"></div>
+    </details>
+  </section>
+
+  <section id="done" hidden>
+    <p id="result" class="result"></p>
+    <p class="eqs"><span class="eq no" id="eq-before"></span><span class="arrow" aria-hidden="true">→</span><span class="eq yes" id="eq-after"></span></p>
+    <p id="movetext" class="movetext"></p>
+    <article id="note" class="note" hidden></article>
+    <div id="sharebox" class="sharebox">
+      <pre id="sharetext"></pre>
+      <button id="share" type="button">分享成绩</button>
+    </div>
+    <nav id="daynav" class="daynav"></nav>
+    <div id="statsbox" class="statsbox"></div>
+  </section>
+
+  <section id="archive" hidden>
+    <h1>往期</h1>
+    <ol id="archivelist" class="archivelist"></ol>
+  </section>
+
+  <div id="fail" class="fail" hidden></div>
+</main>
+
+<dialog id="help">
+  <h2>差一筹</h2>
+  <p>这道算式用算筹摆成，差了一根。<b>挪动一根</b>，让它成立。</p>
+  <p>点一根算筹拿起来，再点发亮的格子放下。摆错了，算筹会自己回去，只多记一次。</p>
+  <p class="hkey" id="helpkey"></p>
+  <p class="muted small">个位竖着摆，十位横着摆；上面那根当五。加号、减号、等号也是算筹，也能挪。每天北京时间零点换一道。头几天一天教一样新东西，之后每周一最容易，周末最难。</p>
+  <button id="help-close" type="button">开始</button>
+</dialog>
+
+<dialog id="stats">
+  <h2>记录</h2>
+  <div id="statsbody" class="statsbox"></div>
+  <p class="muted small">只算当天做完的题。记录只存在这个浏览器里。</p>
+  <button id="stats-close" type="button">好</button>
+</dialog>
+
+<footer class="foot"><a href="credits.html">出处</a> · <a href="/">bogomind.com</a></footer>
+<noscript><p class="fail">这个小游戏需要打开 JavaScript。</p></noscript>
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

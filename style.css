@@ -49,3 +49,5 @@ footer { margin-top: 4rem; border-top: 1px solid var(--rule); padding-top: 1.2re
 .room .glyph { width: 4.2rem; height: 4.2rem; padding: .35rem; border-radius: .6rem; background: #16120f; border: 1px solid #2b241f; color: #efe4cf; display: grid; place-items: center; }
 .room .glyph svg { width: 100%; height: 100%; }
 .room .label { color: var(--dim); font-size: .85rem; }
+.room .rods { width: 5.6rem; padding: .3rem; border-radius: .6rem; background: linear-gradient(180deg, #241a13, #17110c); border: 1px solid #3a2d22; display: block; }
+.room .rods svg { width: 100%; height: auto; display: block; }
