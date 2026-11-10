@@ -14,5 +14,8 @@ https://bogomind.com/ (GitHub Pages, branch `main`, root). Static files, no fram
   proved to have exactly one fix); `chou/notes.json` and `chou/credits.html` are built from `_content/chou/notes.json`
   by `python3 _tools/chou_build.py`. Before a push: `python3 _tools/check_chou.py --cache <saved sources>` must pass
   (it also runs `node _tools/test_chou.mjs`).
+- No video list: the 11-06 rebuild that gave the site its two rooms also dropped the episode list. The generator
+  (`~/projects/channels/site_sync.py`) is kept but its timer is off on purpose — the public history names no channel —
+  and the rooms' own daily content keeps the site alive.
 - `privacy.html`: a short, generic privacy note (noindex, linked from nowhere).
 - Nothing on this site describes its maker, how anything is made or run, or any other account: `_tools/selfcheck.py` (pre-commit hook) refuses it.
