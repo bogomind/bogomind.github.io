@@ -251,6 +251,51 @@ def check_credits(glyphs, days):
                 bad("zi/credits.html", f"does not list {f['glyph']}")
 
 
+def _ink(svg_path, ink_below):
+    """render an SVG at 128x128 on white (rsvg-convert -> PNG -> magick -> binary PGM) and return its ink mask"""
+    with tempfile.TemporaryDirectory() as td:
+        png = os.path.join(td, "g.png")
+        subprocess.run(["rsvg-convert", "-w", "128", "-h", "128", "-b", "white", svg_path, "-o", png], check=True,
+                       capture_output=True)
+        pgm = subprocess.run(["magick", png, "-colorspace", "Gray", "-depth", "8", "pgm:-"], check=True,
+                             capture_output=True).stdout
+    head = pgm.split(maxsplit=4)                        # P5, width, height, maxval, raster
+    w, h = int(head[1]), int(head[2])
+    px = head[4][-w * h:]
+    return [v < ink_below for v in px]
+
+
+def check_raster(glyphs, served_dir=None):
+    """every served glyph must cover the same ink as its Commons original (IoU >= 0.9 at 128 px). Catches a build that
+    resizes or shifts a drawing: on 11-13 transforms rounded to 0.1 had moved 8 glyphs (IoU 0.07-0.77; 贝's seal was cut
+    off at the top). A glyph re-centred on purpose (a "viewbox" in its record) is exempt; grey host strokes don't count
+    as ink where the record drops them."""
+    import shutil
+    if not (shutil.which("rsvg-convert") and shutil.which("magick")):
+        warnings.append("rsvg-convert/magick not found: served glyphs not compared with their originals (skipped)")
+        return
+    served_dir = served_dir or os.path.join(ROOT, "zi", "g")
+    for g, r in glyphs.items():
+        if r.get("viewbox"):
+            continue
+        raw = os.path.join(ROOT, "_content", "glyphs-raw", r["local"])
+        srv = os.path.join(served_dir, r["local"])
+        if not (os.path.exists(raw) and os.path.exists(srv)):
+            continue                                     # check_days reports missing files
+        with tempfile.NamedTemporaryFile("wb", suffix=".svg", delete=False) as f:
+            f.write(open(srv, "rb").read().replace(b"currentColor", b"#000"))
+        try:
+            a = _ink(raw, 100 if r.get("drop_grey") else 200)
+            b = _ink(f.name, 200)
+        finally:
+            os.unlink(f.name)
+        inter = sum(1 for x, y in zip(a, b) if x and y)
+        union = sum(1 for x, y in zip(a, b) if x or y)
+        iou = inter / union if union else 1.0
+        if iou < 0.9:
+            bad(f"zi/g/{r['local']}", f"{g} drawn differently from its original (ink IoU {iou:.2f} < 0.9)")
+
+
 def plain_gate(days):
     tool = os.environ.get("PLAIN_TOOL", "")
     if not tool or not os.path.exists(tool):
@@ -280,6 +325,7 @@ def main():
     check_start()
     check_build()
     check_credits(glyphs, days)
+    check_raster(glyphs)
     check_words_secrets_size()
     if "--plain" in sys.argv:
         plain_gate(days)

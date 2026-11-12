@@ -43,6 +43,18 @@ def _round(s):
     return re.sub(r"-?\d+\.\d+(?:e-?\d+)?", _num, s)
 
 
+def _num_t(m):
+    v = float(m.group())
+    s = f"{v:.6f}".rstrip("0").rstrip(".")
+    return "0" if s in ("-0", "") else s
+
+
+def _round_t(s):
+    """transforms keep 6 decimals: a scale rounded to 0.1 resizes the whole glyph (matrix(0.0879…) -> 0.1 is +14 %,
+    which pushed 贝's seal/slip and 心's slip past their viewBox; 11-13 fix)"""
+    return re.sub(r"-?\d+\.\d+(?:e-?\d+)?", _num_t, s)
+
+
 def _color(v):
     v = (v or "").strip().lower()
     if v in ("", "inherit"):
@@ -83,7 +95,7 @@ def clean_svg(raw, drop_grey=False, name="", viewbox=None):
             for c in (fill, stroke):
                 if c and (c.startswith("other:") or (c == "grey" and not drop_grey)):
                     raise ValueError(f"{name}: unexpected colour {c} on <{t}>")
-            a = {k: _round(el.get(k)) for k in GEOM if el.get(k) is not None}
+            a = {k: (_round_t if k == "transform" else _round)(el.get(k)) for k in GEOM if el.get(k) is not None}
             if t != "g":
                 if fill == "none":
                     a["fill"] = "none"

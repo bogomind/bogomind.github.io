@@ -67,7 +67,11 @@ t('near misses', () => {
   assert.equal(Z.judge(day(1), 'toString'), 'wrong');
 });
 t('every built day: answers right, near keys near, six clues, nothing about the answer in hints', () => {
-  assert.equal(days.length, 30);
+  // every content day is built and announced (the count grows as days are added; it was 30 at launch)
+  const content = readdirSync(path.join(root, '_content', 'days')).filter((f) => f.endsWith('.json')).length;
+  assert.ok(content >= 30, `only ${content} content days`);
+  assert.equal(days.length, content);
+  assert.equal(JSON.parse(readFileSync(path.join(root, 'zi', 'days.json'), 'utf8')).count, content);
   days.forEach((d, i) => {
     assert.equal(d.n, i + 1);
     assert.equal(d.date, Z.dateOfDay(d.n));
