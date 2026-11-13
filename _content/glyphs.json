@@ -3416,5 +3416,70 @@
   "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s04995",
   "modified": "metadata removed, fill set to currentColor",
   "drop_grey": false
+ },
+ "米-oracle.svg": {
+  "char": "米",
+  "kind": "oracle",
+  "local": "7c73-oracle.svg",
+  "commons": "File:米-oracle.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E7%B1%B3-oracle.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/%E7%B1%B3-oracle.svg",
+  "sha1": "565dbc8db0472a750f2a62bc736089db0f0adb66",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Chanueting"
+  ],
+  "script": "oracle",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image j17356",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "米-bronze.svg": {
+  "char": "米",
+  "kind": "bronze",
+  "local": "7c73-bronze.svg",
+  "commons": "File:米-bronze.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E7%B1%B3-bronze.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/%E7%B1%B3-bronze.svg",
+  "sha1": "0959acac6fdf8eded1b3eb310d4d402e4e067923",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated.",
+  "authors": [
+   "Justinrleung",
+   "Micheletb"
+  ],
+  "script": "bronze",
+  "period": "",
+  "source": "",
+  "model": "",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "米-seal.svg": {
+  "char": "米",
+  "kind": "seal",
+  "local": "7c73-seal.svg",
+  "commons": "File:米-seal.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E7%B1%B3-seal.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/%E7%B1%B3-seal.svg",
+  "sha1": "6e89eac467d96db93cf140133809d8fee2ecb2d3",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ). Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Chanueting",
+   "Wargaz"
+  ],
+  "script": "seal",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s05112",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
  }
 }
