@@ -2729,5 +2729,72 @@
   "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s08769",
   "modified": "metadata removed, fill set to currentColor",
   "drop_grey": false
+ },
+ "見-oracle.svg": {
+  "char": "見",
+  "kind": "oracle",
+  "local": "898b-oracle.svg",
+  "commons": "File:見-oracle.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E8%A6%8B-oracle.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/13/%E8%A6%8B-oracle.svg",
+  "sha1": "c42300b7a15da1a616703800554c8a3f214b1794",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Alexmadon",
+   "Justinrleung",
+   "Wargaz"
+  ],
+  "script": "oracle",
+  "period": "商",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image J20938",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "見-bronze.svg": {
+  "char": "見",
+  "kind": "bronze",
+  "local": "898b-bronze.svg",
+  "commons": "File:見-bronze.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E8%A6%8B-bronze.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/7/75/%E8%A6%8B-bronze.svg",
+  "sha1": "f03f422f56558c1d4b16a414be1607fdd2de9b74",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Alexmadon",
+   "Justinrleung"
+  ],
+  "script": "bronze",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image B13541",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "見-seal.svg": {
+  "char": "見",
+  "kind": "seal",
+  "local": "898b-seal.svg",
+  "commons": "File:見-seal.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E8%A6%8B-seal.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/6/61/%E8%A6%8B-seal.svg",
+  "sha1": "87accfa05e1a34fc7f58953c28ce4d247b0f42be",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated.",
+  "authors": [
+   "Alexmadon",
+   "Justinrleung"
+  ],
+  "script": "seal",
+  "period": "",
+  "source": "",
+  "model": "",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
  }
 }

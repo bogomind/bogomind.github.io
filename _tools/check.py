@@ -33,7 +33,7 @@ HAN = re.compile(r"[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0003134f
 ALLOWED = re.compile(r"^(Public domain|CC0( 1\.0)?|CC BY(-SA)? [2-4]\.0( [A-Za-z]+)?)$")
 STAGES = ["甲骨文", "金文", "小篆", "秦简"]
 # simplified -> traditional for the answers we use (checked against OpenCC when it is installed)
-S2T = {"鱼": "魚", "马": "馬", "门": "門", "车": "車", "龟": "龜", "贝": "貝", "册": "冊", "监": "監"}
+S2T = {"鱼": "魚", "马": "馬", "门": "門", "车": "車", "龟": "龜", "贝": "貝", "册": "冊", "监": "監", "见": "見"}
 BANNED = []    # filled from --words FILE (one regex per line, kept outside the repo)
 SECRETS = [r"sk-[A-Za-z0-9]{16,}", r"ghp_[A-Za-z0-9]{20,}", r"github_pat_", r"AKIA[0-9A-Z]{16}", r"-----BEGIN [A-Z ]*PRIVATE KEY",
            r"xox[bap]-[0-9A-Za-z-]+", r"AIza[0-9A-Za-z_-]{30,}", r"(?i)(api[_-]?key|secret|password|token)\s*[:=]\s*['\"][^'\"]{8,}",
