@@ -2988,5 +2988,94 @@
   "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s00814",
   "modified": "metadata removed, fill set to currentColor",
   "drop_grey": false
+ },
+ "刀-oracle.svg": {
+  "char": "刀",
+  "kind": "oracle",
+  "local": "5200-oracle.svg",
+  "commons": "File:刀-oracle.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E5%88%80-oracle.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/%E5%88%80-oracle.svg",
+  "sha1": "f13fdc8c8469a172a3f4e514a9ec5f33c9b8bbcc",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated. Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Chanueting",
+   "Micheletb",
+   "沈澄心"
+  ],
+  "script": "oracle",
+  "period": "商",
+  "source": "甲3085 合22474 子組",
+  "model": "Academia Sinica 小學堂 glyph data (CC0 1.0)",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "刀-bronze-shang.svg": {
+  "char": "刀",
+  "kind": "bronze-shang",
+  "local": "5200-bronze-shang.svg",
+  "commons": "File:刀-bronze-shang.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E5%88%80-bronze-shang.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/%E5%88%80-bronze-shang.svg",
+  "sha1": "3025f1a88b1b0070d3b80c62de572503d83b45b3",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated. Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Micheletb",
+   "Wargaz"
+  ],
+  "script": "bronze",
+  "period": "商",
+  "source": "刀爵 (late Shang)",
+  "model": "Academia Sinica 小學堂 glyph data (CC0 1.0)",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "刀-seal.svg": {
+  "char": "刀",
+  "kind": "seal",
+  "local": "5200-seal.svg",
+  "commons": "File:刀-seal.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E5%88%80-seal.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/ee/%E5%88%80-seal.svg",
+  "sha1": "cbc91a574591c9b867107b6e27c1914d5568de0e",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ). Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Chanueting",
+   "Erin Silversmith",
+   "沈澄心"
+  ],
+  "script": "seal",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s03141",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "刀-slip.svg": {
+  "char": "刀",
+  "kind": "slip",
+  "local": "5200-slip.svg",
+  "commons": "File:刀-slip.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E5%88%80-slip.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/%E5%88%80-slip.svg",
+  "sha1": "3e154f05d218e75585c70ac2a509086507aad23e",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated. Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "沈澄心"
+  ],
+  "script": "slip",
+  "period": "秦",
+  "source": "睡.日甲26背",
+  "model": "Academia Sinica 小學堂 glyph data (CC0 1.0)",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
  }
 }
