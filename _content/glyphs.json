@@ -3630,5 +3630,70 @@
   "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image S00782",
   "modified": "metadata removed, fill set to currentColor",
   "drop_grey": false
+ },
+ "龍-oracle.svg": {
+  "char": "龍",
+  "kind": "oracle",
+  "local": "9f8d-oracle.svg",
+  "commons": "File:龍-oracle.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E9%BE%8D-oracle.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/%E9%BE%8D-oracle.svg",
+  "sha1": "30a3695ea33656d8419a75136a37bc0a320c5604",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated. Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Chanueting",
+   "Wargaz"
+  ],
+  "script": "oracle",
+  "period": "商",
+  "source": "拾55",
+  "model": "Academia Sinica 小學堂 glyph data (CC0 1.0)",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "龍-bronze-shang.svg": {
+  "char": "龍",
+  "kind": "bronze-shang",
+  "local": "9f8d-bronze-shang.svg",
+  "commons": "File:龍-bronze-shang.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E9%BE%8D-bronze-shang.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/%E9%BE%8D-bronze-shang.svg",
+  "sha1": "bfda1be586f23898a66e726a1bcc442d4c94d2ea",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated. Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Wargaz"
+  ],
+  "script": "bronze",
+  "period": "商",
+  "source": "龍爵 (late Shang)",
+  "model": "Academia Sinica 小學堂 glyph data (CC0 1.0)",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "龍-seal.svg": {
+  "char": "龍",
+  "kind": "seal",
+  "local": "9f8d-seal.svg",
+  "commons": "File:龍-seal.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E9%BE%8D-seal.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/%E9%BE%8D-seal.svg",
+  "sha1": "e89a33142fd6c435ff6bc4b464ffe0c58e0ecc69",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ). Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Erin Silversmith",
+   "Wargaz"
+  ],
+  "script": "seal",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s08651",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
  }
 }

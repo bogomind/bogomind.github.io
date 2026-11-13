@@ -92,5 +92,13 @@ try:
 except ValueError:
     check("leading number raises", True)
 
+# 6. credits name each Wiktionary entry by what stands inside 「」 (a fixed slice [12:13] printed 」 for every
+#    one-character entry and 鼎 for 問鼎, live until 11-14)
+check("credits entry name, one character", build._bracketed("Wiktionary「日」Glyph origin") == "日")
+check("credits entry name, a word", build._bracketed("Wiktionary「問鼎」") == "問鼎")
+_cred = build.credits_html(build.load_days(), build.load_glyphs())
+check("no credits link reads only a bracket", not re.search(r">[」』）)]</a>", _cred),
+      re.findall(r".{40}>[」』）)]</a>", _cred)[:2])
+
 print("test_build:", "FAIL" if fails else "PASS", f"({len(fails)} failed)" if fails else "")
 sys.exit(1 if fails else 0)

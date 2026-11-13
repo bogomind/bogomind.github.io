@@ -240,6 +240,12 @@ def client_day(d, glyphs):
     }
 
 
+def _bracketed(title):
+    """The entry name inside 「」 of a source title: 'Wiktionary「日」Glyph origin' -> '日' (a fixed slice showed 」)."""
+    m = re.search(r"「(.+?)」", title)
+    return m.group(1) if m else title
+
+
 def credits_html(days, glyphs):
     used = {}
     for d in days:
@@ -277,7 +283,7 @@ def credits_html(days, glyphs):
         tl.append('<li>許慎《說文解字》（東漢，公有領域）。原文據《漢語多功能字庫》所錄。</li>')
     wk = texts.pop("wikt", [])
     if wk:
-        links = "、".join(f'<a href="{html.escape(s["url"])}">{html.escape(s["title"][12:13])}</a>' for _, s in dict(((s["url"], (d, s)) for d, s in wk)).values())
+        links = "、".join(f'<a href="{html.escape(s["url"])}">{html.escape(_bracketed(s["title"]))}</a>' for _, s in dict(((s["url"], (d, s)) for d, s in wk)).values())
         tl.append(f'<li>Wiktionary 的 Glyph origin 條目（CC BY-SA 4.0，Wiktionary 編者）：{links}。只取事實，文字為本站自寫。</li>')
     for k, lst in texts.items():
         s = lst[0][1]
