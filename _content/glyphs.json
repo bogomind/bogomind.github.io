@@ -2860,5 +2860,68 @@
   "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s06470",
   "modified": "metadata removed, fill set to currentColor",
   "drop_grey": false
+ },
+ "井-oracle.svg": {
+  "char": "井",
+  "kind": "oracle",
+  "local": "4e95-oracle.svg",
+  "commons": "File:井-oracle.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E4%BA%95-oracle.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/%E4%BA%95-oracle.svg",
+  "sha1": "75db90fd17df257186ada773d4c4be85718690bb",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Micheletb"
+  ],
+  "script": "oracle",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image J12552",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "井-bronze.svg": {
+  "char": "井",
+  "kind": "bronze",
+  "local": "4e95-bronze.svg",
+  "commons": "File:井-bronze.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E4%BA%95-bronze.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/%E4%BA%95-bronze.svg",
+  "sha1": "6db810cf9345ffd5f40b0dfa486444433d809e50",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Micheletb"
+  ],
+  "script": "bronze",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image B07748",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "井-seal.svg": {
+  "char": "井",
+  "kind": "seal",
+  "local": "4e95-seal.svg",
+  "commons": "File:井-seal.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E4%BA%95-seal.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/%E4%BA%95-seal.svg",
+  "sha1": "9fda7e20711e859d7aceb5a8f3fda76b1050edf5",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Micheletb"
+  ],
+  "script": "seal",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image S03663",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
  }
 }
