@@ -2923,5 +2923,70 @@
   "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image S03663",
   "modified": "metadata removed, fill set to currentColor",
   "drop_grey": false
+ },
+ "牛-oracle.svg": {
+  "char": "牛",
+  "kind": "oracle",
+  "local": "725b-oracle.svg",
+  "commons": "File:牛-oracle.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E7%89%9B-oracle.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/%E7%89%9B-oracle.svg",
+  "sha1": "ea7aa300cb6101941776e0af866ed0f08a718c89",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated. Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Alexmadon",
+   "Wargaz"
+  ],
+  "script": "oracle",
+  "period": "商",
+  "source": "乙6964 合9525 賓組",
+  "model": "Academia Sinica 小學堂 glyph data (CC0 1.0)",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "牛-bronze-shang.svg": {
+  "char": "牛",
+  "kind": "bronze-shang",
+  "local": "725b-bronze-shang.svg",
+  "commons": "File:牛-bronze-shang.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E7%89%9B-bronze-shang.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/%E7%89%9B-bronze-shang.svg",
+  "sha1": "3c128c36eb079bdd2ef96f0b98c5b593be0a6589",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Quinlan718"
+  ],
+  "script": "bronze",
+  "period": "商",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "牛-seal.svg": {
+  "char": "牛",
+  "kind": "seal",
+  "local": "725b-seal.svg",
+  "commons": "File:牛-seal.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E7%89%9B-seal.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/%E7%89%9B-seal.svg",
+  "sha1": "d420c77494df06c00236bbd99ec617b2b5b30b7e",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ). Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Alexmadon",
+   "Wargaz"
+  ],
+  "script": "seal",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s00814",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
  }
 }
