@@ -55,6 +55,89 @@ def _round_t(s):
     return re.sub(r"-?\d+\.\d+(?:e-?\d+)?", _num_t, s)
 
 
+_PTOK = re.compile(r"[MmZzLlHhVvCcSsQqTtAa]|[-+]?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?")
+_NPAR = {"m": 2, "l": 2, "h": 1, "v": 1, "c": 6, "s": 4, "q": 4, "t": 2, "a": 7, "z": 0}
+
+
+def _r1(v):
+    return round(v * 10) / 10
+
+
+def _fmt_d(v):
+    s = f"{_r1(v):.1f}".rstrip("0").rstrip(".")
+    if s in ("-0", "", "-"):
+        return "0"
+    if s.startswith("0."):
+        return s[1:]
+    if s.startswith("-0."):
+        return "-" + s[2:]
+    return s
+
+
+def _round_d(d):
+    """path data to one decimal WITHOUT drift (11-13 fix). Rounding each number of a relative path on its own lets the
+    errors add up along a traced outline (牛's Shang bronze: ~1,000 'c' segments of 0.0x units walked the outline off by
+    whole units, ink IoU 0.89). Every point is rounded in absolute terms and written against the previous ROUNDED point,
+    so the served outline stays within 0.05 units of the original everywhere. Same commands and parameter counts;
+    numbers written short (.4, -.4, no separator before a minus)."""
+    toks = _PTOK.findall(d)
+    segs, i = [], 0
+    cx = cy = rx = ry = 0.0          # true / rounded current point
+    sx = sy = rsx = rsy = 0.0        # true / rounded start of the subpath
+    cmd = None
+    while i < len(toks):
+        t = toks[i]
+        if t.isalpha():
+            cmd, i = t, i + 1
+            if cmd in "Zz":
+                segs.append((cmd, []))
+                cx, cy, rx, ry = sx, sy, rsx, rsy
+                continue
+        elif cmd is None or cmd in "Zz":
+            raise ValueError(f"path data has a number where a command belongs: {t}")
+        lc, rel = cmd.lower(), cmd.islower()
+        n = _NPAR[lc]
+        if i + n > len(toks) or any(x.isalpha() for x in toks[i:i + n]):
+            raise ValueError(f"path command {cmd} is short of parameters")
+        if lc == "a" and not (toks[i + 3] in ("0", "1") and toks[i + 4] in ("0", "1")):
+            raise ValueError(f"arc flags {toks[i + 3]!r} {toks[i + 4]!r}: write them apart (0 or 1 each)")
+        vals = [float(x) for x in toks[i:i + n]]
+        i += n
+        if lc == "h":
+            ax = cx + vals[0] if rel else vals[0]
+            new = [_r1(ax) - rx if rel else _r1(ax)]
+            cx, rx = ax, _r1(ax)
+        elif lc == "v":
+            ay = cy + vals[0] if rel else vals[0]
+            new = [_r1(ay) - ry if rel else _r1(ay)]
+            cy, ry = ay, _r1(ay)
+        else:
+            pts = [(vals[5], vals[6])] if lc == "a" else [(vals[k], vals[k + 1]) for k in range(0, n, 2)]
+            new = [_r1(v) for v in vals[:3]] + [int(v) for v in vals[3:5]] if lc == "a" else []
+            for px, py in pts:
+                ax, ay = (cx + px, cy + py) if rel else (px, py)
+                new += [_r1(ax) - rx, _r1(ay) - ry] if rel else [_r1(ax), _r1(ay)]
+            ex, ey = pts[-1]
+            cx, cy = (cx + ex, cy + ey) if rel else (ex, ey)
+            rx, ry = _r1(cx), _r1(cy)
+        segs.append((cmd, new))
+        if lc == "m":
+            sx, sy, rsx, rsy = cx, cy, rx, ry
+            cmd = "l" if rel else "L"            # more pairs after a moveto are linetos
+    out, cont = [], None
+    for c, nums in segs:
+        body = ""
+        for k, v in enumerate(nums):
+            s = str(v) if (c in "Aa" and k in (3, 4)) else _fmt_d(v)
+            body += ("," if body and not s.startswith("-") else "") + s
+        if c == cont:
+            out.append(("," if not body.startswith("-") else "") + body)
+        else:
+            out.append(c + body)
+        cont = {"m": "l", "M": "L"}.get(c, None if c in "Zz" else c)
+    return "".join(out)
+
+
 def _color(v):
     v = (v or "").strip().lower()
     if v in ("", "inherit"):
@@ -95,7 +178,8 @@ def clean_svg(raw, drop_grey=False, name="", viewbox=None):
             for c in (fill, stroke):
                 if c and (c.startswith("other:") or (c == "grey" and not drop_grey)):
                     raise ValueError(f"{name}: unexpected colour {c} on <{t}>")
-            a = {k: (_round_t if k == "transform" else _round)(el.get(k)) for k in GEOM if el.get(k) is not None}
+            a = {k: (_round_t if k == "transform" else _round_d if k == "d" else _round)(el.get(k))
+                 for k in GEOM if el.get(k) is not None}
             if t != "g":
                 if fill == "none":
                     a["fill"] = "none"
