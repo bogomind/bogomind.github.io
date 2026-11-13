@@ -3481,5 +3481,91 @@
   "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s05112",
   "modified": "metadata removed, fill set to currentColor",
   "drop_grey": false
+ },
+ "衣-oracle.svg": {
+  "char": "衣",
+  "kind": "oracle",
+  "local": "8863-oracle.svg",
+  "commons": "File:衣-oracle.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E8%A1%A3-oracle.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/%E8%A1%A3-oracle.svg",
+  "sha1": "6a1faab4f1413560f77fbe01c5c179634a309882",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Micheletb"
+  ],
+  "script": "oracle",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image J19803",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "衣-bronze.svg": {
+  "char": "衣",
+  "kind": "bronze",
+  "local": "8863-bronze.svg",
+  "commons": "File:衣-bronze.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E8%A1%A3-bronze.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/%E8%A1%A3-bronze.svg",
+  "sha1": "086ec3ef44103ec74bd7f4c25a362506c9703a0b",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ). Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Micheletb",
+   "沈澄心"
+  ],
+  "script": "bronze",
+  "period": "西周",
+  "source": "頌壺 西周晚期 集成9731",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image b12752",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "衣-seal.svg": {
+  "char": "衣",
+  "kind": "seal",
+  "local": "8863-seal.svg",
+  "commons": "File:衣-seal.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E8%A1%A3-seal.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/%E8%A1%A3-seal.svg",
+  "sha1": "b7695f26443c8b81370cf371021f74cedebdf89f",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ). Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Chanueting",
+   "沈澄心"
+  ],
+  "script": "seal",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s05978",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "衣-slip.svg": {
+  "char": "衣",
+  "kind": "slip",
+  "local": "8863-slip.svg",
+  "commons": "File:衣-slip.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E8%A1%A3-slip.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/%E8%A1%A3-slip.svg",
+  "sha1": "589426dbd6a0b0f9f43c25c844c80783e287d1a7",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated. Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "沈澄心"
+  ],
+  "script": "slip",
+  "period": "秦",
+  "source": "睡.秦78",
+  "model": "Academia Sinica 小學堂 glyph data (CC0 1.0)",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
  }
 }
