@@ -3849,5 +3849,71 @@
   "model": "Academia Sinica 小學堂 glyph data (CC0 1.0)",
   "modified": "metadata removed, fill set to currentColor",
   "drop_grey": false
+ },
+ "兔-oracle.svg": {
+  "char": "兔",
+  "kind": "oracle",
+  "local": "5154-oracle.svg",
+  "commons": "File:兔-oracle.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E5%85%94-oracle.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/%E5%85%94-oracle.svg",
+  "sha1": "bcc330af4c2376473d12c81777f23ddec316bafa",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Justinrleung",
+   "Micheletb"
+  ],
+  "script": "oracle",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image J22555",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "兔-bronze.svg": {
+  "char": "兔",
+  "kind": "bronze",
+  "local": "5154-bronze.svg",
+  "commons": "File:兔-bronze.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E5%85%94-bronze.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/%E5%85%94-bronze.svg",
+  "sha1": "b7476c4c5c27de69da0491b7759ad10f6986eea3",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated.",
+  "authors": [
+   "Justinrleung",
+   "Micheletb"
+  ],
+  "script": "bronze",
+  "period": "",
+  "source": "",
+  "model": "Academia Sinica 小學堂 glyph data (the Commons page says: From Xiaoxuetang.)",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "兔-seal.svg": {
+  "char": "兔",
+  "kind": "seal",
+  "local": "5154-seal.svg",
+  "commons": "File:兔-seal.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E5%85%94-seal.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/%E5%85%94-seal.svg",
+  "sha1": "54315cfd05ce30623057c50afd57656fab9bd932",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Justinrleung",
+   "Micheletb"
+  ],
+  "script": "seal",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image S07132",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
  }
 }
