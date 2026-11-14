@@ -4238,5 +4238,70 @@
   "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s00004",
   "modified": "metadata removed, fill set to currentColor",
   "drop_grey": false
+ },
+ "依-oracle.svg": {
+  "char": "依",
+  "kind": "oracle",
+  "local": "4f9d-oracle.svg",
+  "commons": "File:依-oracle.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E4%BE%9D-oracle.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/%E4%BE%9D-oracle.svg",
+  "sha1": "96657a17561f24f566efe555f61fe6fdf3767e34",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated.",
+  "authors": [
+   "沈澄心"
+  ],
+  "script": "oracle",
+  "period": "商",
+  "source": "乙4761 合6943 賓組",
+  "model": "",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "依-bronze.svg": {
+  "char": "依",
+  "kind": "bronze",
+  "local": "4f9d-bronze.svg",
+  "commons": "File:ACC-b12302.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3AACC-b12302.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/ACC-b12302.svg",
+  "sha1": "fcf23b0e3ed1ca9d0a4730b15b32cf60c623ccff",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Wyangbot",
+   "沈澄心"
+  ],
+  "script": "bronze",
+  "period": "西周",
+  "source": "伯晨鼎",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image b12302",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "依-seal.svg": {
+  "char": "依",
+  "kind": "seal",
+  "local": "4f9d-seal.svg",
+  "commons": "File:ACC-s05761.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3AACC-s05761.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/ACC-s05761.svg",
+  "sha1": "552576a7baa9b39068451575cd22a591a91792e2",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ).",
+  "authors": [
+   "Wyangbot",
+   "沈澄心"
+  ],
+  "script": "seal",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s05761",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
  }
 }
