@@ -4170,5 +4170,73 @@
   "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image S00003",
   "modified": "metadata removed, fill set to currentColor",
   "drop_grey": false
+ },
+ "天-oracle.svg": {
+  "char": "天",
+  "kind": "oracle",
+  "local": "5929-oracle.svg",
+  "commons": "File:天-oracle.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E5%A4%A9-oracle.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/%E5%A4%A9-oracle.svg",
+  "sha1": "f5363b663643fa35784abb2a2d8cfad38099602f",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated. Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Micheletb",
+   "Remsense",
+   "Wargaz"
+  ],
+  "script": "oracle",
+  "period": "商",
+  "source": "乙6390 合22103 午組",
+  "model": "Academia Sinica 小學堂 glyph data (CC0 1.0)",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "天-bronze.svg": {
+  "char": "天",
+  "kind": "bronze",
+  "local": "5929-bronze.svg",
+  "commons": "File:天-bronze.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E5%A4%A9-bronze.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/%E5%A4%A9-bronze.svg",
+  "sha1": "a4465415159c2c2fda57de1fd6ec3edb1bb6966f",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "This is a public domain picture of an ancient script. Attribution is not required but appreciated. Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Remsense",
+   "沈澄心"
+  ],
+  "script": "bronze",
+  "period": "西周",
+  "source": "大盂鼎 (early Western Zhou)",
+  "model": "Academia Sinica 小學堂 glyph data (CC0 1.0)",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
+ },
+ "天-seal.svg": {
+  "char": "天",
+  "kind": "seal",
+  "local": "5929-seal.svg",
+  "commons": "File:天-seal.svg",
+  "page": "https://commons.wikimedia.org/wiki/File%3A%E5%A4%A9-seal.svg",
+  "file_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/%E5%A4%A9-seal.svg",
+  "sha1": "3962de22f617538c474f3b748eac5aa3ffa788a6",
+  "licence": "Public domain",
+  "licence_url": "",
+  "permission": "Courtesy, permission and copyright from Richard Sears website © 2003 (see Richard Sears Agreement ). Picture from Sinica Database is under CC0 1.0 Universal Public Domain Dedication (see License ).",
+  "authors": [
+   "Erin Silversmith",
+   "Remsense",
+   "沈澄心"
+  ],
+  "script": "seal",
+  "period": "",
+  "source": "",
+  "model": "Richard Sears, Chinese Etymology (hanziyuan.net), by permission; image s00004",
+  "modified": "metadata removed, fill set to currentColor",
+  "drop_grey": false
  }
 }
